@@ -1,0 +1,24 @@
+Lab 2 notes: 
+
+
+Plan: 
+
+
+to do: 
+set up vm 
+//will work once I get the cert
+ works at check that its up at this exact URL: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/Lab2
+
+ http://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/Lab2
+
+
+
+
+Things I learned: 
+AJAX vs json look at slides
+
+
+Future improvements: 
+
+
+Any challenges I came across: 
