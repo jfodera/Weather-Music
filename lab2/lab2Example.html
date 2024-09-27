@@ -8,16 +8,39 @@
 <body>
     <img id="image"></img>
     <script>
-      //Have to tell Javscript to slow down and wait for the data to come in 
-      // Fetch is now in vanilla jQuery, creates a get request in given URL 
-        fetch("https://api.unsplash.com/photos/random/?client_id=<YOUR-ACCESS-KEY>")
-         // Takes promise and converts it to a JSON object
-        .then(response => response.json())
-      //   Only once you get back what your supposed to, then this will execute
-        .then(data => {
-            var image = document.getElementById('image');
-            image.src = data.urls.regular;
-        });
+/*Lab2 JavaScript File Placed variables and functions in this file */
+
+
+   //Have to tell Javscript to slow down and wait for the data to come in, put this ar the bottom of the body so that page doesn't 
+   // wait to fetch in oder to show visuals
+   // Fetch is now in vanilla jQuery, creates a get request in given URL 
+   fetch("https://api.unsplash.com/photos/random/?client_id=<YOUR-ACCESS-KEY>")
+
+   
+// Response is a promise returned by fetch: Takes promise and converts it to a JSON object, after the initial fetch promise is resolved 
+//Short format: 
+// .then(response => response.json());
+
+
+.then(function(response){
+   return(response.json());
+});
+
+//   Only once you get back what your JSON object (a conversion process that is also Async, will )
+//What is returned from last .then call is stored in 'data'
+
+//Short format: 
+// .then(data => {
+//    //gets tag with the id 'image' from your webpage
+//    var image = document.getElementById('image');
+//    // Updates that image with data from the JSON
+//    image.src = data.urls.regular;
+// });
+
+.then(function(data){
+   var image = document.getElementById('image');
+   image.src = data.urls.regular;
+});
     </script>
 </body>
 </html>

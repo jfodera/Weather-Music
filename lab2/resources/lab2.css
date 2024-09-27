@@ -1,0 +1,26 @@
+/*CSS specific to the lab2.html page*/
+
+body {
+   width: 100%;
+   height: 100%;
+   overflow: scroll;
+   /* Citation: https://stock.adobe.com/search?k=white+to+blue+gradient */
+   background-image: url(back.jpg);
+   background-repeat: no-repeat;
+   /* background-attachment: fixed; */
+   background-size: cover; 
+}
+
+
+h1 { 
+   font-size: 4em;
+   text-align: center;
+}
+
+#red{
+   color: red; 
+}
+
+#white{
+   color: white; 
+}

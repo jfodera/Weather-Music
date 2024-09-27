@@ -1,23 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <img id="image"></img>
-    <script>
-      //Have to tell Javscript to slow down and wait for the data to come in 
-      // Fetch is now in vanilla jQuery, creates a get request in given URL 
-        fetch("https://api.unsplash.com/photos/random/?client_id=<YOUR-ACCESS-KEY>")
-         // Takes promise and converts it to a JSON object
-        .then(response => response.json())
-      //   Only once you get back what your supposed to, then this will execute
-        .then(data => {
-            var image = document.getElementById('image');
-            image.src = data.urls.regular;
-        });
-    </script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href= "resources/lab2.css">
+   
+  </head>
+  <body>
+
+
+    <!-- Header -->
+    <div id="staticHeader">
+      <h1><span id="red">R.</span><span id="white">P.</span><span id="red">I.</span> Weather!</h1>
+   </div>
+
+
+   <!-- Main Content -->
+   <div class="outCont">
+      <a href="#" class="atomTitle">Click to View Atom Feed</a>
+      <ul id="atomTxt">
+      </ul>
+   </div>
+
+
+
+   <div class="outCont">
+      <a href="#" class="rssTitle">Click to View RSS Feed</a>
+      <ul id="rssTxt">
+      </ul>
+   </div>
+
+   <div id="footerPadding"></div>
+    
+
+
+    <script  src="resources/jquery-3.6.1.min.js"></script>
+    <script src="resources/lab2.js"></script>
+  </body>
 </html>
