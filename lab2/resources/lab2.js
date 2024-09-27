@@ -1,18 +1,19 @@
 /*Lab2 JavaScript File Placed variables and functions in this file */
 
 // GLOBAL VARS
-var weathCt = 0; 
+var weathCt = 1; 
 
 //takes underline off temp and presents rest 
 function showMore(){
    if(weathCt %2 == 0){
       $("#initHide").fadeOut(); 
       weathCt += 1; 
+      $('#lastU').css('margin-top', '10%');
    }else{
       $("#initHide").fadeIn(); 
       weathCt += 1; 
+      $('#lastU').css('margin-top', '35%');
    }
-   console.log(weathCt);
 }
 
 //must return a promise 
@@ -49,22 +50,14 @@ async function getWeath(){
 
 async function getPlays(auth,searchTerm){
 
-   fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=5&offset=0", { 
+   var fetchRes = await fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=5&offset=0", { 
       headers: {
          'Authorization': auth
       }
    })
 
-   .then(function(searchRes){
-      //have to handle response
-      return(searchRes.json());
-   })
-
-   //success
-   .then(function(searchData){
-      // $("body").html(JSON.stringify(searchData, null, 2)) 
-      console.log(searchData); 
-   })
+   var jsonRes = await fetchRes.json();
+   return(jsonRes);
 }
 
 
@@ -81,12 +74,10 @@ $(document).ready(function() {
    //waits for both promises to finish
    Promise.all([key, weatherData])
       
-   .then((vals) => {
-      console.log(vals); 
+   .then(function(vals) {
       var auth = 'Bearer ' + vals[0]; 
       var searchTerm = vals[1].weather[0].description + " day"; 
-      //Make Request Using key 
-      const playlists = getPlays(auth,searchTerm); 
+
       
       //get png 
       const pngUrl = "https://openweathermap.org/img/wn/" + vals[1].weather[0].icon +  "@2x.png";
@@ -102,6 +93,17 @@ $(document).ready(function() {
 
       var date = new Date(vals[1].dt*1000);
       $("#time").html(date);
+
+      //Make Request Using key 
+      getPlays(auth,searchTerm)
+      //reading plays promise
+      .then(function(plays){
+         //loading these in, starting off hiding cause they are dynamically allocated
+         $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
+         $("#oneIm").css('display', 'none');
+      })
+
+      
 
     })
    

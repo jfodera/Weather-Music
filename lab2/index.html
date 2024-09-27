@@ -16,89 +16,96 @@
 
 
    <!-- Main Sec -->
-   <div class="mainHold">
-      <!-- Normal Description -->
-      <div class="innerHold" id="weather">
-         <h2>Current Weather:</h2>
+   <div id="mainSec">
+      <div class="mainHold">
+         <!-- Normal Description -->
+         <div class="innerHold" id="weather">
+            <h2>Current Weather:</h2>
 
-         <div class="mainHold">
-            <div class="innerHold" id="weatherPng">
-               <img id="curWeath" alt="Current Weather png" src="resources/back.jpg" >
-            </div>
-            <div class="innerHold" id="desc">
-               <h3 id="description" class="res"></h3>
-               <ul class="miscList">
-                  <li>Wind Speed:
-                     <span class="res">
-                        <span id="windSpeed">
-                        </span> 
-                           mph
-                     </span>
-                  </li>
-                  <li>Pressure:
-                     <span class="res">
-                        <span id="press">
-                        </span> 
-                           hPa
-                     </span>
-                  </li>
-                  <li>Humidity
-                     <span class="res">
-                        <span id="humid">
-                        </span> 
-                           %
-                     </span>
-                  </li>
-                </ul>
+            <div class="mainHold">
+               <div class="innerHold" id="weatherPng">
+                  <img id="curWeath" alt="Current Weather png" src="resources/back.jpg" >
+               </div>
+               <div class="innerHold" id="desc">
+                  <h3 id="description" class="res">notEmpty</h3>
+                  <ul class="miscList">
+                     <li>Wind Speed:
+                        <span class="res">
+                           <span id="windSpeed">
+                           </span> 
+                              mph
+                        </span>
+                     </li>
+                     <li>Pressure:
+                        <span class="res">
+                           <span id="press">
+                           </span> 
+                              hPa
+                        </span>
+                     </li>
+                     <li>Humidity
+                        <span class="res">
+                           <span id="humid">
+                           </span> 
+                              %
+                        </span>
+                     </li>
+                  </ul>
 
-                <h3 id="mainTemp" onclick="showMore();">Temperature: 
-                  <span id="specRes" class="res">
-                     <span id="temp"></span>
-                     °F
-                  </span>
-                </h3>
-                <ul class="miscList" id="initHide">
-                  <li>Feels Like:
-                     <span class="res">
-                        <span id="fl">
-                        </span> 
+                  <h3 id="mainTemp" onclick="showMore();">Temperature: 
+                     <span id="specRes" class="res">
+                        <span id="temp"></span>
+                        °F
+                     </span>
+                  </h3>
+                  <ul class="miscList" id="initHideW">
+                     <li>Feels Like:
+                        <span class="res">
+                           <span id="fl">
+                           </span> 
+                              °F
+                        </span>
+                     </li>
+                     <li>Min Temperature:
+                        <span class="res">
+                           <span id="min">
+                           </span> 
                            °F
-                     </span>
-                  </li>
-                  <li>Min Temperature:
-                     <span class="res">
-                        <span id="min">
-                        </span> 
-                          °F
-                     </span>
-                  </li>
-                  <li>Max Temperature:
-                     <span class="res">
-                        <span id="max">
-                        </span> 
-                           °F
-                     </span>
-                  </li>
-                </ul>
+                        </span>
+                     </li>
+                     <li>Max Temperature:
+                        <span class="res">
+                           <span id="max">
+                           </span> 
+                              °F
+                        </span>
+                     </li>
+                  </ul>
+               </div>
             </div>
+            <h4 id="lastU">Last Updated: <span class="res" id="time"></span></h4>
          </div>
-         <h4>Last Updated: <span class="res" id="time"></span></h4>
-
-
-      </div>
+         
+         <div class="innerHold" id="Music">
+            <h2 id="spotHead">Suggested Spotify Playlists:</h2>
+            <img id="spotIm" alt="Spotify Logo" src="resources/spotify.png">
+            <ul id="spotUl">
+               <li>
+                  <div class="listFlex">
+                     <div class="playInfo">
+                        <h5 class="title">Title</h5>
+                        <h5 class="initHideS" class ="auth">By author</h5>
+                     </div>
       
-      <div class="innerHold" id="Music">
-        <!-- Confirmed email User Description -->
-        <h2 class="inHead">Confirm your University email with us <br> for more options:</h2>
-        <ul class="attLis">
-          <li>Upload your own back exams</li>
-          <li>Leave ratings on exams</li>
-          <li>Add comments to exams (coming soon)</li>
-        </ul>
-        <a class="mainBut" id="confEm" onclick="confEm();" >Confirm Email</a>
-      </div>
+                     <img class="playIm" class="initHideS" id="oneIm" alt="playlist #1 Image" src="resources/spotify.png">
+                  </div>
+               </li>
 
-    </div>
+            </ul>
+         </div>
+
+      </div>
+   </div>
 
 
    <!-- Footer -->
