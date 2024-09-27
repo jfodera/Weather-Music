@@ -8,6 +8,8 @@ rely on the API's. I'm really happy with my finished product and while it was a 
 
 Plan: 
 
+<a href='bscsd.org'> test</a>
+
 Make a website that calls and presents the weather API 
 Then uses info from that call to call the spotify API 
 
