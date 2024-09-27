@@ -20,7 +20,6 @@ body {
 
    background-color: #3b7ffe;
    width: 100%;
-   padding-right: px;
    text-align: center;
    margin-left: auto;
    margin-right: auto; 
@@ -28,8 +27,6 @@ body {
    margin-top: 0;
    margin-bottom: 0;
    height: 100px; 
-   /* padding-bottom: 40px; */
-   /* border-radius: 25px; */
    border-bottom: 5px solid black; 
 }
 
@@ -60,11 +57,7 @@ h1 {
 }
 
 .innerHold{
-   /* display: block; */
    text-align: center;
-   /* Adjust this for height */
-   /* padding-bottom: 30%; */
-   /* border: 5px solid black;  */
    border-radius: 25px;
 }
 
@@ -83,8 +76,6 @@ h3{
    border: 5px solid white;
    color: #ece284;
    padding-bottom: 20px;
-   /* height: 40px; */
-   /* height: auto;  */
 }
 
 .miscList{
@@ -115,7 +106,7 @@ h2{
    margin: 10px 0 0 0;
    font-size: 3em;
    text-decoration: underline;
-   font-weight: 5000;
+   font-weight: 1000;
 }
 
 #curWeath{
@@ -134,8 +125,6 @@ h2{
 #desc{
    margin: 5% 5% 0 0;
    width: 55%;
-   /* background-color: orange; */
-   
 }
 
 #initHideW{
@@ -223,8 +212,6 @@ h5{
    padding-bottom: 10%;
 }
 
-
-
 .mainBut{
    margin-top: 50px;
    display: block; 
@@ -233,7 +220,6 @@ h5{
    margin-right: auto;
    margin-bottom: 20px; 
    text-decoration: none;
-   font-family: Lilita One;
    color: white; 
    font-size: 2.5em;
    padding: 15px; 
@@ -258,7 +244,6 @@ footer {
    border-top: 10px; 
    /*Font info*/
    color: white;
-   font-family: "Chivo";  
    font-size: 0.9em;
    font-weight: 300;
 }

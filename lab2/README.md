@@ -1,8 +1,10 @@
 Lab 2 notes: 
 
-
-Summary: 
-
+Summary: Overall a really cool lab and defintley learned a lot. Had never realy worked with API's too much before and I think for this really being
+my first true time, the final product came out pretty good. I initially struggled at even finding the right weather API to pull from. Once I did, I read the documentation and the weather one was pretty simple from there. After that I found the spotify API and thats when I came up with the
+idea for curating muscic based off of the weather. Issue was I had no clue how to use the spotify API and that was defintley a process. I ended up having to make a POST request for a key and then using that key to make a search query to the API which was defintley difficult but I'm glad I struggled through it because I know what to do now. Also, the spotify API documentation is really nice. After that it was really just styling 
+and laying out my website. I figured I could add some cool interactivity with the show more button along with all of the things in the DOM that
+rely on the API's. I'm really happy with my finished product and while it was a struggle at times this was defintley a good experience. 
 
 Plan: 
 
@@ -90,8 +92,6 @@ Future improvements:
    Make it for any location 
    Could do an ajax esc for loop and customize how many songs are returned but for right now stick to 5
 
-
-Any challenges I came across: 
 
 Citations
 For POST request using fetch: https://www.geeksforgeeks.org/simple-post-request-using-the-fetch-api/?ref=oin_asr4
