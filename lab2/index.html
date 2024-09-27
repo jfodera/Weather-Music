@@ -16,7 +16,40 @@
 
 
    <!-- Main Sec -->
-    
+   <div class="mainHold">
+      <!-- Normal Description -->
+      <div class="innerHold" id="weather">
+         <h2>Current Weather:</h2>
+
+         <div class="mainHold">
+            <div class="innerHold" id="weatherPng">
+               <img id="curWeath" alt="Current Weather png" >
+            </div>
+            <div class="innerHold" id="desc">
+               <h3 id="description">Partly Cloudy</h3>
+               <ul class="miscList">
+                  <li>Wind Speed: <span id="windSpeed"></span> mph</li>
+                  <li>Pressure <span id="press"></span> hPa</li>
+                  <li>Humidity <span id="humid"></span> %</li>
+                </ul>
+                <h3 id="mainTemp" onclick="showMore();">Temperature: <span id="temp"></span>°F</h3>
+            </div>
+         </div>
+         
+      </div>
+      
+      <div class="innerHold" id="Music">
+        <!-- Confirmed email User Description -->
+        <h2 class="inHead">Confirm your University email with us <br> for more options:</h2>
+        <ul class="attLis">
+          <li>Upload your own back exams</li>
+          <li>Leave ratings on exams</li>
+          <li>Add comments to exams (coming soon)</li>
+        </ul>
+        <a class="mainBut" id="confEm" onclick="confEm();" >Confirm Email</a>
+      </div>
+
+    </div>
 
 
    <!-- Footer -->

@@ -1,5 +1,10 @@
 /*Lab2 JavaScript File Placed variables and functions in this file */
 
+//takes underline off temp and presents rest 
+function showMore(){
+
+}
+
 //must return a promise 
 async function getSpotKey(){
    
@@ -27,7 +32,7 @@ async function getSpotKey(){
 
 
 async function getWeath(){
-   var fetchRes = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=42.7284&lon=73.6918&units=imperial&appid=76b8f36558ce3b5fbce8ba9d025e5fe9");
+   var fetchRes = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=42.7284&lon=-73.6918&units=imperial&appid=76b8f36558ce3b5fbce8ba9d025e5fe9");
    var jsonRes = await fetchRes.json();
    return(jsonRes); 
 }
@@ -70,9 +75,17 @@ $(document).ready(function() {
       console.log(vals); 
       var auth = 'Bearer ' + vals[0]; 
       var searchTerm = vals[1].weather[0].description + " day"; 
-      const playlists = getPlays(auth,searchTerm); 
       //Make Request Using key 
-      //query Right not is rainy 
+      const playlists = getPlays(auth,searchTerm); 
+      
+      //get png 
+      const pngUrl = "https://openweathermap.org/img/wn/" + vals[1].weather[0].icon +  "@2x.png";
+      $("#description").html(vals[1].weather[0].main)
+      $("#curWeath").attr('src', pngUrl);
+      $("#windSpeed").html(vals[1].wind.speed);
+      $("#press").html(vals[1].main.pressure);
+      $("#humid").html(vals[1].main.humidity);
+      $("#temp").html(vals[1].main.temp);
 
     })
    
