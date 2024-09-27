@@ -96,7 +96,7 @@ $(document).ready(function() {
       
    .then(function(vals) {
       var auth = 'Bearer ' + vals[0]; 
-      var searchTerm = vals[1].weather[0].description + " day"; 
+      var searchTerm = vals[1].weather[0].main + " day"; 
 
       
       //get Weather info and insert into HTML
@@ -121,7 +121,6 @@ $(document).ready(function() {
          $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
          $("#titlOne").html(plays.playlists.items[0].name);
          $("#auOne").html(plays.playlists.items[0].owner.display_name);
-
 
 
          $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
