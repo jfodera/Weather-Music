@@ -1,8 +1,18 @@
 /*Lab2 JavaScript File Placed variables and functions in this file */
 
+// GLOBAL VARS
+var weathCt = 0; 
+
 //takes underline off temp and presents rest 
 function showMore(){
-
+   if(weathCt %2 == 0){
+      $("#initHide").fadeOut(); 
+      weathCt += 1; 
+   }else{
+      $("#initHide").fadeIn(); 
+      weathCt += 1; 
+   }
+   console.log(weathCt);
 }
 
 //must return a promise 
@@ -86,12 +96,17 @@ $(document).ready(function() {
       $("#press").html(vals[1].main.pressure);
       $("#humid").html(vals[1].main.humidity);
       $("#temp").html(vals[1].main.temp);
+      $("#fl").html(vals[1].main.feels_like);
+      $("#min").html(vals[1].main.temp_min);
+      $("#max").html(vals[1].main.temp_max);
+
+      var date = new Date(vals[1].dt*1000);
+      $("#time").html(date);
 
     })
    
     //can pass dt as argument of date for conversion
-    var date = new Date(1727397715*1000);
-    console.log(date); 
+
 
 });
 

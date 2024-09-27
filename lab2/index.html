@@ -11,7 +11,7 @@
    
     <!-- Header -->
     <div id="header">
-      <h1><span id="red">R.</span><span id="white">P.</span><span id="red">I.</span> Weather & Music!</h1>
+      <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
    </div>
 
 
@@ -23,19 +23,68 @@
 
          <div class="mainHold">
             <div class="innerHold" id="weatherPng">
-               <img id="curWeath" alt="Current Weather png" >
+               <img id="curWeath" alt="Current Weather png" src="resources/back.jpg" >
             </div>
             <div class="innerHold" id="desc">
-               <h3 id="description">Partly Cloudy</h3>
+               <h3 id="description" class="res"></h3>
                <ul class="miscList">
-                  <li>Wind Speed: <span id="windSpeed"></span> mph</li>
-                  <li>Pressure <span id="press"></span> hPa</li>
-                  <li>Humidity <span id="humid"></span> %</li>
+                  <li>Wind Speed:
+                     <span class="res">
+                        <span id="windSpeed">
+                        </span> 
+                           mph
+                     </span>
+                  </li>
+                  <li>Pressure:
+                     <span class="res">
+                        <span id="press">
+                        </span> 
+                           hPa
+                     </span>
+                  </li>
+                  <li>Humidity
+                     <span class="res">
+                        <span id="humid">
+                        </span> 
+                           %
+                     </span>
+                  </li>
                 </ul>
-                <h3 id="mainTemp" onclick="showMore();">Temperature: <span id="temp"></span>°F</h3>
+
+                <h3 id="mainTemp" onclick="showMore();">Temperature: 
+                  <span id="specRes" class="res">
+                     <span id="temp"></span>
+                     °F
+                  </span>
+                </h3>
+                <ul class="miscList" id="initHide">
+                  <li>Feels Like:
+                     <span class="res">
+                        <span id="fl">
+                        </span> 
+                           °F
+                     </span>
+                  </li>
+                  <li>Min Temperature:
+                     <span class="res">
+                        <span id="min">
+                        </span> 
+                          °F
+                     </span>
+                  </li>
+                  <li>Max Temperature:
+                     <span class="res">
+                        <span id="max">
+                        </span> 
+                           °F
+                     </span>
+                  </li>
+                </ul>
             </div>
          </div>
-         
+         <h4>Last Updated: <span class="res" id="time"></span></h4>
+
+
       </div>
       
       <div class="innerHold" id="Music">

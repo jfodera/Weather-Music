@@ -38,7 +38,7 @@ h1 {
    text-align: center; 
 }
 
-#red{
+.red{
    color: red; 
 }
 
@@ -93,6 +93,11 @@ li{
    margin-top: 10px
 }
 
+.res{
+   color: rgb(255, 255, 255);
+   font-weight: 700;
+}
+
 #mainTemp{
    margin: 0 0 0 0;
    padding: 0 0 0 21%;
@@ -104,7 +109,13 @@ li{
 }
 
 #mainTemp:hover{
-   color: white;
+   color: orange;
+   cursor: pointer;
+}
+
+#specRes:hover{
+   color: orange;
+   cursor: pointer;
 }
 
 h2{
@@ -132,6 +143,17 @@ h2{
    width: 55%;
    /* background-color: orange; */
    
+}
+
+#initHide{
+   display: none;
+}
+
+h4{
+   margin-top: 10%;
+   margin-bottom: 0;
+   padding: 0 0 0 0;
+   font-size: 0.9em;
 }
 
 #Music{
