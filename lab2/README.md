@@ -91,6 +91,7 @@ For some Reason, You can initially hide dynamically allocated things through ID'
 Future improvements: 
    Make it for any location 
    Could do an ajax esc for loop and customize how many songs are returned but for right now stick to 5
+   Figure out why spotify doesn't always return 5 song results 
 
 
 Citations

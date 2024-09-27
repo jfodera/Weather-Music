@@ -119,24 +119,28 @@ $(document).ready(function() {
          //loading images and links in
          $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
          $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
-         $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
-         $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
-         $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
-         $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
-         $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
-         $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
-         $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
-         $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
-
-         //loading in titles and authors
          $("#titlOne").html(plays.playlists.items[0].name);
          $("#auOne").html(plays.playlists.items[0].owner.display_name);
+
+
+
+         $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
+         $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
          $("#titlTwo").html(plays.playlists.items[1].name);
          $("#auTwo").html(plays.playlists.items[1].owner.display_name);
+
+         $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
+         $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
          $("#titlThree").html(plays.playlists.items[2].name);
          $("#auThree").html(plays.playlists.items[2].owner.display_name);
+
+         $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
+         $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
          $("#titlFour").html(plays.playlists.items[3].name);
          $("#auFour").html(plays.playlists.items[3].owner.display_name);
+
+         $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
+         $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
          $("#titlFive").html(plays.playlists.items[4].name);
          $("#auFive").html(plays.playlists.items[4].owner.display_name);
 
