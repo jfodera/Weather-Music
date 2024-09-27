@@ -6,13 +6,19 @@ var weathCt = 1;
 //takes underline off temp and presents rest 
 function showMore(){
    if(weathCt %2 == 0){
-      $("#initHide").fadeOut(); 
+      $("#initHideW").fadeOut(); 
+      $(".auth").fadeOut();
+      $(".playIm").fadeOut();
       weathCt += 1; 
       $('#lastU').css('margin-top', '10%');
+      $('#show').html('Show More Info');
    }else{
-      $("#initHide").fadeIn(); 
+      $("#initHideW").fadeIn(); 
+      $(".auth").fadeIn();
+      $(".playIm").fadeIn();
       weathCt += 1; 
       $('#lastU').css('margin-top', '35%');
+      $('#show').html('Show Less Info');
    }
 }
 
@@ -98,16 +104,41 @@ $(document).ready(function() {
       getPlays(auth,searchTerm)
       //reading plays promise
       .then(function(plays){
-         //loading these in, starting off hiding cause they are dynamically allocated
+         //loading titles and authors in
+
+
+         //loading images and links in
          $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
-         $("#oneIm").css('display', 'none');
+         $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
+         $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
+         $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
+         $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
+         $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
+         $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
+         $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
+         $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
+         $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
+
+         
+         //loading in titles and authors
+         $("#titlOne").html(plays.playlists.items[0].name);
+         $("#auOne").html(plays.playlists.items[0].owner.display_name);
+         $("#titlTwo").html(plays.playlists.items[1].name);
+         $("#auTwo").html(plays.playlists.items[1].owner.display_name);
+         $("#titlThree").html(plays.playlists.items[2].name);
+         $("#auThree").html(plays.playlists.items[2].owner.display_name);
+         $("#titlFour").html(plays.playlists.items[3].name);
+         $("#auFour").html(plays.playlists.items[3].owner.display_name);
+         $("#titlFive").html(plays.playlists.items[4].name);
+         $("#auFive").html(plays.playlists.items[4].owner.display_name);
+
+         //hides all images for 'show more' 
+         $(".playIm").css('display', 'none');
       })
 
       
 
     })
-   
-    //can pass dt as argument of date for conversion
 
 
 });

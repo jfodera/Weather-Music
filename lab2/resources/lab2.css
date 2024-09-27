@@ -109,18 +109,6 @@ li{
    text-align: left;
    font-size: 1.6em;
    margin-top: 20px;
-   font-style: italic;
-   text-decoration: underline;
-}
-
-#mainTemp:hover{
-   color: orange;
-   cursor: pointer;
-}
-
-#specRes:hover{
-   color: orange;
-   cursor: pointer;
 }
 
 h2{
@@ -154,10 +142,6 @@ h2{
    display: none;
 }
 
-
-.initHideS{
-   display: none;
-}
 
 h4{
    margin-top: 10%;
@@ -201,15 +185,22 @@ h5{
    font-weight: 1000;
    margin: 0 0 0 0;
    padding: 0 0 0 0;
+   color: #1ed760;
 }
+
+.title:hover{
+   color:#9434d3;
+}
+
 .auth{
    margin: 0 0 0 0;
    padding: 0 0 0 0;
+   display: none;
 }
 
 .playIm{
    width: 15%;
-   margin: 0 10% 0 10%;
+   margin: 0 5% 0 10%;
    padding: 0 0 0 0;
 }
 
@@ -228,21 +219,42 @@ h5{
    text-align: center;
 }
 
-.spotLi{
-   /* display: block; */
+#lastLi{
+   padding-bottom: 10%;
 }
 
 
+
+.mainBut{
+   margin-top: 50px;
+   display: block; 
+   width: fit-content;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 20px; 
+   text-decoration: none;
+   font-family: Lilita One;
+   color: white; 
+   font-size: 2.5em;
+   padding: 15px; 
+   border-radius: 30px;
+   background-color: #3b7ffe;
+}
+.mainBut:hover{
+   border: 5px solid black;
+   margin-bottom: 15px;
+   padding-top: 10px;
+}
 
 
 /*Footer*/
 footer {
    /* Sizing */
    display: block;
-   width: 100%;
+   width: 100.2%;
    height: 125px;
    text-align: center;
-   background-color: red;
+   background-color: #3b7ffe;
    border-top: 10px; 
    /*Font info*/
    color: white;
@@ -279,12 +291,6 @@ footer {
    padding-bottom: 0px;
    margin-bottom: 0px;
    padding-top: 0px;
-   margin-top: 5px;
+   margin-top: 10px;
 }
 
- #date{
-   padding-top: 0px;
-   margin-top: 5px;
-   font-style: italic;
-   font-weight: 400;
- }

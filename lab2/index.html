@@ -52,7 +52,7 @@
                      </li>
                   </ul>
 
-                  <h3 id="mainTemp" onclick="showMore();">Temperature: 
+                  <h3 id="mainTemp" >Temperature: 
                      <span id="specRes" class="res">
                         <span id="temp"></span>
                         °F
@@ -93,11 +93,46 @@
                <li>
                   <div class="listFlex">
                      <div class="playInfo">
-                        <h5 class="title">Title</h5>
-                        <h5 class="initHideS" class ="auth">By author</h5>
-                     </div>
-      
-                     <img class="playIm" class="initHideS" id="oneIm" alt="playlist #1 Image" src="resources/spotify.png">
+                        <a href="placeholder.com" id="oneLin"><h5 class="title" id="titlOne">Title</h5></a>
+                        <h5 class="auth">By <span id="auOne"></span></h5>
+                     </div>   
+                     <img class="playIm" id="oneIm" alt="playlist #1 Image" src="resources/spotify.png">
+                  </div>
+               </li>
+               <li>
+                  <div class="listFlex">
+                     <div class="playInfo">
+                        <a href="placeholder.com" id="twoLin"><h5 class="title" id="titlTwo">Title</h5></a>
+                        <h5 class="auth">By <span id="auTwo"></span></h5>
+                     </div>   
+                     <img class="playIm" id="twoIm" alt="playlist #2 Image" src="resources/spotify.png">
+                  </div>
+               </li>
+               <li>
+                  <div class="listFlex">
+                     <div class="playInfo">
+                        <a href="placeholder.com" id="threeLin"><h5 class="title" id="titlThree">Title</h5></a>
+                        <h5 class="auth">By <span id="auThree"></span></h5>
+                     </div>   
+                     <img class="playIm" id="threeIm" alt="playlist #3 Image" src="resources/spotify.png">
+                  </div>
+               </li>
+               <li>
+                  <div class="listFlex">
+                     <div class="playInfo">
+                        <a href="placeholder.com" id="fourLin"><h5 class="title" id="titlFour">Title</h5></a>
+                        <h5 class="auth">By <span id="auFour"></h5>
+                     </div>   
+                     <img class="playIm" id="fourIm" alt="playlist #4 Image" src="resources/spotify.png">
+                  </div>
+               </li>
+               <li>
+                  <div class="listFlex" id="lastLi">
+                     <div class="playInfo">
+                        <a href="placeholder.com" id="fiveLin"><h5 class="title"  id="titlFive">Title</h5></a>
+                        <h5 class="auth">By <span id="auFive"></h5>
+                     </div>   
+                     <img class="playIm" id="fiveIm" alt="playlist #5 Image" src="resources/spotify.png">
                   </div>
                </li>
 
@@ -105,11 +140,18 @@
          </div>
 
       </div>
+      <a class="mainBut" id="show" onclick="showMore();" >Show More Info</a>
    </div>
 
 
    <!-- Footer -->
-
+   <footer> 
+      <div id="helpLogos" class="flex-container">
+        <a id="discLink" href="https://discord.gg/xBJHqEsM"><img id="discLogo" alt="Discord Logo" src="resources/discord logo.svg"></a>
+        <a id="gitLink" href="https://github.com/RPI-ITWS/ITWS-2110-F24-foderj"><img id="gitLogo" alt="Github Logo" src="resources/github-mark.png"></a>
+      </div>
+      <p id="cpright">©2024 Fodera Sites</p>
+   </footer>
 
 
     <script  src="resources/jquery-3.6.1.min.js"></script>
