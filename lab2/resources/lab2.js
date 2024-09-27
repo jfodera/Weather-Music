@@ -76,6 +76,10 @@ $(document).ready(function() {
 
     })
    
+    //can pass dt as argument of date for conversion
+    var date = new Date(1727397715*1000);
+    console.log(date); 
+
 });
 
 
