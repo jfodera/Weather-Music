@@ -119,8 +119,11 @@ $(document).ready(function() {
    
             })
             .then(function(response){
-               console.log(response); 
+               return(response.json()) 
             })
+            .then(function(js){
+               console.log(js); 
+            }); 
    
    
          })

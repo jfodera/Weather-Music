@@ -57,6 +57,7 @@ Must have type='module' in script in order to import
    will see in directory that node_modules is installed 
 php://input allows you to acses raw POST data -> the JSON
 Send Javascript object to php, very cool 
+CANNOT use console with scripts inserted as type='module'   
 
 
 
@@ -89,7 +90,7 @@ Decided to not use anything above
 
 
 Current:
-   Getting Javascript to toss to php using fetch, and console testing issue 
+   Getting Javascript to toss to php using fetch
 
 
 Helpful Code Chunks: 
