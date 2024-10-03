@@ -82,48 +82,52 @@ async function getPlays(auth,searchTerm){
    return(jsonRes);
 }
 
-// function apiBut(){
-
-//    //Getting key For Spotify 
-//    const key = getSpotKey()
-//    //getting weather 
-//    const weatherData = getWeath()
-
-//    Promise.all([key, weatherData])
-
-//    .then(function(vals) {
-//       var auth = 'Bearer ' + vals[0]; 
-//       var searchTerm = vals[1].weather[0].main + " day"; 
-//       // Weather JSON is vals[1]
-//       // Spotify JSON is caught in promise below
-
-//       getPlays(auth,searchTerm)
-
-//       .then(function(spotJSON){
-//          console.log(vals[1]);
-//          console.log(spotJSON);
-
-//          fetch("insertToDB.php", {
-//             "method" : "POST",
-//             "headers" : {
-//                //Tells php that the body of the request is json 
-//                "Content-Type" : "application/json; charset=utf-8"
-//             },
-//             "body" : vals[1]
-
-//          })
-//          .then(function(response){
-//             console.log(response); 
-//          })
+function apiBut(){
 
 
-//       })
-//    });
-
-// }
+}
 
 // /*MAIN*/
-// $(document).ready(function() {
+$(document).ready(function() {
+
+      //Getting key For Spotify 
+      const key = getSpotKey()
+      //getting weather 
+      const weatherData = getWeath()
+   
+      Promise.all([key, weatherData])
+   
+      .then(function(vals) {
+         var auth = 'Bearer ' + vals[0]; 
+         var searchTerm = vals[1].weather[0].main + " day"; 
+         // Weather JSON is vals[1]
+         // Spotify JSON is caught in promise below
+   
+         getPlays(auth,searchTerm)
+   
+         .then(function(spotJSON){
+            console.log(vals[1]);
+            console.log(spotJSON);
+   
+            fetch("insertToDB.php", {
+               "method" : "POST",
+               "headers" : {
+                  //Tells php that the body of the request is json 
+                  "Content-Type" : "application/json; charset=utf-8"
+               },
+               "body" : vals[1]
+   
+            })
+            .then(function(response){
+               console.log(response); 
+            })
+   
+   
+         })
+      });
+   
+
+})
 
 
 
