@@ -53,6 +53,8 @@ Don't forget to include API ID when inserting
 
 Future improvements: 
 Use XAMPP instead of pushing to main 
+Could have made the API call in PHP, but it seemed more complicated so just did it in js
+   in the future, should have my js file running serverside with node js 
 
 
 Any challenges I came across: 
@@ -60,6 +62,9 @@ Any challenges I came across:
 Citations:
 JSON into mySQL    :
    https://dev.mysql.com/doc/refman/8.4/en/json.html
+
+JS database connection: 
+   https://www.w3schools.com/nodejs/nodejs_mysql.asp
 
 
 

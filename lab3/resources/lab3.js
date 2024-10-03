@@ -101,6 +101,17 @@ function apiBut(){
       .then(function(spotJSON){
          console.log(vals[1]);
          console.log(spotJSON);
+
+         const connection = mysql.createConnection({
+            host: 'localhost', // Your database host
+            user: 'phpmyadmin', // Your database username
+            password: '!fodAdmin!', // Your database password
+            database: 'jsonObjs' // Your database name
+          });
+          connection.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+          });
       })
    });
 
