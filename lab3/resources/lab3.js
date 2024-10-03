@@ -122,10 +122,10 @@ $(document).ready(function() {
             //Catches echo response if there is an error
             .then(function(response){
                //must do this because returns a promise
-               return(response.json());
+               return(response.text);
             })
             .then(function(error){
-               console.log(error.error);
+               console.log(error);
             })
    
          })

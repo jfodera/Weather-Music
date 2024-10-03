@@ -13,13 +13,8 @@
 
       //connect_error is a property of a mysqli object that has any error message if it false
       if ($db->connect_error) {
-         $connectErrors = array(
-           'errors' => true,
-           //error number 
-           'errno' => mysqli_connect_errno(),
-           'error' => mysqli_connect_error()
-         );
-         echo json_encode($connectErrors);
+  
+         echo $db->connect_error;
       }
       
 
