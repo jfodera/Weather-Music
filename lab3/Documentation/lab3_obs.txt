@@ -48,12 +48,16 @@ Without Phpmyadin, mySQl is interacted with most commonly through the command li
 Only can insert into DB if valid JSON
 int(10) -> 10 is the display width, not the storage size 
 Don't forget to include API ID when inserting 
+Node.js is a tool that basically allows js to connect to databases
+Need Node.js for use of mysql package
 
 
 
 Future improvements: 
 Use XAMPP instead of pushing to main 
 Could have made the API call in PHP, but it seemed more complicated so just did it in js
+   would have had to make a js call, call a php script to fetch API data and store it, now that I think about it that may have been easier 
+
    in the future, should have my js file running serverside with node js 
 
 
@@ -65,6 +69,11 @@ JSON into mySQL    :
 
 JS database connection: 
    https://www.w3schools.com/nodejs/nodejs_mysql.asp
+   Also taught me how to install node.js and npm (the package manager )
+
+Getting the mySQL Package in JS file:
+   https://www.sitepoint.com/using-node-mysql-javascript-client/
+
 
 
 
