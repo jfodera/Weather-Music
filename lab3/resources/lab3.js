@@ -123,7 +123,11 @@ $(document).ready(function() {
 
             //Catches echo response if there is an error
             .then(function(response){
-               alert(response.text());
+               //must do this because returns a promise
+               return(response.text());
+            })
+            .then(function(error){
+               alert(error);
             })
    
          })
