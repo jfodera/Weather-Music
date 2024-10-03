@@ -1,0 +1,53 @@
+Lab 2 notes: 
+
+
+Summary: 
+
+
+Plan: 
+
+install mariaDB and mySQL  and phpmyadmin 
+
+Make a database format so that the website can store the JSON objects in the database
+Make a version of the website that requires you to click a button to start and get the weather
+Then use PHP to display the same exact version of the website as last lab from the database
+They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
+   selecting a new location will overwrite the existing database entry 
+
+
+
+Before submit checklist: 
+
+
+Questions: 
+
+
+
+Outline: 
+
+
+ Regarding "putting that JSON object into a MySQL database," 
+ I checked with Dr. Callahan, and he mentioned that it is up 
+ to you and your fellow students to decide how you want to store 
+ your data and in what format within the database
+
+ You all installed PHPMyAdmin on your VMs during the Intro class. It was not pre-installed on the VMs—I confirmed this with him as well.
+
+
+Things I learned: 
+
+. is concatenation
+//$_Server, returns the name of the path of the file path currrently executing 
+
+
+Future improvements: 
+
+
+Any challenges I came across: 
+
+Citations
+
+
+
+
+Helpful Code Chunks: 
