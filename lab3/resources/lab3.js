@@ -106,8 +106,6 @@ $(document).ready(function() {
          getPlays(auth,searchTerm)
    
          .then(function(spotJSON){
-            console.log(vals[1]);
-            console.log(spotJSON);
             //remember, relative to page running on 
             //Makes post request to php file, basically sends it the JSON 
             fetch("resources/insertToDB.php", {
@@ -121,14 +119,14 @@ $(document).ready(function() {
    
             })
 
-            // //Catches echo response if there is an error
-            // .then(function(response){
-            //    //must do this because returns a promise
-            //    return(response.text());
-            // })
-            // .then(function(error){
-            //    console.log(error);
-            // })
+            //Catches echo response if there is an error
+            .then(function(response){
+               //must do this because returns a promise
+               return(response.json());
+            })
+            .then(function(error){
+               console.log(error.error);
+            })
    
          })
       });
