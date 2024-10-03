@@ -115,7 +115,7 @@ $(document).ready(function() {
                   //Tells php that the body of the request is json 
                   "Content-Type" : "application/json; charset=utf-8"
                },
-               "body" : vals[1]
+               "body" : JSON.stringify(vals[1])
    
             })
             .then(function(response){
