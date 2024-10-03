@@ -58,6 +58,7 @@ Must have type='module' in script in order to import
 php://input allows you to acses raw POST data -> the JSON
 Send Javascript object to php, very cool 
 CANNOT use console with scripts inserted as type='module'   
+JSON.stringify converts JavaScript Objects into strings 
 
 
 
@@ -86,6 +87,8 @@ Didn't actually use:
    Getting the mySQL Package in JS file:
       https://www.sitepoint.com/using-node-mysql-javascript-client/
 
+   stringify: https://www.w3schools.com/jsref/jsref_stringify.asp#:~:text=The%20JSON.,has%20to%20be%20a%20string.
+
 Decided to not use anything above 
 
 
@@ -94,3 +97,11 @@ Current:
 
 
 Helpful Code Chunks: 
+
+            //Catches echo response for testing, returns as a string so must be converted to JSON 
+            .then(function(response){
+               return(response.json()) 
+            })
+            .then(function(js){
+               console.log(js); 
+            }); 

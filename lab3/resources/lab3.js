@@ -109,22 +109,22 @@ $(document).ready(function() {
             console.log(vals[1]);
             console.log(spotJSON);
             //remember, relative to page running on 
+            //Makes post request to php file, basically sends it the JSON 
             fetch("resources/insertToDB.php", {
                "method" : "POST",
                "headers" : {
                   //Tells php that the body of the request is json 
                   "Content-Type" : "application/json; charset=utf-8"
                },
+               // stringify is vital and php will recieve this as a plain string
                "body" : JSON.stringify(vals[1])
    
             })
+
+            //Catches echo response if there is an error
             .then(function(response){
-               return(response.json()) 
+               alert(response);
             })
-            .then(function(js){
-               console.log(js); 
-            }); 
-   
    
          })
       });

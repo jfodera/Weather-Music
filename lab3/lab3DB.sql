@@ -8,4 +8,4 @@ CREATE TABLE `jsonObjs` (
 );
 
 INSERT INTO jsonObjs
-VALUES ('{"key1": "value1", "key2": "value2"}');
+VALUES (1, '{"key1": "value1", "key2": "value2"}');
