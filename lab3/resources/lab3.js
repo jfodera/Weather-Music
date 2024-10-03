@@ -3,7 +3,8 @@
 /*Important to note, Weather Hardcoded for Possible locations */
 
 //IMPORTS
-const mysql = require('mysql2');
+import mysql from 'mysql2';
+
 
 // GLOBAL VARS
 var weathCt = 1; 
