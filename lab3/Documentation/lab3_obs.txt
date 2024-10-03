@@ -8,9 +8,12 @@ Plan:
 
 install mariaDB and mySQL  and phpmyadmin 
 
-Make a database format so that the website can store the JSON objects in the database
+Make a database format so that the website can store the JSON objects in the database √
+
+
 Make a version of the website that requires you to click a button to start, only once you click, then it fetches 
    and puts JSON obj in database
+   Only use PHP fetch obj out of database and display it to front end 
 
 Then use PHP to display the same exact version of the website as last lab from the database
 They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
@@ -49,6 +52,7 @@ Don't forget to include API ID when inserting
 
 
 Future improvements: 
+Use XAMPP instead of pushing to main 
 
 
 Any challenges I came across: 

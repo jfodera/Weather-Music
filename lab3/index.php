@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href= "resources/lab2.css">
+    <link rel="stylesheet" href= "resources/lab3.css">
     <title>RPI Weather & Music</title>
   </head>
   <body>
@@ -157,6 +157,6 @@
 
 
     <script  src="resources/jquery-3.6.1.min.js"></script>
-    <script src="resources/lab2.js"></script>
+    <script src="resources/lab3.js"></script>
   </body>
 </html>
