@@ -123,7 +123,7 @@ $(document).ready(function() {
 
             //Catches echo response if there is an error
             .then(function(response){
-               alert(response);
+               alert(response.text());
             })
    
          })
