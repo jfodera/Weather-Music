@@ -9,9 +9,12 @@ Plan:
 install mariaDB and mySQL  and phpmyadmin 
 
 Make a database format so that the website can store the JSON objects in the database
-Make a version of the website that requires you to click a button to start and get the weather
+Make a version of the website that requires you to click a button to start, only once you click, then it fetches 
+   and puts JSON obj in database
+
 Then use PHP to display the same exact version of the website as last lab from the database
 They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
+   index.php:96 is where you can insert
    selecting a new location will overwrite the existing database entry 
 
 
@@ -38,6 +41,11 @@ Things I learned:
 
 . is concatenation
 //$_Server, returns the name of the path of the file path currrently executing 
+Without Phpmyadin, mySQl is interacted with most commonly through the command line 
+Only can insert into DB if valid JSON
+int(10) -> 10 is the display width, not the storage size 
+Don't forget to include API ID when inserting 
+
 
 
 Future improvements: 
@@ -45,7 +53,9 @@ Future improvements:
 
 Any challenges I came across: 
 
-Citations
+Citations:
+JSON into mySQL    :
+   https://dev.mysql.com/doc/refman/8.4/en/json.html
 
 
 
