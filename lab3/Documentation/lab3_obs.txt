@@ -51,6 +51,8 @@ Don't forget to include API ID when inserting
 Node.js is a tool that basically allows js to connect to databases
 Need Node.js for use of mysql package
 Must have type='module' in script in order to import 
+   and then must have mysql2 installed in project directory which you can only use with node.js installed 
+   will see in directory that node_modules is installed 
 
 
 
