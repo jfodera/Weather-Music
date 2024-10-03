@@ -108,8 +108,8 @@ $(document).ready(function() {
          .then(function(spotJSON){
             console.log(vals[1]);
             console.log(spotJSON);
-   
-            fetch("insertToDB.php", {
+            //remember, relative to page running on 
+            fetch("resources/insertToDB.php", {
                "method" : "POST",
                "headers" : {
                   //Tells php that the body of the request is json 
