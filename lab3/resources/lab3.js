@@ -127,7 +127,7 @@ $(document).ready(function() {
                return(response.text());
             })
             .then(function(error){
-               alert(error);
+               console.log(error);
             })
    
          })
