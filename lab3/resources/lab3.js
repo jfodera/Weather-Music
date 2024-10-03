@@ -93,7 +93,15 @@ function apiBut(){
    .then(function(vals) {
       var auth = 'Bearer ' + vals[0]; 
       var searchTerm = vals[1].weather[0].main + " day"; 
-      console.log(vals[1]);
+      // Weather JSON is vals[1]
+      // Spotify JSON is caught in promise below
+
+      getPlays(auth,searchTerm)
+
+      .then(function(spotJSON){
+         console.log(vals[1]);
+         console.log(spotJSON);
+      })
    });
 
 }
