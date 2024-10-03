@@ -157,6 +157,6 @@
 
 
     <script  src="resources/jquery-3.6.1.min.js"></script>
-    <script src="resources/lab3.js"></script>
+    <script src="resources/lab3.js" type="module"></script>
   </body>
 </html>

@@ -50,6 +50,7 @@ int(10) -> 10 is the display width, not the storage size
 Don't forget to include API ID when inserting 
 Node.js is a tool that basically allows js to connect to databases
 Need Node.js for use of mysql package
+Must have type='module' in script in order to import 
 
 
 
