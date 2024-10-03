@@ -125,7 +125,7 @@ function apiBut(){
 // /*MAIN*/
 $(document).ready(function() {
    console.log('hi');
-}
+})
 
 
 //    //waits for both promises to finish
