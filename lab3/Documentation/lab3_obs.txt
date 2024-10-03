@@ -14,6 +14,7 @@ Make a database format so that the website can store the JSON objects in the dat
 Make a version of the website that requires you to click a button to start, only once you click, then it fetches 
    and puts JSON obj in database
    Only use PHP fetch obj out of database and display it to front end 
+   make a js call, call a php script to fetch API data and store it, now that I think about it that may have been easier 
 
 Then use PHP to display the same exact version of the website as last lab from the database
 They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
@@ -26,6 +27,7 @@ Before submit checklist:
 
 
 Questions: 
+how to run mysql package so I can connect to DB from js? 
 
 
 
@@ -53,29 +55,37 @@ Need Node.js for use of mysql package
 Must have type='module' in script in order to import 
    and then must have mysql2 installed in project directory which you can only use with node.js installed 
    will see in directory that node_modules is installed 
+php://input allows you to acses raw POST data -> the JSON
+Send Javascript object to php, very cool 
 
 
 
 Future improvements: 
 Use XAMPP instead of pushing to main 
-Could have made the API call in PHP, but it seemed more complicated so just did it in js
-   would have had to make a js call, call a php script to fetch API data and store it, now that I think about it that may have been easier 
 
    in the future, should have my js file running serverside with node js 
+Couldn't figure out how to succesfully import mysql package and would be less time to just make it with php so did it like that instead
+   Can learn how to do this in future
 
 
 Any challenges I came across: 
 
 Citations:
-JSON into mySQL    :
-   https://dev.mysql.com/doc/refman/8.4/en/json.html
+Send Javascript object to php: 
+   https://www.youtube.com/watch?v=Ctz1Fsgt9OE
 
-JS database connection: 
-   https://www.w3schools.com/nodejs/nodejs_mysql.asp
-   Also taught me how to install node.js and npm (the package manager )
+Didn't actually use: 
+   JSON into mySQL    :
+      https://dev.mysql.com/doc/refman/8.4/en/json.html
 
-Getting the mySQL Package in JS file:
-   https://www.sitepoint.com/using-node-mysql-javascript-client/
+   JS database connection: 
+      https://www.w3schools.com/nodejs/nodejs_mysql.asp
+      Also taught me how to install node.js and npm (the package manager )
+
+   Getting the mySQL Package in JS file:
+      https://www.sitepoint.com/using-node-mysql-javascript-client/
+
+Decided to not use anything above 
 
 
 

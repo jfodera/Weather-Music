@@ -2,9 +2,6 @@
 
 /*Important to note, Weather Hardcoded for Possible locations */
 
-//IMPORTS
-import mysql from '../../node_modules/mysql2';
-
 
 // GLOBAL VARS
 var weathCt = 1; 
@@ -106,16 +103,20 @@ function apiBut(){
          console.log(vals[1]);
          console.log(spotJSON);
 
-         const connection = mysql.createConnection({
-            host: 'localhost', // Your database host
-            user: 'phpmyadmin', // Your database username
-            password: '!fodAdmin!', // Your database password
-            database: 'jsonObjs' // Your database name
-          });
-          connection.connect(function(err) {
-            if (err) throw err;
-            console.log("Connected!");
-          });
+         fetch("insertToDB.php", {
+            "method" : "POST",
+            "headers" : {
+               //Tells php that the body of the request is json 
+               "Content-Type" : "application/json; charset=utf-8"
+            },
+            "body" : vals[1]
+
+         })
+         .then(function(response){
+            console.log(response); 
+         })
+
+
       })
    });
 
