@@ -88,7 +88,8 @@ Didn't actually use:
 Decided to not use anything above 
 
 
-
+Current:
+   Getting Javascript to toss to php using fetch, and console testing issue 
 
 
 Helpful Code Chunks: 
