@@ -29,9 +29,10 @@
       $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
       $result = $db->query($query);
       $record = $result->fetch_assoc();
-      $id = $record['callId'];
+      echo $record; 
+      // $id = $record['callId'];
 
-      echo $id; 
+      
    
       
    }
