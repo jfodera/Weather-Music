@@ -202,7 +202,7 @@ async function locCheck(){
 
    if (selBox.value == "Clemson"){
 
-      $("#univTitle").html("<span class=\"orange\">Clemson</span><span class=\"white\"> U</span>");
+      $("#univTitle").html("<span class=\"orange\">Clemson</span>");
       $("title").html("Clemson Weather & Music");
 
       const weathDat = await getWeath("34.683437", "-82.837364");
