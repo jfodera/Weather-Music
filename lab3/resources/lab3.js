@@ -105,25 +105,25 @@ function apiBut(){
          //send weather to PHP
          //remember, relative to page running on 
          //Makes post request to php file, basically sends it the JSON 
-         fetch("resources/initInDb.php", {
-            "method" : "POST",
-            "headers" : {
-               //Tells php that the body of the request is json 
-               "Content-Type" : "application/json; charset=utf-8"
-            },
-            // stringify is vital and php will recieve this as a plain string
-            "body" : JSON.stringify(vals[1])
+         // fetch("resources/initInDb.php", {
+         //    "method" : "POST",
+         //    "headers" : {
+         //       //Tells php that the body of the request is json 
+         //       "Content-Type" : "application/json; charset=utf-8"
+         //    },
+         //    // stringify is vital and php will recieve this as a plain string
+         //    "body" : JSON.stringify(vals[1])
 
-         })
+         // })
 
-         //Catches echo response if there is an error
-         .then(function(response){
-            //must do this because returns a promise
-            return(response.text());
-         })
-         .then(function(error){
-            console.log(error);
-         })
+         // //Catches echo response if there is an error
+         // .then(function(response){
+         //    //must do this because returns a promise
+         //    return(response.text());
+         // })
+         // .then(function(error){
+         //    console.log(error);
+         // })
 
       })
    });

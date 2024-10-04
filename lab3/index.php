@@ -21,7 +21,7 @@
    </div>
 
 
-   <?php
+
       // //so can check every time we write in PhP 
       // $dbOk = false; 
 
@@ -46,7 +46,7 @@
       // echo $weath['coord']['lat'];
       // */
 
-   ?>
+
 
    <!-- Main Sec -->
    <div id="mainSec">
