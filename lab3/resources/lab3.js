@@ -127,6 +127,55 @@ async function retrieve(id){
 
 }
 
+function popHTML(weathDat, plays){
+
+   //get Weather info and insert into HTML
+   const pngUrl = "https://openweathermap.org/img/wn/" + weathDat.weather[0].icon +  "@2x.png";
+   $("#description").html(weathDat.weather[0].main)
+   $("#curWeath").attr('src', pngUrl);
+   $("#windSpeed").html(weathDat.wind.speed);
+   $("#press").html(weathDat.main.pressure);
+   $("#humid").html(weathDat.main.humidity);
+   $("#temp").html(weathDat.main.temp);
+   $("#fl").html(weathDat.main.feels_like);
+   $("#min").html(weathDat.main.temp_min);
+   $("#max").html(weathDat.main.temp_max);
+   var date = new Date(weathDat.dt*1000);
+   $("#time").html(date);
+
+
+   //loading images and links in
+   $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
+   $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
+   $("#titlOne").html(plays.playlists.items[0].name);
+   $("#auOne").html(plays.playlists.items[0].owner.display_name);
+
+
+   $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
+   $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
+   $("#titlTwo").html(plays.playlists.items[1].name);
+   $("#auTwo").html(plays.playlists.items[1].owner.display_name);
+
+   $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
+   $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
+   $("#titlThree").html(plays.playlists.items[2].name);
+   $("#auThree").html(plays.playlists.items[2].owner.display_name);
+
+   $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
+   $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
+   $("#titlFour").html(plays.playlists.items[3].name);
+   $("#auFour").html(plays.playlists.items[3].owner.display_name);
+
+   $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
+   $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
+   $("#titlFive").html(plays.playlists.items[4].name);
+   $("#auFive").html(plays.playlists.items[4].owner.display_name);
+
+   //hides all images for 'show more' functionality  
+   $(".playIm").css('display', 'none');
+
+}
+
 /*Fetch Data from API's and show it on the page*/
 async function apiBut(){
 
@@ -147,80 +196,11 @@ async function apiBut(){
    const initWeath = await retrieve(weathID);
    const initPlays = await retrieve(playsID);
 
-   console.log(initWeath.weather[0].main);
-   console.log(initPlays.playlists.items[1].images[0].url);
-
-
-
    //Display Stuff 
    $("#firstSec").fadeOut();
    $("#mainSec").fadeIn();
 
+   popHTML(initWeath,initPlays);
+
 
 }
-
-// /*MAIN*/
-
-
-
-//    //waits for both promises to finish
-   
-      
-//    .then(function(vals) {
-//       var auth = 'Bearer ' + vals[0]; 
-//       var searchTerm = vals[1].weather[0].main + " day"; 
-
-      
-//       //get Weather info and insert into HTML
-//       const pngUrl = "https://openweathermap.org/img/wn/" + vals[1].weather[0].icon +  "@2x.png";
-//       $("#description").html(vals[1].weather[0].main)
-//       $("#curWeath").attr('src', pngUrl);
-//       $("#windSpeed").html(vals[1].wind.speed);
-//       $("#press").html(vals[1].main.pressure);
-//       $("#humid").html(vals[1].main.humidity);
-//       $("#temp").html(vals[1].main.temp);
-//       $("#fl").html(vals[1].main.feels_like);
-//       $("#min").html(vals[1].main.temp_min);
-//       $("#max").html(vals[1].main.temp_max);
-//       var date = new Date(vals[1].dt*1000);
-//       $("#time").html(date);
-
-//       //Make Search Query Request Using key 
-//       getPlays(auth,searchTerm)
-//       .then(function(plays){
-//          //loading images and links in
-//          $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
-//          $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
-//          $("#titlOne").html(plays.playlists.items[0].name);
-//          $("#auOne").html(plays.playlists.items[0].owner.display_name);
-
-
-//          $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
-//          $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
-//          $("#titlTwo").html(plays.playlists.items[1].name);
-//          $("#auTwo").html(plays.playlists.items[1].owner.display_name);
-
-//          $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
-//          $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
-//          $("#titlThree").html(plays.playlists.items[2].name);
-//          $("#auThree").html(plays.playlists.items[2].owner.display_name);
-
-//          $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
-//          $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
-//          $("#titlFour").html(plays.playlists.items[3].name);
-//          $("#auFour").html(plays.playlists.items[3].owner.display_name);
-
-//          $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
-//          $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
-//          $("#titlFive").html(plays.playlists.items[4].name);
-//          $("#auFive").html(plays.playlists.items[4].owner.display_name);
-
-//          //hides all images for 'show more' functionality  
-//          $(".playIm").css('display', 'none');
-//       })
-
-//     })
-
-// });
-
-
