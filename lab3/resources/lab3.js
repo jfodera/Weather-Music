@@ -199,15 +199,18 @@ async function overwrite(overDat, id){
 
 /*USER TRIGGERED FUNCTIONS*/
 
-
+/*Called everytime the dropdox menu is changed. Updates the page accordingly based on the value selected from the dropdown.*/
 async function locCheck(){
+   //The val selected
    var selBox = document.getElementById("locSel");
 
    if (selBox.value == "Clemson"){
 
+      //change title/header
       $("#univTitle").html("<span class=\"orange\">Clemson</span>");
       $("title").html("Clemson Weather & Music");
 
+      //make API Calls
       const weathDat = await getWeath("34.683437", "-82.837364");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathDat.weather[0].main + " day"; 
@@ -219,20 +222,19 @@ async function locCheck(){
       if(weathSuc!= 1 || playsSuc != 1){
          console.log("overwrite error"); 
       }
-      //retrieve
+
+      //retrieve from DB
       const initWeath = await retrieve(WEATHERID);
       const initPlays = await retrieve(PLAYID);
-
-      console.log(initWeath);
-      console.log(initPlays);
 
       //populate
       popHTML(initWeath,initPlays);
    }else if(selBox.value == "RPI"){
-
+      //change title/header
       $("#univTitle").html("<span class=\"red\">R.</span><span class=\"white\">P.</span><span class=\"red\">I.</span>");
       $("title").html("RPI Weather & Music");
 
+      //make API Calls
       const weathDat = await getWeath("42.7284", "-73.6918");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathDat.weather[0].main + " day"; 
@@ -244,22 +246,20 @@ async function locCheck(){
       if(weathSuc!= 1 || playsSuc != 1){
          console.log("overwrite error"); 
       }
-      //retrieve
+      //retrieve from DB 
       const initWeath = await retrieve(WEATHERID);
       const initPlays = await retrieve(PLAYID);
-
-      console.log(initWeath);
-      console.log(initPlays);
 
       //populate
       popHTML(initWeath,initPlays);
 
    }else if(selBox.value == "UMiami"){
 
-      //Change title and coloring 
+      //Change title/Header
       $("#univTitle").html("<span class=\"orange\">U</span><span class=\"green\">Miami</span>");
       $("title").html("UMiami Weather & Music");
 
+      //make API Calls
       const weathDat = await getWeath("25.761681", "80.191788");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathDat.weather[0].main + " day"; 
@@ -271,42 +271,34 @@ async function locCheck(){
       if(weathSuc!= 1 || playsSuc != 1){
          console.log("overwrite error"); 
       }
+
       //retrieve
       const initWeath = await retrieve(WEATHERID);
       const initPlays = await retrieve(PLAYID);
 
-      console.log(initWeath);
-      console.log(initPlays);
-
       //populate
       popHTML(initWeath,initPlays);
-
    }
-
-   /*troy: 
-   lat: 42.7284
-   long: -73.6918
-   */
 }
 
-/*Fetch Data from API's and show it on the page*/
+
+/*Call when fetch API data button is pressed. Calls each of the APIS with troy as the default and 
+populates the screen accordingly. */
 async function apiBut(){
 
-   //Getting key For Spotify 
+   //Making calls
    const key = await getSpotKey()
    SPOTIFYKEY = key; 
-   //getting weather 
    const weatherData = await getWeath("42.7284", "-73.6918");
-
    var auth = 'Bearer ' + key; 
    var searchTerm = weatherData.weather[0].main + " day"; 
-
    const plays = await getPlays(auth,searchTerm);
 
    //insert into database
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 
+   //setting globs for future calls
    WEATHERID = weathID; 
    PLAYID = playsID; 
 
@@ -314,12 +306,11 @@ async function apiBut(){
    const initWeath = await retrieve(weathID);
    const initPlays = await retrieve(playsID);
 
-   //Display Stuff 
+   // populate screen 
    popHTML(initWeath,initPlays);
 
 
    //so that user cannot make box selection before global ID's are set
    $("#firstSec").fadeOut();
    $("#mainSec").fadeIn();
-
 }
