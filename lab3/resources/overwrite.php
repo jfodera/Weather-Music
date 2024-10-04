@@ -5,18 +5,34 @@
       $data = file_get_contents("php://input");
 
       echo $data; 
-      //single quote escape chars: 
+      //parse data and edit escape chars
       //error: must put escape chars around the single quotes quotes 
       //accounts for any single quote escape chars
-   //    $wEsc = "";
-   //    for($i = 0; $i < strlen($data); $i++){
-   //       if($data[$i] == "'"){
-   //          // Need double escape here
-   //          $wEsc = $wEsc . "\\'";
-   //       }else{
-   //          $wEsc = $wEsc . $data[$i];
-   //       }
-   //    }
+      $id = ""
+      $wEsc = "";
+      $flag = 0;
+      for($i = strlen($data)-1; $i < 0; $i--){
+         //indicating start of the json
+         if($data[$i] == '}'){
+            $flag = 1; 
+         }
+
+         if($flag == 0){
+            //adds to front 
+            $id = $data[$i] + $id;
+         }else{
+            if($data[$i] == "'"){
+               // Need double escape here
+               $wEsc = "\\'" . $wEsc;
+            }else{
+               $wEsc = $data[$i] . $wEsc ;
+            }
+         }
+
+      }
+
+      echo $id; 
+      echo "the data" . $data;
    
    //    /* Create a new database connection object, passing in the host, username, 
    //   password, and database to use. */
