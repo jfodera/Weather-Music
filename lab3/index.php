@@ -35,6 +35,7 @@
    <div id="mainSec">
 
       <div class="mainHold" id="drop">
+         <p>Pick a School!</p>
          <select id="locSel" onchange="locCheck();">
             <!-- Value != to inner HTML  -->
             <option value="RPI" selected>RPI</option>
