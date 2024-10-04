@@ -39,7 +39,8 @@
                   <ul class="miscList">
                      <li>Wind Speed:
                         <span class="res">
-
+                           <span id='windSpeed'></span>
+                            mph
                         </span>
                      </li>
                      <li>Pressure:

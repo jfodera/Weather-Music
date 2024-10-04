@@ -121,8 +121,8 @@ function apiBut(){
             //must do this because returns a promise
             return(response.text());
          })
-         .then(function(error){
-            console.log(error);
+         .then(function(entryID){
+            
          })
 
       })

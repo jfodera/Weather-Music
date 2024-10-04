@@ -1,6 +1,5 @@
-<!-- Makes initial Entry to the Database when the Website Starts up  -->
 <?php
-
+// <!-- Makes initial Entry to the Database when the Website Starts up  -->
 // If the server has recieved a post request (it has if getting called from lab3.js)
    if(isset($_POST)){
       //the php:// makes it so that it reads raw data from the post requests body 
@@ -26,7 +25,13 @@
       $statement->bind_param("ss", $data, $type);
       $statement->execute();
 
-      echo "done"; 
+      //Get ID
+      $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
+      $result = $db->query($query);
+      $record = $result->fetch_assoc();
+      $id = $record['callid'];
+
+      echo $id; 
    
       
    }
