@@ -19,8 +19,10 @@
          echo "connection failed:" . $db->connect_error;
       }
       // //don't need prepare statement here because not a form submission 
-      $insQuery = "insert into jsonObjs (`jdoc`) values('$data')";
-      echo $insQuery;
+      $insQuery = "insert into jsonObjs (`jdoc`) values(?)";
+      $statement = $db->prepare($insQuery);
+      $statement->bind_param("s", $data);
+      echo $statement;
       
       // $db->query($insQuery);
       
