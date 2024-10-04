@@ -4,11 +4,11 @@
       //the php:// makes it so that it reads raw data from the post requests body 
       $id = file_get_contents("php://input");
       //getting weather data
-      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
 
-      // $query = "SELECT * FROM jsonObjs WHERE callId=";
-      // echo $query
+      $query = "SELECT * FROM jsonObjs WHERE callId=";
+      echo $query;
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();
       // $inter = json_decode($record['jdoc']);
