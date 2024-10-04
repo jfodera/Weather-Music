@@ -5,7 +5,7 @@
       //the php:// makes it so that it reads raw data from the post requests body 
       $data = file_get_contents("php://input");
 
-      $data = json_encode($data); 
+       
 
       
 
@@ -26,8 +26,8 @@
       $statement->execute();
 
       //Get ID
-      $iner = json_decode($data);
-      $query = "SELECT * FROM jsonObjs WHERE jdoc='$iner'";
+      
+      $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();
       echo $query; 
