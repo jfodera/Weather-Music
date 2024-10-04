@@ -217,6 +217,7 @@ async function locCheck(){
       const initPlays = await retrieve(PLAYID);
 
       console.log(initWeath);
+      console.log(initPlays);
 
       //populate
       // popHTML(initWeath,initPlays);
