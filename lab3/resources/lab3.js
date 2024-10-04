@@ -131,7 +131,7 @@ async function retrieve(id){
 }
 
 
-async function overwrite(overDat){
+async function overwrite(overDat, id){
    var res = await fetch("resources/overwrite.php", {
       "method" : "POST",
       "headers" : {
@@ -139,7 +139,7 @@ async function overwrite(overDat){
          "Content-Type" : "application/json; charset=utf-8"
       },
       // stringify is vital and php will recieve this as a plain string
-      "body" : JSON.stringify(overDat)+ WEATHERID
+      "body" : JSON.stringify(overDat)+ id
 
    })
 
@@ -207,8 +207,8 @@ async function locCheck(){
       const plays = await getPlays(auth,searchTerm);
 
       //overwrite existing entries 
-      var weathSuc = await overwrite(weathDat);
-      var playsSuc = await overwrite(plays);
+      var weathSuc = await overwrite(weathDat, WEATHERID);
+      var playsSuc = await overwrite(plays, PLAYID);
       if(weathSuc!= 1 || playsSuc != 1){
          console.log("overwrite error"); 
       }
