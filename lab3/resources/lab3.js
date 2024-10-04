@@ -221,6 +221,28 @@ async function locCheck(){
 
       //populate
       popHTML(initWeath,initPlays);
+   }else if(selBox.value == "RPI"){
+
+      const weathDat = await getWeath("42.7284", "-73.6918");
+      var auth = 'Bearer ' + SPOTIFYKEY; 
+      var searchTerm = weathDat.weather[0].main + " day"; 
+      const plays = await getPlays(auth,searchTerm);
+
+      //overwrite existing entries 
+      var weathSuc = await overwrite(weathDat, WEATHERID);
+      var playsSuc = await overwrite(plays, PLAYID);
+      if(weathSuc!= 1 || playsSuc != 1){
+         console.log("overwrite error"); 
+      }
+      //retrieve
+      const initWeath = await retrieve(WEATHERID);
+      const initPlays = await retrieve(PLAYID);
+
+      console.log(initWeath);
+      console.log(initPlays);
+
+      //populate
+      popHTML(initWeath,initPlays);
 
    }
 
