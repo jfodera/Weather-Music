@@ -13,17 +13,31 @@ Make a database format so that the website can store the JSON objects in the dat
 
 Make a version of the website that requires you to click a button to start, only once you click, then it fetches 
    and puts JSON obj in database
-   Only use PHP fetch obj out of database and display it to front end 
-   make a js call, call a php script to fetch API data and store it
+   Only use PHP fetch obj in/out of database 
+   Use js for dynamically calling 
+   make a js API call, call a php script to fetch API data and store it
 
-Then use PHP to display the same exact version of the website as last lab from the database
+Then after the use hits that button, and the php insert function has echod "done",
+ call a retrive/populate JavaScript function that calls a php script which recieves the current DB entry (by ID), gives it to JS, then JS inserts it into the page.
+   A set of 2 database entries are made every time there are new users
+
+
+Then every time a new drop down menu item in selected, a corresponsing JS function to that place is called, makes the API call (long and lat hardcoded) then calls
+   a PHP script to overwrite the database entry, just as with insert, waits till php script responds and then calls the retrive php scripts which gets the 
+   current DB entry, gives it to JS, and then JS inserts it into the page 
+
+Reasoning I took this approach was because I had dynamic updates set up in JS already adn don't really know how I would dynamically update page using inline PHP 
+without refreshing 
+
 They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
    index.php:96 is where you can insert
    selecting a new location will overwrite the existing database entry 
+   then a page reload should reset the data 
 
 
 
 Before submit checklist: 
+   Validation
 
 
 Questions: 
@@ -86,6 +100,10 @@ Use XAMPP instead of pushing to main
 Couldn't figure out how to succesfully import mysql package and would be less time to just make it with php so did it like that instead
    Can learn how to do this in future
 
+   learn how to dymically update php inline
+   Delete every single user database entry automatically with https://www.zyxware.com/articles/5732/solved-how-to-run-a-javascript-code-at-browser-closing-time#:~:text=In%20JS%20there%20is%20a,of%20callback%20function%20of%20onbeforeunload%20.
+      after their session is over, won't be getting too much traffic so not going to do this 
+
 
 Any challenges I came across: 
 
@@ -95,6 +113,8 @@ Send Javascript object to php:
 
 json Decoding docs: 
    https://www.php.net/manual/en/function.json-decode.php
+
+Intro to ITWS lab docs (can provide them if needed, just didn't really know how to cite without including actual files)
 
 Didn't actually use: 
    JSON into mySQL    :
@@ -113,7 +133,7 @@ Decided to not use anything above
 
 
 Current:
-   Getting Javascript to toss to php using fetch
+   loading in the info using php
 
 
 Helpful Code Chunks: 

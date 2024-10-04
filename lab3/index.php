@@ -22,9 +22,19 @@
 
 
    <?php
+      //so can check every time we write in PhP 
+      $dbOk = false; 
 
       //getting weather data
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+
+      if ($db->connect_error) {
+         echo '<div class="messages">Could not connect to the database. Error: ';
+         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
+      } else {
+         $dbOk = true;
+      }
+
       $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
       $result = $db->query($query);
       $record = $result->fetch_assoc();
@@ -55,6 +65,7 @@
                      <li>Wind Speed:
                         <span class="res">
                            <?php
+                           if
                               echo "<span id='windSpeed'>" . $weath['wind']['speed'] .  "</span> mph";
                            ?>
                         </span>
@@ -168,6 +179,9 @@
       <a class="mainBut" id="show" onclick="showMore();">Show More Info</a>
    </div>
 
+   <?php
+     $db->close();
+   ?>
 
    <!-- Footer -->
    <footer> 

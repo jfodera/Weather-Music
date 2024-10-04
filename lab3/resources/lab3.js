@@ -105,7 +105,7 @@ function apiBut(){
          //send weather to PHP
          //remember, relative to page running on 
          //Makes post request to php file, basically sends it the JSON 
-         fetch("resources/insertToDB.php", {
+         fetch("resources/initInDb.php", {
             "method" : "POST",
             "headers" : {
                //Tells php that the body of the request is json 
