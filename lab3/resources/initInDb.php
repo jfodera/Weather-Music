@@ -21,12 +21,9 @@
       //Prepare and insert API's val to database
       $type = "misc";
       $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
-
-      echo $insQuery;
-
-      // $statement = $db->prepare($insQuery);
-      // $statement->bind_param("ss", $data, $type);
-      // $statement->execute();
+      $statement = $db->prepare($insQuery);
+      $statement->bind_param("ss", $data, $type);
+      $statement->execute();
 
       //Get ID
       
