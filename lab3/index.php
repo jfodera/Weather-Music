@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href= "resources/lab3.css">
+    <!-- //icon in URL -->
     <link rel="icon" href="resources/back.jpg" >
     <title>RPI Weather & Music</title>
   </head>
@@ -28,18 +29,9 @@
    <div id="mainSec">
       <select id="locSel" onchange="locCheck();">
          <!-- Value != to inner HTML  -->
-         <option value="Adelphi University">Adelphi University</option>
-         <option value="Bentley College">Bentley College</option>
-         <option value="Canisius College">Canisius College</option>
-         <option value="Fordham University">Fordham University</option>
-         <option value="Harvard University">Harvard University</option>
-         <option value="Lehigh Univervsity">Lehigh Univervsity</option>
-         <option value="Le Moyne College">Le Moyne College</option>
-         <option value="Manhattan College">Manhattan College</option>
-         <option value="Marist College">Marist College</option>
-         <option value="Rensselaer Polytechnic Institute" selected>Rensselaer Polytechnic Institute</option>
-         <option value="Temple University">Temple University</option>
-         <option value="University at Albany">University at Albany</option>
+         <option value="RPI" selected>RPI</option>
+         <option value="UMiami">University of Miami</option>
+         <option value="Clemson">Clemson University</option>
       </select>  
       <div class="mainHold">
          <!-- Weather Description -->

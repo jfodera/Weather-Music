@@ -180,8 +180,6 @@ function popHTML(weathDat, plays){
 
 //when box is changed
 function locCheck(){
-   console.log(WEATHERID);
-   console.log(PLAYID);
    var selBox = document.getElementById("locSel");
    var txtLoc = document.getElementById("locResp");
 
