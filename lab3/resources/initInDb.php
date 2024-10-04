@@ -17,8 +17,7 @@
             $wEsc = $wEsc . $data[$i];
          }
       }
-   }
-
+   
       /* Create a new database connection object, passing in the host, username, 
      password, and database to use. */
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
@@ -45,10 +44,8 @@
 
       echo $id; 
       
-   
-      
-//    }
+      $db->close();
 
-//    $db->close();
+   }
 
 ?>

@@ -85,7 +85,6 @@ async function getPlays(auth,searchTerm){
 
 async function insert(jsonDat){
 
-   console.log(jsonDat);
 
    //send json to PHP
    //remember, relative to page running on 
@@ -106,6 +105,29 @@ async function insert(jsonDat){
 
 }
 
+async function retrieve(id){
+
+
+   //send json to PHP
+   //remember, relative to page running on 
+   //Makes post request to php file, basically sends it the JSON 
+   var res = await fetch("resources/initInDb.php", {
+      "method" : "POST",
+      "headers" : {
+         //Tells php that the body of the request is json 
+         "Content-Type" : "application/json; charset=utf-8"
+      },
+      // stringify is vital and php will recieve this as a plain string
+      "body" : JSON.stringify(id)
+
+   })
+
+   var newRes = await res.text(); 
+   console.log(newRes);
+   return(newRes);
+
+}
+
 /*Fetch Data from API's and show it on the page*/
 async function apiBut(){
 
@@ -122,8 +144,11 @@ async function apiBut(){
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 
-   console.log(weathID);
-   console.log(playsID);
+   //init retrieve and populate 
+   const initWeath = await retrieve(weathID);
+   // const initPlays = await retrieve(playsID);
+
+
 
    //Display Stuff 
    $("#firstSec").fadeOut();
