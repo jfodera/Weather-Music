@@ -12,7 +12,7 @@ Makes initial Entry to the Database when the Website Starts up
 
       /* Create a new database connection object, passing in the host, username, 
      password, and database to use. */
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
       // //connect_error is a property of a mysqli object that has any error message if it false
       // if ($db->connect_error) {
