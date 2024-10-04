@@ -220,7 +220,7 @@ async function locCheck(){
       console.log(initPlays);
 
       //populate
-      // popHTML(initWeath,initPlays);
+      popHTML(initWeath,initPlays);
 
    }
 
