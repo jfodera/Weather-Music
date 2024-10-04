@@ -1,4 +1,4 @@
-Lab 2 notes: 
+Lab 3 notes: 
 
 
 Summary: 
