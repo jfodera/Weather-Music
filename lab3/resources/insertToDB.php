@@ -20,7 +20,7 @@
       }
       // //don't need prepare statement here because not a form submission 
       $insQuery = "insert into jsonObjs (`jdoc`) values('" . $data . "')";
-      // $db->query($insQuery);
+      $db->query($insQuery);
       
    }
 
