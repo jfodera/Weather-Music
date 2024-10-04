@@ -18,7 +18,7 @@
          }
       }
 
-      echo $wEsc
+      echo $wEsc;
 
 
 //       /* Create a new database connection object, passing in the host, username, 
