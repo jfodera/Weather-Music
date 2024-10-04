@@ -28,7 +28,7 @@
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'jsonObjs');
 
       if ($db->connect_error) {
-         echo($db->connect_error);
+         die("Connection failed: ");
      }
      
      echo "Connected successfully";
