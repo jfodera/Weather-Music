@@ -24,11 +24,11 @@
 
       /* Create a new database connection object, passing in the host, username, 
      password, and database to use. */
-      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'jsonObjs');
+      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'jsonObjs');
 
-   //    if ($db->connect_error) {
-   //       die("Connection failed: ");
-   //   }
+      if ($db->connect_error) {
+         die("Connection failed: " . $db->connect_error);
+     }
      
      echo "Connected successfully";
       
