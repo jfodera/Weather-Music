@@ -45,7 +45,6 @@
       }
       //Prepare and insert API's val to database
 
-      UPDATE `jsonObjs` SET `jdoc`='3782273' WHERE callId=50
 
       $upQuery = "UPDATE `jsonObjs` SET `jdoc`='$wEsc' WHERE callId=$id";
       echo $upQuery;
