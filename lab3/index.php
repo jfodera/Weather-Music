@@ -22,7 +22,7 @@
    $result = $db->query($query);
    $record = $result->fetch_assoc();
    $weathJSON = json_decode($record['jdoc']);
-   print_r($weathJSON->weather[0]);
+   print_r($weathJSON->weather);
 
 ?>
 
