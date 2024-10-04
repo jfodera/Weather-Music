@@ -184,7 +184,7 @@ async function locCheck(){
    var selBox = document.getElementById("locSel");
 
    if (selBox.value == "Clemson"){
-      weathDat = await getWeath( "34.683437", "-82.837364");
+      var weathDat = await getWeath( "34.683437", "-82.837364");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathData.weather[0].main + " day"; 
       const plays = await getPlays(auth,searchTerm);
