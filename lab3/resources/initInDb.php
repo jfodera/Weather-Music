@@ -39,12 +39,11 @@
 
 
       $query = "SELECT * FROM jsonObjs WHERE jdoc='$wEsc'";
-      echo $query;
       $result = $db->query($query);
       $record = $result->fetch_assoc();
       $id = $record['callId'];
 
-      // echo $id; 
+      echo $id; 
       
    
       
