@@ -27,9 +27,9 @@
 
       //Get ID
       $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
-      $result = $db->query($query);
-      $record = $result->fetch_assoc();
-      echo $record; 
+      // $result = $db->query($query);
+      // $record = $result->fetch_assoc();
+      echo $query; 
       // $id = $record['callId'];
 
       
