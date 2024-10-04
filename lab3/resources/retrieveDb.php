@@ -8,7 +8,6 @@
 
 
       $query = "SELECT * FROM jsonObjs WHERE callId=" . $id;
-      echo $query;
       $result = $db->query($query);
       $record = $result->fetch_assoc();
       //at this point, inter is still a string because the data is double JSON encoded, so have to do it one more
