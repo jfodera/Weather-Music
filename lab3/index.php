@@ -10,29 +10,18 @@
 
    
     <!-- Header -->
-    <!-- <div id="header">
+    <div id="header">
       <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
-   </div> -->
+   </div>
 
-   <?php
+<?php
 
-// If the server has recieved a post request (it has if getting called from lab3.js)
-
-      //the php:// makes it so that it reads raw data from the post requests body 
-
-      $dbOk = false;
-
-      /* Create a new database connection object, passing in the host, username, 
-     password, and database to use. */
-     $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
-
-      if ($db->connect_error) {
-         die("Connection failed: " . $db->connect_error);
-     }
-     
-     echo "Connected successfully";
-      
-
+   //getting weather data
+   $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+   $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
+   $result = $db->query($query);
+   $record = $result->fetch_assoc();
+   echo $record['jdoc'];
 
 ?>
 

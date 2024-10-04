@@ -74,6 +74,7 @@ Always use this series of binding statements to insert into a table:
       $statement = $db->prepare($insQuery);
       $statement->bind_param("s", $data);
       $statement->execute();
+      fetch_assoc() increments every call
 
 
 Future improvements: 

@@ -24,10 +24,7 @@
       $statement = $db->prepare($insQuery);
       $statement->bind_param("ss", $data, $type);
       $statement->execute();
-      
-      // $db->query($insQuery);
-      
-      // $db->query($insQuery);
+   
       
    }
 

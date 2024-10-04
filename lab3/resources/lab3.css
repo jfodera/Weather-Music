@@ -5,7 +5,7 @@ body {
    margin: 0 0 0 0;
    overflow: scroll;
    /* Citation: https://stock.adobe.com/search?k=white+to+blue+gradient */
-   /* background-image: url('back.jpg'); */
+   background-image: url('back.jpg');
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover; 
