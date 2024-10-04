@@ -191,8 +191,6 @@ function popHTML(weathDat, plays){
    $("#titlFive").html(plays.playlists.items[4].name);
    $("#auFive").html(plays.playlists.items[4].owner.display_name);
 
-   //hides all images for 'show more' functionality  
-   $(".playIm").css('display', 'none');
 
 }
 
