@@ -1,5 +1,6 @@
 Lab 3 notes: 
 
+https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3
 
 Summary: 
 
