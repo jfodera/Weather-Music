@@ -10,9 +10,9 @@
 
    
     <!-- Header -->
-    <div id="header">
+    <!-- <div id="header">
       <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
-   </div>
+   </div> -->
 
    <?php
 
