@@ -223,6 +223,8 @@ async function locCheck(){
       popHTML(initWeath,initPlays);
    }else if(selBox.value == "RPI"){
 
+      $("#univTitle").html("<span class=\"red\">R.</span><span class=\"white\">P.</span><span class=\"red\">I.</span>");
+
       const weathDat = await getWeath("42.7284", "-73.6918");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathDat.weather[0].main + " day"; 
@@ -245,6 +247,9 @@ async function locCheck(){
       popHTML(initWeath,initPlays);
 
    }else if(selBox.value == "UMiami"){
+
+      //Change title and coloring 
+      $("#univTitle").html("<span class=\"orange\">U</span><span class=\"white\">Miami</span>");
 
       const weathDat = await getWeath("25.761681", "80.191788");
       var auth = 'Bearer ' + SPOTIFYKEY; 

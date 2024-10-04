@@ -13,16 +13,12 @@
    
     <!-- Header -->
     <div id="header">
-      
-   </div>
-
-   <div class="mainHold" id="header">
-         <div class="innerHold" id="weatherPng">
-            <img id="curWeath" alt="Current Weather png" src="resources/back.jpg" >
-         </div>
-         <div class="innerHold">
-            <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
-         </div>
+      <h1>
+         <span id="univTitle">
+            <span class="red">R.</span><span class="white">P.</span><span class="red">I.</span>
+         </span>
+         Weather & Music!
+      </h1>
    </div>
 
 
