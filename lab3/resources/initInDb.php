@@ -31,7 +31,7 @@
       $record = $result->fetch_assoc();
       $id = $record['callid'];
 
-      echo $id; 
+      echo "hello"; 
    
       
    }
