@@ -41,6 +41,9 @@ Outline:
 
  You all installed PHPMyAdmin on your VMs during the Intro class. It was not pre-installed on the VMs—I confirmed this with him as well.
 
+Debug: 
+   sqli is not even throwing an error 
+
 
 Things I learned: 
 
