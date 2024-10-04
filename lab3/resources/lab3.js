@@ -190,6 +190,7 @@ async function locCheck(){
       const plays = await getPlays(auth,searchTerm);
 
       //overwrite existing entries 
+      console.log(weathDat);
 
       var res = await fetch("resources/overwrite.php", {
          "method" : "POST",
