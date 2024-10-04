@@ -26,7 +26,8 @@
       $statement->execute();
 
       //Get ID
-      $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
+      $iner = json_decode($data);
+      $query = "SELECT * FROM jsonObjs WHERE jdoc='$inter'";
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();
       echo $query; 
