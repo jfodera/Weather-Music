@@ -38,6 +38,7 @@ They have a dropdown menu of other available (pre-inserted locations) that the u
 
 Before submit checklist: 
    Validation
+   figured didn't need type so can remove if have time
 
 
 Questions: 
@@ -108,6 +109,10 @@ Couldn't figure out how to succesfully import mysql package and would be less ti
       after their session is over, won't be getting too much traffic so not going to do this 
    
    learn how to read server logs
+   Is a chance id of other entry is retrived but doesn't really matter because, same content
+   Error catching for inserting into DB
+
+   
 
 
 Any challenges I came across: 

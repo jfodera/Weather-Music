@@ -82,51 +82,47 @@ async function getPlays(auth,searchTerm){
    return(jsonRes);
 }
 
+
+async function insert(jsonDat){
+
+   //send json to PHP
+   //remember, relative to page running on 
+   //Makes post request to php file, basically sends it the JSON 
+   var res = await fetch("resources/initInDb.php", {
+      "method" : "POST",
+      "headers" : {
+         //Tells php that the body of the request is json 
+         "Content-Type" : "application/json; charset=utf-8"
+      },
+      // stringify is vital and php will recieve this as a plain string
+      "body" : JSON.stringify(jsonDat)
+
+   })
+
+   var newRes = await res.text(); 
+   return(newRes);
+
+}
+
 /*Fetch Data from API's and show it on the page*/
-function apiBut(){
+async function apiBut(){
 
    //Getting key For Spotify 
-   const key = getSpotKey()
+   const key = await getSpotKey()
    //getting weather 
-   const weatherData = getWeath()
+   const weatherData = await getWeath()
 
-   Promise.all([key, weatherData])
+   var auth = 'Bearer ' + key; 
+   var searchTerm = weatherData.weather[0].main + " day"; 
 
-   .then(function(vals) {
-      var auth = 'Bearer ' + vals[0]; 
-      var searchTerm = vals[1].weather[0].main + " day"; 
-      // Weather JSON is vals[1]
-      // Spotify JSON is caught in promise below
+   const plays = await getPlays(auth,searchTerm)
 
-      getPlays(auth,searchTerm)
 
-      .then(function(spotJSON){
+   const weathID = insert(weatherData); 
+   const playsID = insert(plays);
 
-         //send weather to PHP
-         //remember, relative to page running on 
-         //Makes post request to php file, basically sends it the JSON 
-         fetch("resources/initInDb.php", {
-            "method" : "POST",
-            "headers" : {
-               //Tells php that the body of the request is json 
-               "Content-Type" : "application/json; charset=utf-8"
-            },
-            // stringify is vital and php will recieve this as a plain string
-            "body" : JSON.stringify(vals[1])
-
-         })
-
-         //Catches echo response if there is an error
-         .then(function(response){
-            //must do this because returns a promise
-            return(response.text());
-         })
-         .then(function(entryID){
-            console.log(entryID); 
-         })
-
-      })
-   });
+   console.log(weathID);
+   console.log(playsID);
 
    //Display Stuff 
    $("#firstSec").fadeOut();

@@ -19,7 +19,7 @@
          echo "connection failed:" . $db->connect_error;
       }
       //Prepare and insert API's val to database
-      $type = "weather";
+      $type = "misc";
       $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
       $statement = $db->prepare($insQuery);
       $statement->bind_param("ss", $data, $type);
