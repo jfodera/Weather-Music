@@ -116,6 +116,7 @@ Couldn't figure out how to succesfully import mysql package and would be less ti
    Is a chance id of other entry is retrived but doesn't really matter because, same content
    Error catching for inserting into DB
    Make use of apiType row 
+   learn how to use xampp for php debugging
 
    
 
