@@ -151,9 +151,6 @@
       <a class="mainBut" id="show" onclick="showMore();">Show More Info</a>
    </div>
 
-   <?php
-     $db->close();
-   ?>
 
    <!-- Footer -->
    <footer> 
