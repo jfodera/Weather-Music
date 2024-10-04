@@ -3,8 +3,10 @@
 /*Important to note, Weather Hardcoded for Possible locations */
 
 
-// GLOBAL VARS
+// GLOBAL VARS -> all reset on reload
 var weathCt = 1; 
+var WEATHERID = 0; 
+var PLAYID = 0; 
 
 
 /*FUNCTIONS*/
@@ -178,6 +180,8 @@ function popHTML(weathDat, plays){
 
 //when box is changed
 function locCheck(){
+   console.log(WEATHERID);
+   console.log(PLAYID);
    var selBox = document.getElementById("locSel");
    var txtLoc = document.getElementById("locResp");
 
@@ -201,6 +205,9 @@ async function apiBut(){
    //insert into database
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
+
+   WEATHERID = weathID; 
+   PLAYID = playsID; 
 
    //init retrieve and populate 
    const initWeath = await retrieve(weathID);
