@@ -43,6 +43,7 @@ Outline:
 
 Debug: 
    sqli is not even throwing an error 
+   Error handling in php and js was set up correct, issue was I was using a table name, not a database name
 
 
 Things I learned: 
@@ -62,7 +63,11 @@ php://input allows you to acses raw POST data -> the JSON
 Send Javascript object to php, very cool 
 CANNOT use console with scripts inserted as type='module'   
 JSON.stringify converts JavaScript Objects into strings 
-
+if you misstype something in the initial mysqli statement it will not throw an error that you can read 
+can error handle in php by using echo  
+   If JS called it, it will just return it to the JS file it called it from  
+   $dbok is a way of checking if the database connection is good without stopping the rest of the HTML from working, not really neccesarry in a script where the main function is to connect to a database; no ins and outs
+When make table of JSON objects, content type will say longtext, but it's JSON  
 
 
 Future improvements: 
