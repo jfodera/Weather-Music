@@ -7,7 +7,7 @@
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
 
-      $query = 'SELECT * FROM jsonObjs WHERE apiType='$id;
+      $query = "SELECT * FROM jsonObjs WHERE apiType=" . $id;
       echo $query
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();
