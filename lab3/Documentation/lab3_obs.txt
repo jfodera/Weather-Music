@@ -14,7 +14,7 @@ Make a database format so that the website can store the JSON objects in the dat
 Make a version of the website that requires you to click a button to start, only once you click, then it fetches 
    and puts JSON obj in database
    Only use PHP fetch obj out of database and display it to front end 
-   make a js call, call a php script to fetch API data and store it, now that I think about it that may have been easier 
+   make a js call, call a php script to fetch API data and store it
 
 Then use PHP to display the same exact version of the website as last lab from the database
 They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
