@@ -177,8 +177,8 @@ function popHTML(weathDat, plays){
 }
 
 //when box is changed
-function scoCheck(){
-   var selBox = document.getElementById("schoolSel");
+function locCheck(){
+   var selBox = document.getElementById("locSel");
    var txtLoc = document.getElementById("locResp");
 
    if (selBox.value != "Rensselaer Polytechnic Institute"){
@@ -207,10 +207,11 @@ async function apiBut(){
    const initPlays = await retrieve(playsID);
 
    //Display Stuff 
-   $("#firstSec").fadeOut();
-   $("#mainSec").fadeIn();
-
    popHTML(initWeath,initPlays);
 
+
+   //so that user cannot make box selection before global ID's are set
+   $("#firstSec").fadeOut();
+   $("#mainSec").fadeIn();
 
 }

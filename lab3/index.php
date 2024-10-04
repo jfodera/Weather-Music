@@ -25,7 +25,7 @@
 
    <!-- Main Sec -->
    <div id="mainSec">
-      <select id="schoolSel" onchange="scoCheck();">
+      <select id="locSel" onchange="locCheck();">
          <!-- Value != to inner HTML  -->
          <option value="Adelphi University">Adelphi University</option>
          <option value="Bentley College">Bentley College</option>

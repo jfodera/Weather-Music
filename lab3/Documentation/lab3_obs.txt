@@ -94,6 +94,7 @@ Must decode json and convers to php array in order to modify
 Don't forget to close database
 if json_encode too much, escape "'s will start to show up
 If echos mult times in php script, it is just concatenated into the log 
+JavaScript global variables are reset when the page is reloaded
 
 
 Future improvements: 
