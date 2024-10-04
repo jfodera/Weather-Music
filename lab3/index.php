@@ -22,9 +22,11 @@
    $result = $db->query($query);
    $record = $result->fetch_assoc();
    $weathAr = json_decode($record['jdoc']);
-   var_dump($weathAr); 
+   //at this point, weathAr is still a string because the data is double JSON encoded, so have to do it one more
    $oneMore = json_decode($weathAr, true);
+   //Now it is a php array acsessable by 
    var_dump($oneMore);
+   echo $oneMore['coord'][1];
 
 ?>
 

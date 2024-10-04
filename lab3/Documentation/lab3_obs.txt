@@ -92,6 +92,9 @@ Citations:
 Send Javascript object to php: 
    https://www.youtube.com/watch?v=Ctz1Fsgt9OE
 
+json Decoding docs: 
+   https://www.php.net/manual/en/function.json-decode.php
+
 Didn't actually use: 
    JSON into mySQL    :
       https://dev.mysql.com/doc/refman/8.4/en/json.html

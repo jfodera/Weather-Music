@@ -18,7 +18,7 @@
          //can echo back in json as well using json_encode
          echo "connection failed:" . $db->connect_error;
       }
-      // //don't need prepare statement here because not a form submission 
+      //Prepare and insert API's val to database
       $type = "weather";
       $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
       $statement = $db->prepare($insQuery);
