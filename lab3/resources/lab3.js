@@ -202,7 +202,7 @@ async function locCheck(){
 
    if (selBox.value == "Clemson"){
 
-      $("#univTitle").html("<span class=\"orange\">Clemson</span><span class=\"white\">University</span>");
+      $("#univTitle").html("<span class=\"orange\">Clemson</span><span class=\"white\"> U</span>");
 
       const weathDat = await getWeath("34.683437", "-82.837364");
       var auth = 'Bearer ' + SPOTIFYKEY; 
