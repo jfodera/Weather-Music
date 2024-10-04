@@ -55,7 +55,7 @@
                      <li>Wind Speed:
                         <span class="res">
                            <?php
-                              echo "<span id='windSpeed'>" . $weath['wind']['speed'] .  "</span>mph";
+                              echo "<span id='windSpeed'>" . $weath['wind']['speed'] .  "</span> mph";
                            ?>
                         </span>
                      </li>
