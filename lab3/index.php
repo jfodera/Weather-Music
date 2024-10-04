@@ -22,7 +22,7 @@
    $result = $db->query($query);
    $record = $result->fetch_assoc();
    $weathAr = json_decode($record['jdoc']);
-   var_dump(&weathAr); 
+   var_dump($weathAr); 
    $oneMore = json_decode($weathAr, true);
    var_dump($oneMore);
 
