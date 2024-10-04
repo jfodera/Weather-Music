@@ -24,7 +24,7 @@
 
       /* Create a new database connection object, passing in the host, username, 
      password, and database to use. */
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'jsonObjs');
+     $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
       if ($db->connect_error) {
          die("Connection failed: " . $db->connect_error);
