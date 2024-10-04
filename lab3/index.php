@@ -13,7 +13,16 @@
    
     <!-- Header -->
     <div id="header">
-      <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
+      
+   </div>
+
+   <div class="mainHold" id="header">
+         <div class="innerHold" id="weatherPng">
+            <img id="curWeath" alt="Current Weather png" src="resources/back.jpg" >
+         </div>
+         <div class="innerHold">
+            <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
+         </div>
    </div>
 
 
@@ -32,6 +41,7 @@
          <option value="RPI" selected>RPI</option>
          <option value="UMiami">University of Miami</option>
          <option value="Clemson">Clemson University</option>
+
       </select>  
       <div class="mainHold">
          <!-- Weather Description -->
