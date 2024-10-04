@@ -102,8 +102,8 @@ async function insert(jsonDat){
    })
 
    var newRes = await res.text(); 
-   // console.log(newRes);
-   return(newRes);
+   console.log(newRes);
+   // return(newRes);
 
 }
 
@@ -120,9 +120,9 @@ async function apiBut(){
 
    const plays = await getPlays(auth,searchTerm)
 
-   console.log(plays)
+   // console.log(plays)
 
-   const weathID = await insert(weatherData); 
+   // const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 
    // console.log(weathID);

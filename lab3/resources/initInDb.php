@@ -21,18 +21,21 @@
       //Prepare and insert API's val to database
       $type = "misc";
       $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
-      $statement = $db->prepare($insQuery);
-      $statement->bind_param("ss", $data, $type);
-      $statement->execute();
+
+      echo $insQuery;
+
+      // $statement = $db->prepare($insQuery);
+      // $statement->bind_param("ss", $data, $type);
+      // $statement->execute();
 
       //Get ID
       
-      $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
-      $result = $db->query($query);
-      $record = $result->fetch_assoc();
-      $id = $record['callId'];
+      // $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
+      // $result = $db->query($query);
+      // $record = $result->fetch_assoc();
+      // $id = $record['callId'];
 
-      echo $id; 
+      // echo $id; 
       
    
       
