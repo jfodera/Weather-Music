@@ -12,6 +12,8 @@ var PLAYID = 0;
 
 /*FUNCTIONS*/
 
+/*DISPLAY FUNCTIONS*/
+
 /*When called, toggles showing additional info or not. 
 Does this by playing with DOM element attributes*/
 function showMore(){
@@ -38,6 +40,54 @@ function showMore(){
       weathCt += 1; 
    }
 }
+
+
+/* Given weather and playlist JSON's, this function populates the page
+with the information from these JSONS*/
+function popHTML(weathDat, plays){
+
+   //weather info
+   const pngUrl = "https://openweathermap.org/img/wn/" + weathDat.weather[0].icon +  "@2x.png";
+   $("#description").html(weathDat.weather[0].main)
+   $("#curWeath").attr('src', pngUrl);
+   $("#windSpeed").html(weathDat.wind.speed);
+   $("#press").html(weathDat.main.pressure);
+   $("#humid").html(weathDat.main.humidity);
+   $("#temp").html(weathDat.main.temp);
+   $("#fl").html(weathDat.main.feels_like);
+   $("#min").html(weathDat.main.temp_min);
+   $("#max").html(weathDat.main.temp_max);
+   var date = new Date(weathDat.dt*1000);
+   $("#time").html(date);
+
+   //Playlist info
+   $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
+   $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
+   $("#titlOne").html(plays.playlists.items[0].name);
+   $("#auOne").html(plays.playlists.items[0].owner.display_name);
+
+   $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
+   $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
+   $("#titlTwo").html(plays.playlists.items[1].name);
+   $("#auTwo").html(plays.playlists.items[1].owner.display_name);
+
+   $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
+   $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
+   $("#titlThree").html(plays.playlists.items[2].name);
+   $("#auThree").html(plays.playlists.items[2].owner.display_name);
+
+   $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
+   $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
+   $("#titlFour").html(plays.playlists.items[3].name);
+   $("#auFour").html(plays.playlists.items[3].owner.display_name);
+
+   $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
+   $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
+   $("#titlFive").html(plays.playlists.items[4].name);
+   $("#auFive").html(plays.playlists.items[4].owner.display_name);
+}
+
+/*API CALL FUNCTIONS*/
 
 /*Makes a call to the spotify API to retrieve a key so that we can 
 actually make real search requests. Returns a promise*/ 
@@ -66,6 +116,7 @@ async function getSpotKey(){
    return(key);
 }
 
+
 /*Fetches the weather data from the API and returns a promise of it converted into JSON */ 
 async function getWeath(lat,lon){
    var fetchRes = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=76b8f36558ce3b5fbce8ba9d025e5fe9");
@@ -73,7 +124,8 @@ async function getWeath(lat,lon){
    return(jsonRes); 
 }
 
-/*Fetches the search query result data from the SPotify api given a get and a search term. A promise of the return converted to JSON is returned.  */ 
+
+/*Fetches the search query result data from the Spotify api given a get and a search term. A promise of the return converted to JSON is returned.  */ 
 async function getPlays(auth,searchTerm){
 
    var fetchRes = await fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=5&offset=0", { 
@@ -86,11 +138,14 @@ async function getPlays(auth,searchTerm){
 }
 
 
+/*PHP SCRIPT FUNCTIONS*/
+
+/*Passes jsonData to a PHP script using the fetch method in order to stor it in mySQL database. Returns the ID of 
+the row created */
 async function insert(jsonDat){
 
-
    //send json to PHP
-   //remember, relative to page running on 
+   //URL relative to page running on (index.php)
    //Makes post request to php file, basically sends it the JSON 
    var res = await fetch("resources/initInDb.php", {
       "method" : "POST",
@@ -103,42 +158,37 @@ async function insert(jsonDat){
 
    })
 
-   var newRes = await res.text(); 
-   return(newRes);
-
+   var id = await res.text(); 
+   return(id);
 }
 
+
+/*Passes id to a PHP script using the fetch method in order to retrieve JSON at that ID. Returns the JSON data of 
+the id given */
 async function retrieve(id){
-
-
-   //send json to PHP
-   //remember, relative to page running on 
-   //Makes post request to php file, basically sends it the JSON 
+ 
    var res = await fetch("resources/retrieveDb.php", {
       "method" : "POST",
       "headers" : {
-         //Tells php that the body of the request is json 
          "Content-Type" : "application/json; charset=utf-8"
       },
-      // stringify is vital and php will recieve this as a plain string
       "body" : JSON.stringify(id)
-
    })
 
    var newRes = await res.json(); 
    return(newRes);
-
 }
 
 
+/*Passes id and data to a PHP script using the fetch method in order to Update the JSON at that id. Returns 1 if Update was 
+succesfull and 0 if not */
 async function overwrite(overDat, id){
+
    var res = await fetch("resources/overwrite.php", {
       "method" : "POST",
       "headers" : {
-         //Tells php that the body of the request is json 
          "Content-Type" : "application/json; charset=utf-8"
       },
-      // stringify is vital and php will recieve this as a plain string
       "body" : JSON.stringify(overDat)+ id
 
    })
@@ -147,54 +197,9 @@ async function overwrite(overDat, id){
    return(newRes);
 }
 
-function popHTML(weathDat, plays){
-
-   //get Weather info and insert into HTML
-   const pngUrl = "https://openweathermap.org/img/wn/" + weathDat.weather[0].icon +  "@2x.png";
-   $("#description").html(weathDat.weather[0].main)
-   $("#curWeath").attr('src', pngUrl);
-   $("#windSpeed").html(weathDat.wind.speed);
-   $("#press").html(weathDat.main.pressure);
-   $("#humid").html(weathDat.main.humidity);
-   $("#temp").html(weathDat.main.temp);
-   $("#fl").html(weathDat.main.feels_like);
-   $("#min").html(weathDat.main.temp_min);
-   $("#max").html(weathDat.main.temp_max);
-   var date = new Date(weathDat.dt*1000);
-   $("#time").html(date);
+/*USER TRIGGERED FUNCTIONS*/
 
 
-   //loading images and links in
-   $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
-   $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
-   $("#titlOne").html(plays.playlists.items[0].name);
-   $("#auOne").html(plays.playlists.items[0].owner.display_name);
-
-
-   $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
-   $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
-   $("#titlTwo").html(plays.playlists.items[1].name);
-   $("#auTwo").html(plays.playlists.items[1].owner.display_name);
-
-   $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
-   $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
-   $("#titlThree").html(plays.playlists.items[2].name);
-   $("#auThree").html(plays.playlists.items[2].owner.display_name);
-
-   $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
-   $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
-   $("#titlFour").html(plays.playlists.items[3].name);
-   $("#auFour").html(plays.playlists.items[3].owner.display_name);
-
-   $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
-   $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
-   $("#titlFive").html(plays.playlists.items[4].name);
-   $("#auFive").html(plays.playlists.items[4].owner.display_name);
-
-
-}
-
-//when box is changed
 async function locCheck(){
    var selBox = document.getElementById("locSel");
 

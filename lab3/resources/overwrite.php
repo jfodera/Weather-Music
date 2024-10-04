@@ -1,13 +1,12 @@
 <?php
-// Overwrites Existing Entry
+// Overwrites Existing Entry in the database given an entry-specific ID, and JSON Data to overwrite with 
+
    if(isset($_POST)){
       //the php:// makes it so that it reads raw data from the post requests body 
       $data = file_get_contents("php://input");
 
-      // echo $data; 
       //parse data and edit escape chars
-      //error: must put escape chars around the single quotes quotes 
-      //accounts for any single quote escape chars
+      //must put escape chars around the single quotes quotes 
       $id = "";
       $wEsc = "";
       $flag = 0;
@@ -33,24 +32,18 @@
 
       }
 
-   
-      /* Create a new database connection object, passing in the host, username, 
-     password, and database to use. */
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
-      //connect_error is a property of a mysqli object that has any error message if it false
+      //error handling 
       if ($db->connect_error) {
          //can echo back in json as well using json_encode
          echo "connection failed:" . $db->connect_error;
       }
-      //Prepare and insert API's val to database
 
-
+      //Update JSON at ID using mySQL call
       $upQuery = "UPDATE `jsonObjs` SET `jdoc`='$wEsc' WHERE callId=$id";
       echo $db->query($upQuery);
 
       $db->close();
-
    }
-
 ?>

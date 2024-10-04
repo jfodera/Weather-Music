@@ -13,18 +13,18 @@ install mariaDB and mySQL  and phpmyadmin
 Make a database format so that the website can store the JSON objects in the database √
 
 
-Make a version of the website that requires you to click a button to start, only once you click, then it fetches 
+Make a version of the website that requires you to click a button to start, only once you click, then it fetches √
    and puts JSON obj in database
    Only use PHP fetch obj in/out of database 
    Use js for dynamically calling 
    make a js API call, call a php script to fetch API data and store it
 
-Then after the use hits that button, and the php insert function has echod "done",
+Then after the use hits that button, and the php insert function has echod "done",√
  call a retrive/populate JavaScript function that calls a php script which recieves the current DB entry (by ID), gives it to JS, then JS inserts it into the page.
    A set of 2 database entries are made every time there are new users
 
 
-Then every time a new drop down menu item in selected, a corresponsing JS function to that place is called, makes the API call (long and lat hardcoded) then calls
+Then every time a new drop down menu item in selected, a corresponsing JS function to that place is called, makes the API call (long and lat hardcoded) then calls √
    a PHP script to overwrite the database entry, just as with insert, waits till php script responds and then calls the retrive php scripts which gets the 
    current DB entry, gives it to JS, and then JS inserts it into the page 
 
@@ -40,7 +40,6 @@ They have a dropdown menu of other available (pre-inserted locations) that the u
 
 Before submit checklist: 
    Validation
-   figured didn't need type so can remove if have time
 
 
 Questions: 
@@ -101,6 +100,7 @@ JavaScript global variables are reset when the page is reloaded
 
 Future improvements (Things I would have done if I had more time.): 
 Use XAMPP instead of pushing to main 
+   make more universal functions in js
 
 
    learn how to dymically update php inline
@@ -147,6 +147,7 @@ Decided to not use anything above
 
 Current:
    Prepare for submission 
+   User triggered functions commenting 
 
 
 Helpful Code Chunks: 
