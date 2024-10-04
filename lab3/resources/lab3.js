@@ -184,13 +184,13 @@ async function locCheck(){
    var selBox = document.getElementById("locSel");
 
    if (selBox.value == "Clemson"){
-      var weathDat = await getWeath( "34.683437", "-82.837364");
+      const weathDat = await getWeath("34.683437", "-82.837364");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathData.weather[0].main + " day"; 
       const plays = await getPlays(auth,searchTerm);
 
       //overwrite existing entries 
-      console.log(weathDat);
+      // console.log(weathDat);
 
       var res = await fetch("resources/overwrite.php", {
          "method" : "POST",
