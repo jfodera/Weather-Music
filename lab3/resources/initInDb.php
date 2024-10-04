@@ -8,7 +8,7 @@
       //single quote escape chars: 
       //Get ID
       //error: must put escape chars around the single quotes quotes 
-      echo $data
+      echo $data;
       // $wEsc = "";
       // for($i = 0; $i < strlen($data); $i++){
       //    if($data[$i] == "'"){
