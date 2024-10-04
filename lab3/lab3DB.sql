@@ -5,7 +5,7 @@ CREATE DATABASE apiDat;
       -- Auto Increment allows for every val to be unique
       `callId` int(10) unsigned NOT NULL AUTO_INCREMENT,
       `apiType` char(40) NOT NULL,
-      jdoc JSON NOT NULL,
+      `jdoc` JSON NOT NULL,
       PRIMARY KEY (`callId`)
    );
 

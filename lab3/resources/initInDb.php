@@ -14,19 +14,19 @@ Makes initial Entry to the Database when the Website Starts up
      password, and database to use. */
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
-      //connect_error is a property of a mysqli object that has any error message if it false
-      if ($db->connect_error) {
-         //can echo back in json as well using json_encode
-         echo "connection failed:" . $db->connect_error;
-      }
-      //Prepare and insert API's val to database
-      $type = "weather";
-      $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
-      $statement = $db->prepare($insQuery);
-      $statement->bind_param("ss", $data, $type);
-      $statement->execute();
+      // //connect_error is a property of a mysqli object that has any error message if it false
+      // if ($db->connect_error) {
+      //    //can echo back in json as well using json_encode
+      //    echo "connection failed:" . $db->connect_error;
+      // }
+      // //Prepare and insert API's val to database
+      // $type = "weather";
+      // $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
+      // $statement = $db->prepare($insQuery);
+      // $statement->bind_param("ss", $data, $type);
+      // $statement->execute();
 
-      echo "done"; 
+      // echo "done"; 
    
       
    }

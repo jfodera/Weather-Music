@@ -22,29 +22,29 @@
 
 
    <?php
-      //so can check every time we write in PhP 
-      $dbOk = false; 
+      // //so can check every time we write in PhP 
+      // $dbOk = false; 
 
-      //getting weather data
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      // //getting weather data
+      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
-      if ($db->connect_error) {
-         echo '<div class="messages">Could not connect to the database. Error: ';
-         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
-      } else {
-         $dbOk = true;
-      }
+      // if ($db->connect_error) {
+      //    echo '<div class="messages">Could not connect to the database. Error: ';
+      //    echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
+      // } else {
+      //    $dbOk = true;
+      // }
 
-      $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
-      $result = $db->query($query);
-      $record = $result->fetch_assoc();
-      $inter = json_decode($record['jdoc']);
-      //at this point, inter is still a string because the data is double JSON encoded, so have to do it one more
-      $weath = json_decode($inter, true);
-      //Now it is a php array acsessable by 
-      /*lat: 
-      echo $weath['coord']['lat'];
-      */
+      // $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
+      // $result = $db->query($query);
+      // $record = $result->fetch_assoc();
+      // $inter = json_decode($record['jdoc']);
+      // //at this point, inter is still a string because the data is double JSON encoded, so have to do it one more
+      // $weath = json_decode($inter, true);
+      // //Now it is a php array acsessable by 
+      // /*lat: 
+      // echo $weath['coord']['lat'];
+      // */
 
    ?>
 
