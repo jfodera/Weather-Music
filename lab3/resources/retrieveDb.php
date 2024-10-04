@@ -8,7 +8,7 @@
 
 
       $query = "SELECT * FROM jsonObjs WHERE callId=";
-      echo $query
+      echo "hey";
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();
       // $inter = json_decode($record['jdoc']);
