@@ -17,24 +17,22 @@
    <?php
 
 // If the server has recieved a post request (it has if getting called from lab3.js)
-   if(isset($_POST)){
+
       //the php:// makes it so that it reads raw data from the post requests body 
-      $data = file_get_contents("php://input");
 
       $dbOk = false;
 
       /* Create a new database connection object, passing in the host, username, 
      password, and database to use. */
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'jsonObjs');
+      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'jsonObjs');
 
-      if ($db->connect_error) {
-         die("Connection failed: ");
-     }
+   //    if ($db->connect_error) {
+   //       die("Connection failed: ");
+   //   }
      
      echo "Connected successfully";
       
 
-   }
 
 ?>
 
