@@ -244,7 +244,7 @@ async function locCheck(){
       //populate
       popHTML(initWeath,initPlays);
 
-   }else if(selBox.value == "UMiami "){
+   }else if(selBox.value == "UMiami"){
 
       const weathDat = await getWeath("25.761681", "80.191788");
       var auth = 'Bearer ' + SPOTIFYKEY; 
