@@ -8,18 +8,18 @@
       //single quote escape chars: 
       //Get ID
       //error: must put escape chars around the single quotes quotes 
-      echo $data;
-      // $wEsc = "";
-      // for($i = 0; $i < strlen($data); $i++){
-      //    if($data[$i] == "'"){
-      //       // Need double escape here
-      //       $wEsc = $wEsc . "\\'";
-      //    }else{
-      //       $wEsc = $wEsc . $data[$i];
-      //    }
-      // }
+      // echo $data;
+      $wEsc = "";
+      for($i = 0; $i < strlen($data); $i++){
+         if($data[$i] == "'"){
+            // Need double escape here
+            $wEsc = $wEsc . "\\'";
+         }else{
+            $wEsc = $wEsc . $data[$i];
+         }
+      }
 
-      // echo $wEsc;
+      echo $wEsc;
    }
 
 //       /* Create a new database connection object, passing in the host, username, 
