@@ -85,6 +85,8 @@ async function getPlays(auth,searchTerm){
 
 async function insert(jsonDat){
 
+   console.log(jsonDat);
+
    //send json to PHP
    //remember, relative to page running on 
    //Makes post request to php file, basically sends it the JSON 
@@ -100,7 +102,7 @@ async function insert(jsonDat){
    })
 
    var newRes = await res.text(); 
-   console.log(newRes);
+   // console.log(newRes);
    return(newRes);
 
 }
