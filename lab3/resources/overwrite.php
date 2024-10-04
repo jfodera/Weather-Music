@@ -12,14 +12,15 @@
       $wEsc = "";
       $flag = 0;
       for($i = strlen($data)-1; $i < 0; $i--){
-         //indicating start of the json
-         if($data[$i] == '}'){
-            $flag = 1; 
-         }
 
          if($flag == 0){
-            //adds to front 
-            $id = $data[$i] + $id;
+            //indicating start of the json
+            if($data[$i] == '}'){
+               $flag = 1; 
+            }else{
+               //adds to front 
+                $id = $data[$i] + $id;
+            }
          }else{
             if($data[$i] == "'"){
                // Need double escape here
