@@ -201,6 +201,9 @@ async function locCheck(){
    var selBox = document.getElementById("locSel");
 
    if (selBox.value == "Clemson"){
+
+      $("#univTitle").html("<span class=\"orange\">Clemson</span>");
+
       const weathDat = await getWeath("34.683437", "-82.837364");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathDat.weather[0].main + " day"; 
@@ -249,7 +252,7 @@ async function locCheck(){
    }else if(selBox.value == "UMiami"){
 
       //Change title and coloring 
-      $("#univTitle").html("<span class=\"orange\">U</span><span class=\"white\">Miami</span>");
+      $("#univTitle").html("<span class=\"orange\">U</span><span class=\"green\">Miami</span>");
 
       const weathDat = await getWeath("25.761681", "80.191788");
       var auth = 'Bearer ' + SPOTIFYKEY; 
