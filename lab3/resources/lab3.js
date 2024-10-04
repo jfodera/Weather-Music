@@ -128,6 +128,10 @@ function apiBut(){
       })
    });
 
+   //Display Stuff 
+   $("#firstSec").fadeOut();
+   $("#MainSec").fadeIn();
+
 
 }
 
