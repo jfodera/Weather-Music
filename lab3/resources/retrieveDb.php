@@ -7,7 +7,7 @@
       $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
 
-      $query = "SELECT * FROM jsonObjs WHERE callId=";
+      $query = "SELECT * FROM jsonObjs WHERE callId=" . $id;
       echo $query;
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();
