@@ -130,6 +130,23 @@ async function retrieve(id){
 
 }
 
+
+async function overwrite(overDat){
+   var res = await fetch("resources/overwrite.php", {
+      "method" : "POST",
+      "headers" : {
+         //Tells php that the body of the request is json 
+         "Content-Type" : "application/json; charset=utf-8"
+      },
+      // stringify is vital and php will recieve this as a plain string
+      "body" : JSON.stringify(overDat)+ WEATHERID
+
+   })
+
+   var newRes = await res.text(); 
+   return(newRes);
+}
+
 function popHTML(weathDat, plays){
 
    //get Weather info and insert into HTML
@@ -190,21 +207,10 @@ async function locCheck(){
       const plays = await getPlays(auth,searchTerm);
 
       //overwrite existing entries 
-      // console.log(weathDat);
+      var success = overwrite(weathDat);
+      console.log(success); 
 
-      var res = await fetch("resources/overwrite.php", {
-         "method" : "POST",
-         "headers" : {
-            //Tells php that the body of the request is json 
-            "Content-Type" : "application/json; charset=utf-8"
-         },
-         // stringify is vital and php will recieve this as a plain string
-         "body" : JSON.stringify(weathDat)+ WEATHERID
-   
-      })
-   
-      var newRes = await res.text(); 
-      console.log(newRes);
+
 
 
    }

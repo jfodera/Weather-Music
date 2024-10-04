@@ -47,12 +47,8 @@
 
 
       $upQuery = "UPDATE `jsonObjs` SET `jdoc`='$wEsc' WHERE callId=$id";
-      echo $upQuery;
-      // $statement = $db->prepare($insQuery);
-      // $statement->bind_param("ss", $wEsc, $type);
-      // $statement->execute();
+      echo $db->query($upQuery);
 
-      
       $db->close();
 
    }
