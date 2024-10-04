@@ -122,7 +122,7 @@ async function apiBut(){
 
    console.log(plays)
 
-   // const weathID = await insert(weatherData); 
+   const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 
    // console.log(weathID);
