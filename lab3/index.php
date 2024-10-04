@@ -22,9 +22,8 @@
    $result = $db->query($query);
    $record = $result->fetch_assoc();
    $weathAr = json_decode($record['jdoc']);
-   $new = json_decode($weathAr);
    // print_r($weathAr);
-   echo $new;
+   echo $weathAr;
 
 ?>
 
