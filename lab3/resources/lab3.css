@@ -63,11 +63,15 @@ h1 {
    
    margin-left: auto;
    margin-right: auto;
-   padding-top: 40px;
    width: 20%;
    font-size: 1.25em;
    text-align: center;
    padding: 7px;
+   border-radius: 10px;
+}
+
+#drop{
+   padding-top: 40px;
 }
 
 /*Main Section*/

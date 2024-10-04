@@ -23,7 +23,7 @@
 
 
    <!-- Start Button -->
-   <div class="mainHold" id="firstSec">
+   <div id="firstSec">
       <a class="mainBut" id="startB" onclick="apiBut();">Click to Fetch From APIs!</a>
    </div>
 
@@ -33,13 +33,17 @@
 
    <!-- Main Sec -->
    <div id="mainSec">
-      <select id="locSel" onchange="locCheck();">
-         <!-- Value != to inner HTML  -->
-         <option value="RPI" selected>RPI</option>
-         <option value="UMiami">University of Miami</option>
-         <option value="Clemson">Clemson University</option>
 
-      </select>  
+      <div class="mainHold" id="drop">
+         <select id="locSel" onchange="locCheck();">
+            <!-- Value != to inner HTML  -->
+            <option value="RPI" selected>RPI</option>
+            <option value="UMiami">University of Miami</option>
+            <option value="Clemson">Clemson University</option>
+
+         </select>  
+      </div>
+
       <div class="mainHold">
          <!-- Weather Description -->
          <div class="innerHold" id="weather">
