@@ -25,7 +25,7 @@
    //at this point, weathAr is still a string because the data is double JSON encoded, so have to do it one more
    $oneMore = json_decode($weathAr, true);
    //Now it is a php array acsessable by 
-   echo $oneMore['coord'][1];
+   echo $oneMore['coord']['lat'];
 
 ?>
 
