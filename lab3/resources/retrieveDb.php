@@ -13,6 +13,6 @@
       //at this point, inter is still a string because the data is double JSON encoded, so have to do it one more
       echo $record['jdoc'];
 
-      // $db->close();
+      $db->close();
    }
 ?>

@@ -122,8 +122,7 @@ async function retrieve(id){
 
    })
 
-   var newRes = await res.text(); 
-   console.log(newRes);
+   var newRes = await res.json(); 
    return(newRes);
 
 }
@@ -146,7 +145,10 @@ async function apiBut(){
 
    //init retrieve and populate 
    const initWeath = await retrieve(weathID);
-   // const initPlays = await retrieve(playsID);
+   const initPlays = await retrieve(playsID);
+
+   console.log(initWeath.weather[0].main);
+   console.log(initPlays.playlists.items[1].images[0].url);
 
 
 
