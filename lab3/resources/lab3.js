@@ -100,6 +100,7 @@ async function insert(jsonDat){
    })
 
    var newRes = await res.text(); 
+   console.log(newRes);
    return(newRes);
 
 }
