@@ -122,7 +122,7 @@ function apiBut(){
             return(response.text());
          })
          .then(function(entryID){
-            
+            console.log(entryID); 
          })
 
       })
