@@ -99,26 +99,20 @@ If echos mult times in php script, it is just concatenated into the log
 JavaScript global variables are reset when the page is reloaded
 
 
-Future improvements: 
+Future improvements (Things I would have done if I had more time.): 
 Use XAMPP instead of pushing to main 
 
-   in the future, should have my js file running serverside with node js 
-Couldn't figure out how to succesfully import mysql package and would be less time to just make it with php so did it like that instead
-   Can learn how to do this in future
-
-   why json is double encoded
 
    learn how to dymically update php inline
-   Delete every single user database entry automatically with https://www.zyxware.com/articles/5732/solved-how-to-run-a-javascript-code-at-browser-closing-time#:~:text=In%20JS%20there%20is%20a,of%20callback%20function%20of%20onbeforeunload%20.
-      after their session is over, won't be getting too much traffic so not going to do this 
    
    learn how to read server logs
    Is a chance id of other entry is retrived but doesn't really matter because, same content
    Error catching for inserting into DB
    Make use of apiType row 
    learn how to use xampp for php debugging
-
-   
+   Delete things when the tab closes or opens in order to not overload the database, leaving it for now because it's a cool way to count users as I won't have a lot of traffic. 
+      https://www.zyxware.com/articles/5732/solved-how-to-run-a-javascript-code-at-browser-closing-time#:~:text=In%20JS%20there%20is%20a,of%20callback%20function%20of%20onbeforeunload%20.
+   Could put location or type for the apiType column but didn't here because was not neccesary for the functionallity.
 
 
 Any challenges I came across: 
@@ -152,7 +146,7 @@ Decided to not use anything above
 
 
 Current:
-   loading in the info using php
+   Prepare for submission 
 
 
 Helpful Code Chunks: 
