@@ -10,14 +10,14 @@
       //error: must put escape chars around the single quotes quotes 
       $wEsc = "";
       $echo $data
-      for($i = 0; $i < strlen($data); $i++){
-         if($data[$i] == "'"){
-            // Need double escape here
-            $wEsc = $wEsc . "\\'";
-         }else{
-            $wEsc = $wEsc . $data[$i];
-         }
-      }
+      // for($i = 0; $i < strlen($data); $i++){
+      //    if($data[$i] == "'"){
+      //       // Need double escape here
+      //       $wEsc = $wEsc . "\\'";
+      //    }else{
+      //       $wEsc = $wEsc . $data[$i];
+      //    }
+      // }
 
       // echo $wEsc;
    }
