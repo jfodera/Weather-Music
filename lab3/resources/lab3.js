@@ -176,6 +176,15 @@ function popHTML(weathDat, plays){
 
 }
 
+//when box is changed
+function scoCheck(){
+   var selBox = document.getElementById("schoolSel");
+   var txtLoc = document.getElementById("locResp");
+
+   if (selBox.value != "Rensselaer Polytechnic Institute"){
+   }
+}
+
 /*Fetch Data from API's and show it on the page*/
 async function apiBut(){
 
@@ -189,6 +198,7 @@ async function apiBut(){
 
    const plays = await getPlays(auth,searchTerm)
 
+   //insert into database
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 

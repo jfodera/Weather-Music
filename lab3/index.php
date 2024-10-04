@@ -25,6 +25,21 @@
 
    <!-- Main Sec -->
    <div id="mainSec">
+      <select id="schoolSel" onchange="scoCheck();">
+         <!-- Value != to inner HTML  -->
+         <option value="Adelphi University">Adelphi University</option>
+         <option value="Bentley College">Bentley College</option>
+         <option value="Canisius College">Canisius College</option>
+         <option value="Fordham University">Fordham University</option>
+         <option value="Harvard University">Harvard University</option>
+         <option value="Lehigh Univervsity">Lehigh Univervsity</option>
+         <option value="Le Moyne College">Le Moyne College</option>
+         <option value="Manhattan College">Manhattan College</option>
+         <option value="Marist College">Marist College</option>
+         <option value="Rensselaer Polytechnic Institute" selected>Rensselaer Polytechnic Institute</option>
+         <option value="Temple University">Temple University</option>
+         <option value="University at Albany">University at Albany</option>
+      </select>  
       <div class="mainHold">
          <!-- Weather Description -->
          <div class="innerHold" id="weather">
