@@ -14,7 +14,7 @@
       //connect_error is a property of a mysqli object that has any error message if it false
       if ($db->connect_error) {
   
-         echo "con faile:" .$db->connect_error;
+         echo "con faile:" . $db->connect_error;
       }
       
 
