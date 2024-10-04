@@ -18,9 +18,9 @@
          //can echo back in json as well using json_encode
          echo "connection failed:" . $db->connect_error;
       }
-      //don't need prepare statement here because not a form submission 
-      $insQuery = "insert into jsonObjs (`jdoc`) values('" . $data . "')";
-      $db->query($insQuery);
+      // //don't need prepare statement here because not a form submission 
+      // $insQuery = "insert into jsonObjs (`jdoc`) values('" . $data . "')";
+      // $db->query($insQuery);
       
    }
 
