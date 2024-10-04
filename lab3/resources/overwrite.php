@@ -4,7 +4,7 @@
       //the php:// makes it so that it reads raw data from the post requests body 
       $data = file_get_contents("php://input");
 
-      echo $data; 
+      // echo $data; 
       //parse data and edit escape chars
       //error: must put escape chars around the single quotes quotes 
       //accounts for any single quote escape chars
@@ -32,7 +32,7 @@
       }
 
       echo $id; 
-      echo "the data" . $data;
+      echo "the data: " . $wEsc;
    
    //    /* Create a new database connection object, passing in the host, username, 
    //   password, and database to use. */
@@ -56,14 +56,14 @@
 
 
 
-      $query = "SELECT * FROM jsonObjs WHERE jdoc='$wEsc'";
-      $result = $db->query($query);
-      $record = $result->fetch_assoc();
-      $id = $record['callId'];
+      // $query = "SELECT * FROM jsonObjs WHERE jdoc='$wEsc'";
+      // $result = $db->query($query);
+      // $record = $result->fetch_assoc();
+      // $id = $record['callId'];
 
-      echo $id; 
+      // echo $id; 
       
-      $db->close();
+      // $db->close();
 
    }
 
