@@ -38,6 +38,7 @@
 
    <!-- Main Sec -->
    <div id="mainSec">
+      <div class="mainHide">
       <div class="mainHold">
          <!-- Weather Description -->
          <div class="innerHold" id="weather">
