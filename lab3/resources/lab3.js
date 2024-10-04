@@ -199,7 +199,7 @@ async function locCheck(){
             "Content-Type" : "application/json; charset=utf-8"
          },
          // stringify is vital and php will recieve this as a plain string
-         "body" : JSON.stringify(weathDat + WEATHERID)
+         "body" : JSON.stringify(weathDat)+ WEATHERID
    
       })
    
