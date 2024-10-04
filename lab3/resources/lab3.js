@@ -186,7 +186,7 @@ async function locCheck(){
    if (selBox.value == "Clemson"){
       const weathDat = await getWeath("34.683437", "-82.837364");
       var auth = 'Bearer ' + SPOTIFYKEY; 
-      var searchTerm = weathData.weather[0].main + " day"; 
+      var searchTerm = weathDat.weather[0].main + " day"; 
       const plays = await getPlays(auth,searchTerm);
 
       //overwrite existing entries 
