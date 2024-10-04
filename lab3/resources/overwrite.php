@@ -8,7 +8,7 @@
       //parse data and edit escape chars
       //error: must put escape chars around the single quotes quotes 
       //accounts for any single quote escape chars
-      $id = ""
+      $id = "";
       $wEsc = "";
       $flag = 0;
       for($i = (strlen($data)-1); $i >= 0; $i--){
