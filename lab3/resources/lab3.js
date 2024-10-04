@@ -123,7 +123,7 @@ async function apiBut(){
    // const playsID = await insert(plays);
 
    console.log(weathID);
-   console.log(playsID);
+   // console.log(playsID);
 
    //Display Stuff 
    $("#firstSec").fadeOut();
