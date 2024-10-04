@@ -17,6 +17,7 @@
             //indicating start of the json
             if($data[$i] == '}'){
                $flag = 1; 
+               $wEsc = $data[$i] . $wEsc ;
             }else{
                //adds to front 
                 $id = $data[$i] . $id;
