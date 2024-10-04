@@ -34,7 +34,7 @@
    <!-- Main Sec -->
    <div id="mainSec">
 
-      <p>Pick a School!</p>
+      <h2>Pick a school!</h2> 
       <div class="mainHold" id="drop">
          <select id="locSel" onchange="locCheck();">
             <!-- Value != to inner HTML  -->
