@@ -212,9 +212,12 @@ async function locCheck(){
       if(weathSuc!= 1 || playsSuc != 1){
          console.log("overwrite error"); 
       }
+      //retrieve
+      const initWeath = await retrieve(WEATHERID);
+      const initPlays = await retrieve(PLAYID);
 
-      
-
+      //populate
+      popHTML(initWeath,initPlays);
 
    }
 
