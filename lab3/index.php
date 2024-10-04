@@ -31,6 +31,11 @@
 
 ?>
 
+   <!-- Start Button -->
+   <div id="firstSec">
+      <a class="mainBut" id="startB" onclick="apiBut();">Click to Fetch From APIs!</a>
+   </div>
+
    <!-- Main Sec -->
    <div id="mainSec">
       <div class="mainHold">

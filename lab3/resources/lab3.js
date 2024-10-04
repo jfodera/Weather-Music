@@ -82,57 +82,56 @@ async function getPlays(auth,searchTerm){
    return(jsonRes);
 }
 
+/*Fetch Data from API's and show it on the page*/
 function apiBut(){
+
+   //Getting key For Spotify 
+   const key = getSpotKey()
+   //getting weather 
+   const weatherData = getWeath()
+
+   Promise.all([key, weatherData])
+
+   .then(function(vals) {
+      var auth = 'Bearer ' + vals[0]; 
+      var searchTerm = vals[1].weather[0].main + " day"; 
+      // Weather JSON is vals[1]
+      // Spotify JSON is caught in promise below
+
+      getPlays(auth,searchTerm)
+
+      .then(function(spotJSON){
+
+         //send weather to PHP
+         //remember, relative to page running on 
+         //Makes post request to php file, basically sends it the JSON 
+         fetch("resources/insertToDB.php", {
+            "method" : "POST",
+            "headers" : {
+               //Tells php that the body of the request is json 
+               "Content-Type" : "application/json; charset=utf-8"
+            },
+            // stringify is vital and php will recieve this as a plain string
+            "body" : JSON.stringify(vals[1])
+
+         })
+
+         //Catches echo response if there is an error
+         .then(function(response){
+            //must do this because returns a promise
+            return(response.text());
+         })
+         .then(function(error){
+            console.log(error);
+         })
+
+      })
+   });
 
 
 }
 
 // /*MAIN*/
-$(document).ready(function() {
-
-      //Getting key For Spotify 
-      const key = getSpotKey()
-      //getting weather 
-      const weatherData = getWeath()
-   
-      Promise.all([key, weatherData])
-   
-      .then(function(vals) {
-         var auth = 'Bearer ' + vals[0]; 
-         var searchTerm = vals[1].weather[0].main + " day"; 
-         // Weather JSON is vals[1]
-         // Spotify JSON is caught in promise below
-   
-         getPlays(auth,searchTerm)
-   
-         .then(function(spotJSON){
-            //remember, relative to page running on 
-            //Makes post request to php file, basically sends it the JSON 
-            fetch("resources/insertToDB.php", {
-               "method" : "POST",
-               "headers" : {
-                  //Tells php that the body of the request is json 
-                  "Content-Type" : "application/json; charset=utf-8"
-               },
-               // stringify is vital and php will recieve this as a plain string
-               "body" : JSON.stringify(vals[1])
-   
-            })
-
-            //Catches echo response if there is an error
-            .then(function(response){
-               //must do this because returns a promise
-               return(response.text());
-            })
-            .then(function(error){
-               console.log(error);
-            })
-   
-         })
-      });
-   
-
-})
 
 
 
