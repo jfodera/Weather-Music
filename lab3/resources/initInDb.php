@@ -7,7 +7,6 @@
 
       //don't need to encode here, it's already encoded
 
-      $test = json_encode($data); 
 
       /* Create a new database connection object, passing in the host, username, 
      password, and database to use. */
@@ -22,12 +21,12 @@
       $type = "misc";
       $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
       $statement = $db->prepare($insQuery);
-      $statement->bind_param("ss", $test, $type);
+      $statement->bind_param("ss", $data, $type);
       $statement->execute();
 
       //Get ID
       
-      $query = "SELECT * FROM jsonObjs WHERE jdoc='$test'";
+      $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
       echo $query;
       // $result = $db->query($query);
       // $record = $result->fetch_assoc();

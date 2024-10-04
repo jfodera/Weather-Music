@@ -124,11 +124,15 @@ Send Javascript object to php:
 json Decoding docs: 
    https://www.php.net/manual/en/function.json-decode.php
 
+   JSON into mySQL    :
+      https://dev.mysql.com/doc/refman/8.4/en/json.html
+
+   stringify: https://www.w3schools.com/jsref/jsref_stringify.asp#:~:text=The%20JSON.,has%20to%20be%20a%20string.
+
 Intro to ITWS lab docs (can provide them if needed, just didn't really know how to cite without including actual files)
 
 Didn't actually use: 
-   JSON into mySQL    :
-      https://dev.mysql.com/doc/refman/8.4/en/json.html
+
 
    JS database connection: 
       https://www.w3schools.com/nodejs/nodejs_mysql.asp
@@ -137,7 +141,6 @@ Didn't actually use:
    Getting the mySQL Package in JS file:
       https://www.sitepoint.com/using-node-mysql-javascript-client/
 
-   stringify: https://www.w3schools.com/jsref/jsref_stringify.asp#:~:text=The%20JSON.,has%20to%20be%20a%20string.
 
 Decided to not use anything above 
 
