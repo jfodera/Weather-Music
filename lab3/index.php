@@ -14,27 +14,29 @@
       <h1><span class="red">R.</span><span id="white">P.</span><span class="red">I.</span> Weather & Music!</h1>
    </div>
 
-<?php
-
-   //getting weather data
-   $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
-   $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
-   $result = $db->query($query);
-   $record = $result->fetch_assoc();
-   $weathAr = json_decode($record['jdoc']);
-   //at this point, weathAr is still a string because the data is double JSON encoded, so have to do it one more
-   $oneMore = json_decode($weathAr, true);
-   //Now it is a php array acsessable by 
-   /*lat: 
-   echo $oneMore['coord']['lat'];
-   */
-
-?>
 
    <!-- Start Button -->
    <div id="firstSec">
       <a class="mainBut" id="startB" onclick="apiBut();">Click to Fetch From APIs!</a>
    </div>
+
+
+   <?php
+
+      //getting weather data
+      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
+      $result = $db->query($query);
+      $record = $result->fetch_assoc();
+      $inter = json_decode($record['jdoc']);
+      //at this point, inter is still a string because the data is double JSON encoded, so have to do it one more
+      $weath = json_decode($inter, true);
+      //Now it is a php array acsessable by 
+      /*lat: 
+      echo $weath['coord']['lat'];
+      */
+
+   ?>
 
    <!-- Main Sec -->
    <div id="mainSec">
@@ -52,9 +54,9 @@
                   <ul class="miscList">
                      <li>Wind Speed:
                         <span class="res">
-                           <span id="windSpeed">
-                           </span> 
-                              mph
+                           <?php
+                              echo "<span id='windSpeed'>" . $weath['wind']['speed'] .  "</span>mph";
+                           ?>
                         </span>
                      </li>
                      <li>Pressure:
