@@ -103,6 +103,8 @@ Couldn't figure out how to succesfully import mysql package and would be less ti
    learn how to dymically update php inline
    Delete every single user database entry automatically with https://www.zyxware.com/articles/5732/solved-how-to-run-a-javascript-code-at-browser-closing-time#:~:text=In%20JS%20there%20is%20a,of%20callback%20function%20of%20onbeforeunload%20.
       after their session is over, won't be getting too much traffic so not going to do this 
+   
+   learn how to read server logs
 
 
 Any challenges I came across: 

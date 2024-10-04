@@ -1,4 +1,4 @@
-Makes initial Entry to the Database when the Website Starts up 
+<!-- Makes initial Entry to the Database when the Website Starts up  -->
 <?php
 
 // If the server has recieved a post request (it has if getting called from lab3.js)
