@@ -11,7 +11,7 @@
       $id = ""
       $wEsc = "";
       $flag = 0;
-      for($i = strlen($data)-1; $i < 0; $i--){
+      for($i = (strlen($data)-1); $i >= 0; $i--){
 
          if($flag == 0){
             //indicating start of the json
@@ -19,7 +19,7 @@
                $flag = 1; 
             }else{
                //adds to front 
-                $id = $data[$i] + $id;
+                $id = $data[$i] . $id;
             }
          }else{
             if($data[$i] == "'"){
