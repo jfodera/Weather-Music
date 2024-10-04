@@ -22,7 +22,7 @@
       $insQuery = "insert into jsonObjs (`jdoc`) values(?)";
       $statement = $db->prepare($insQuery);
       $statement->bind_param("s", $data);
-      echo $statement;
+      $statement->execute();
       
       // $db->query($insQuery);
       
