@@ -21,8 +21,8 @@
    $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
    $result = $db->query($query);
    $record = $result->fetch_assoc();
-   $weathJSON = json_encode($record['jdoc']);
-   echo $weathJSON;
+   $weathJSON = json_decode($record['jdoc']);
+   print_r($weathJSON);
 
 ?>
 
