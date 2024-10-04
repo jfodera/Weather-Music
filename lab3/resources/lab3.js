@@ -5,6 +5,7 @@
 
 // GLOBAL VARS -> all reset on reload
 var weathCt = 1; 
+var SPOTIFYKEY;
 var WEATHERID = 0; 
 var PLAYID = 0; 
 
@@ -181,9 +182,10 @@ function popHTML(weathDat, plays){
 //when box is changed
 function locCheck(){
    var selBox = document.getElementById("locSel");
-   var txtLoc = document.getElementById("locResp");
 
-   if (selBox.value != "Rensselaer Polytechnic Institute"){
+   if (selBox.value == "Clemson"){
+      console.log(SPOTIFYKEY);
+
    }
 }
 
@@ -192,6 +194,7 @@ async function apiBut(){
 
    //Getting key For Spotify 
    const key = await getSpotKey()
+   SPOTIFYKEY = key; 
    //getting weather 
    const weatherData = await getWeath()
 
