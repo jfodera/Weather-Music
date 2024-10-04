@@ -22,8 +22,8 @@
       $type = "weather";
       $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
       $statement = $db->prepare($insQuery);
-      // $statement->bind_param("ss", $data, $type);
-      // $statement->execute();
+      $statement->bind_param("ss", $data, $type);
+      $statement->execute();
       
       // $db->query($insQuery);
       
