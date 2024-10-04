@@ -48,7 +48,7 @@ function popHTML(weathDat, plays){
 
    //weather info
    const pngUrl = "https://openweathermap.org/img/wn/" + weathDat.weather[0].icon +  "@2x.png";
-   $("#description").html(weathDat.weather[0].main)
+   $("#description").html(weathDat.weather[0].main);
    $("#curWeath").attr('src', pngUrl);
    $("#windSpeed").html(weathDat.wind.speed);
    $("#press").html(weathDat.main.pressure);
