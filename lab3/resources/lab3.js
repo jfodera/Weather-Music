@@ -111,7 +111,7 @@ async function retrieve(id){
    //send json to PHP
    //remember, relative to page running on 
    //Makes post request to php file, basically sends it the JSON 
-   var res = await fetch("resources/initInDb.php", {
+   var res = await fetch("resources/retrieveDb.php", {
       "method" : "POST",
       "headers" : {
          //Tells php that the body of the request is json 
@@ -123,7 +123,7 @@ async function retrieve(id){
    })
 
    var newRes = await res.text(); 
-   // console.log(newRes);
+   console.log(newRes);
    return(newRes);
 
 }
