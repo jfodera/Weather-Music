@@ -207,7 +207,7 @@ async function locCheck(){
       const plays = await getPlays(auth,searchTerm);
 
       //overwrite existing entries 
-      var success = overwrite(weathDat);
+      var success = await overwrite(weathDat);
       console.log(success); 
 
 
