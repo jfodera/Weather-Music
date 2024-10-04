@@ -118,8 +118,8 @@ async function apiBut(){
    const plays = await getPlays(auth,searchTerm)
 
 
-   const weathID = insert(weatherData); 
-   const playsID = insert(plays);
+   const weathID = await insert(weatherData); 
+   const playsID = await insert(plays);
 
    console.log(weathID);
    console.log(playsID);
