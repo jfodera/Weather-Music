@@ -20,10 +20,10 @@
       }
       // //don't need prepare statement here because not a form submission 
       $type = "weather";
-      $insQuery = "insert into jsonObjs (`jdoc`, `apiType`) values(?,?)";
+      $insQuery = "insert into jsonObjs (`jdoc`,`apiType`) values(?,?)";
       $statement = $db->prepare($insQuery);
-      $statement->bind_param("ss", $data, $type);
-      $statement->execute();
+      // $statement->bind_param("ss", $data, $type);
+      // $statement->execute();
       
       // $db->query($insQuery);
       
