@@ -123,7 +123,7 @@ async function retrieve(id){
    })
 
    var newRes = await res.text(); 
-   console.log(newRes);
+   // console.log(newRes);
    return(newRes);
 
 }
