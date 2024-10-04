@@ -67,8 +67,8 @@ async function getSpotKey(){
 }
 
 /*Fetches the weather data from the API and returns a promise of it converted into JSON */ 
-async function getWeath(){
-   var fetchRes = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=42.7284&lon=-73.6918&units=imperial&appid=76b8f36558ce3b5fbce8ba9d025e5fe9");
+async function getWeath(lat,lon){
+   var fetchRes = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=76b8f36558ce3b5fbce8ba9d025e5fe9");
    var jsonRes = await fetchRes.json();
    return(jsonRes); 
 }
@@ -184,9 +184,13 @@ function locCheck(){
    var selBox = document.getElementById("locSel");
 
    if (selBox.value == "Clemson"){
-      console.log(SPOTIFYKEY);
-
+      getWeath( "34.683437", "-82.837364");
    }
+
+   /*troy: 
+   lat: 42.7284
+   long: -73.6918
+   */
 }
 
 /*Fetch Data from API's and show it on the page*/
@@ -196,7 +200,7 @@ async function apiBut(){
    const key = await getSpotKey()
    SPOTIFYKEY = key; 
    //getting weather 
-   const weatherData = await getWeath()
+   const weatherData = await getWeath("42.7284", "-73.6918");
 
    var auth = 'Bearer ' + key; 
    var searchTerm = weatherData.weather[0].main + " day"; 
