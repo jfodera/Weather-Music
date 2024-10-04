@@ -5,7 +5,7 @@
       //the php:// makes it so that it reads raw data from the post requests body 
       $data = file_get_contents("php://input");
 
-       
+      //don't need to encode here, it's already encoded
 
       
 
@@ -28,11 +28,11 @@
       //Get ID
       
       $query = "SELECT * FROM jsonObjs WHERE jdoc='$data'";
-      // $result = $db->query($query);
-      // $record = $result->fetch_assoc();
-      echo $query; 
-      // $id = $record['callId'];
+      $result = $db->query($query);
+      $record = $result->fetch_assoc();
+      $id = $record['callId'];
 
+      echo $id; 
       
    
       
