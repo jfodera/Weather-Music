@@ -69,6 +69,11 @@ can error handle in php by using echo
    $dbok is a way of checking if the database connection is good without stopping the rest of the HTML from working, not really neccesarry in a script where the main function is to connect to a database; no ins and outs
 When make table of JSON objects, content type will say longtext, but it's JSON  
 Error handling for php set up perfectly 
+Always use this series of binding statements to insert into a table: 
+       $insQuery = "insert into jsonObjs (`jdoc`) values(?)";
+      $statement = $db->prepare($insQuery);
+      $statement->bind_param("s", $data);
+      $statement->execute();
 
 
 Future improvements: 

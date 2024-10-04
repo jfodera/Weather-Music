@@ -3,7 +3,8 @@ CREATE DATABASE apiDat;
    CREATE TABLE `jsonObjs` (
       -- NOT NULL -> Can't store null values
       -- Auto Increment allows for every val to be unique
-      jdoc JSON 
+      `apiType` char(40) NOT NULL,
+      jdoc JSON NOT NULL
    );
 
 INSERT INTO jsonObjs
