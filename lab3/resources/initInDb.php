@@ -4,11 +4,10 @@
    if(isset($_POST)){
       //the php:// makes it so that it reads raw data from the post requests body 
       $data = file_get_contents("php://input");
-      // $data = '{"mascot": "Our mascot is a dolphin named \'Sakila\'."}';
+
       //single quote escape chars: 
-      //Get ID
       //error: must put escape chars around the single quotes quotes 
-      // echo $data;
+      //accounts for any single quote escape chars
       $wEsc = "";
       for($i = 0; $i < strlen($data); $i++){
          if($data[$i] == "'"){
@@ -18,8 +17,6 @@
             $wEsc = $wEsc . $data[$i];
          }
       }
-
-      // echo $wEsc;
    }
 
       /* Create a new database connection object, passing in the host, username, 
@@ -43,9 +40,9 @@
 
       $query = "SELECT * FROM jsonObjs WHERE jdoc='$wEsc'";
       echo $query;
-      // $result = $db->query($query);
-      // $record = $result->fetch_assoc();
-      // $id = $record['callId'];
+      $result = $db->query($query);
+      $record = $result->fetch_assoc();
+      $id = $record['callId'];
 
       // echo $id; 
       
