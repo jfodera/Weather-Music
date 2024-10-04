@@ -180,11 +180,32 @@ function popHTML(weathDat, plays){
 }
 
 //when box is changed
-function locCheck(){
+async function locCheck(){
    var selBox = document.getElementById("locSel");
 
    if (selBox.value == "Clemson"){
-      getWeath( "34.683437", "-82.837364");
+      weathDat = await getWeath( "34.683437", "-82.837364");
+      var auth = 'Bearer ' + SPOTIFYKEY; 
+      var searchTerm = weathData.weather[0].main + " day"; 
+      const plays = await getPlays(auth,searchTerm);
+
+      //overwrite existing entries 
+
+      var res = await fetch("resources/overwrite.php", {
+         "method" : "POST",
+         "headers" : {
+            //Tells php that the body of the request is json 
+            "Content-Type" : "application/json; charset=utf-8"
+         },
+         // stringify is vital and php will recieve this as a plain string
+         "body" : JSON.stringify(weathDat + WEATHERID)
+   
+      })
+   
+      var newRes = await res.text(); 
+      console.log(newRes);
+
+
    }
 
    /*troy: 
@@ -205,7 +226,7 @@ async function apiBut(){
    var auth = 'Bearer ' + key; 
    var searchTerm = weatherData.weather[0].main + " day"; 
 
-   const plays = await getPlays(auth,searchTerm)
+   const plays = await getPlays(auth,searchTerm);
 
    //insert into database
    const weathID = await insert(weatherData); 
