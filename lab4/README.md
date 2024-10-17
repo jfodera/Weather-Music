@@ -45,8 +45,8 @@ How I used it: -
 Promt 6: On page 2, add a dropdown menu with 3 options, RPI, Clemson, Umiami
 How I used it: Copied and pasted everything in, added the new css to the bottom of existing 
 
-Promt 7: 
-How I used it:
+Promt 7: Center this dropbox at the top of the page, above the current weather and suggested spotify playlists
+How I used it: Deleted old dropbox section of CSS and replaced it with new, Updated entire index.php
 
 Promt 8: 
 How I used it:

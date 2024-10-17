@@ -18,13 +18,16 @@
 
         <!-- Content that is initially hidden (Page 2) -->
         <div id="contentSection" class="content hidden">
-            <!-- Dropdown Menu to Select School -->
-            <label for="schoolSelect">Pick a school!!</label>
-            <select id="schoolSelect" class="school-dropdown">
-                <option value="RPI">RPI</option>
-                <option value="Clemson">Clemson</option>
-                <option value="Umiami">Umiami</option>
-            </select>
+
+            <!-- Dropdown Menu to Select School (Centered at the top) -->
+            <div class="dropdown-container">
+                <label for="schoolSelect">Pick a school!!</label>
+                <select id="schoolSelect" class="school-dropdown">
+                    <option value="RPI">RPI</option>
+                    <option value="Clemson">Clemson</option>
+                    <option value="Umiami">Umiami</option>
+                </select>
+            </div>
 
             <!-- Weather Section -->
             <div class="weather">
