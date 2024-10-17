@@ -39,7 +39,23 @@ Promt 4: Create an initial page in which basically everything currently in index
    *included init.png* (lab4/resources) 
 How I used it: Copied and pasted everything in, also created new js file in resources, matching the name given to me by chatgpt 
 
+Promt 5: I'm going to refer to the page that shows up after you click the API's button as page 2
+How I used it: -
 
+Promt 6: On page 2, add a dropdown menu with 3 options, RPI, Clemson, Umiami
+How I used it: Copied and pasted everything in, added the new css to the bottom of existing 
+
+Promt 7: 
+How I used it:
+
+Promt 8: 
+How I used it:
+
+Promt 9: 
+How I used it:
+
+Promt 10: 
+How I used it:
 
 
 

@@ -16,8 +16,16 @@
         <!-- Button to fetch content -->
         <button id="fetchButton" class="fetch-button">Click to Fetch From APIs!</button>
 
-        <!-- Content that is initially hidden -->
+        <!-- Content that is initially hidden (Page 2) -->
         <div id="contentSection" class="content hidden">
+            <!-- Dropdown Menu to Select School -->
+            <label for="schoolSelect">Pick a school!!</label>
+            <select id="schoolSelect" class="school-dropdown">
+                <option value="RPI">RPI</option>
+                <option value="Clemson">Clemson</option>
+                <option value="Umiami">Umiami</option>
+            </select>
+
             <!-- Weather Section -->
             <div class="weather">
                 <h2>Current Weather:</h2>

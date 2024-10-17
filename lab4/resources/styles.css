@@ -71,3 +71,19 @@ footer {
    height: 30px;
    margin: 0 10px;
 }
+
+/* Dropdown menu */
+.school-dropdown {
+   font-size: 18px;
+   padding: 10px;
+   margin: 20px 0;
+   border-radius: 5px;
+   border: 1px solid #3070A0;
+   background-color: white;
+   color: #000;
+}
+
+.school-dropdown:focus {
+   outline: none;
+   border-color: #1D4A74;
+}
