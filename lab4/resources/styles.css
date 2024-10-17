@@ -1,0 +1,127 @@
+/* General styles */
+body {
+   margin: 0;
+   font-family: Arial, sans-serif;
+   background: linear-gradient(to bottom, #82aaff, #1e3a8a);
+   color: white;
+}
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+   padding-top: 20px;
+}
+
+header h1 {
+   text-align: center;
+   font-size: 36px;
+   color: white;
+}
+
+.rpi {
+   color: red;
+}
+
+/* Content Section */
+.content {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 30px;
+}
+
+.weather, .music {
+   width: 45%;
+   padding: 20px;
+   background: rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+}
+
+/* Weather Section */
+.weather h2, .music h2 {
+   font-size: 28px;
+   text-align: center;
+   color: yellow;
+}
+
+.weather-content {
+   display: flex;
+   align-items: center;
+}
+
+.weather-icon {
+   width: 150px;
+   height: 150px;
+   margin-right: 20px;
+}
+
+.weather-info p {
+   font-size: 18px;
+}
+
+.last-updated {
+   text-align: center;
+   font-size: 12px;
+   margin-top: 10px;
+   color: yellow;
+}
+
+/* Music Section */
+.spotify-icon {
+   width: 150px;
+   height: 150px;
+   display: block;
+   margin: 0 auto;
+}
+
+.music ol {
+   list-style-type: none;
+   padding-left: 0;
+   font-size: 18px;
+   text-align: center;
+}
+
+.music ol li {
+   margin-bottom: 10px;
+}
+
+.music ol li a {
+   color: #00ff00;
+   text-decoration: none;
+}
+
+.music ol li a:hover {
+   text-decoration: underline;
+}
+
+/* Show More Info Button */
+.info-button {
+   display: block;
+   margin: 30px auto;
+   padding: 10px 20px;
+   font-size: 16px;
+   background-color: #1e40af;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.info-button:hover {
+   background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+   text-align: center;
+   margin-top: 40px;
+   color: #aaa;
+}
+
+.footer-icons {
+   margin-top: 10px;
+}
+
+.footer-icons img {
+   width: 32px;
+   margin: 0 10px;
+}
