@@ -19,8 +19,8 @@
         <!-- Content that is initially hidden (Page 2) -->
         <div id="contentSection" class="content hidden">
 
-            <!-- Dropdown Menu to Select School (Centered at the top) -->
-            <div class="dropdown-container">
+            <!-- First Row: Dropdown Menu to Select School -->
+            <div class="row dropdown-container">
                 <label for="schoolSelect">Pick a school!!</label>
                 <select id="schoolSelect" class="school-dropdown">
                     <option value="RPI">RPI</option>
@@ -29,37 +29,42 @@
                 </select>
             </div>
 
-            <!-- Weather Section -->
-            <div class="weather">
-                <h2>Current Weather:</h2>
-                <div class="weather-content">
-                    <img src="cloud_icon.png" alt="Weather Icon" class="weather-icon">
-                    <div class="weather-info">
-                        <p>Clouds</p>
-                        <p><strong>Wind Speed:</strong> 3 mph</p>
-                        <p><strong>Pressure:</strong> 1024 hPa</p>
-                        <p><strong>Humidity:</strong> 55%</p>
-                        <p><strong>Temperature:</strong> 55.44°F</p>
+            <!-- Second Row: Weather and Music Sections (Side by Side) -->
+            <div class="row">
+                <!-- Weather Section -->
+                <div class="column weather">
+                    <h2>Current Weather:</h2>
+                    <div class="weather-content">
+                        <img src="cloud_icon.png" alt="Weather Icon" class="weather-icon">
+                        <div class="weather-info">
+                            <p>Clouds</p>
+                            <p><strong>Wind Speed:</strong> 3 mph</p>
+                            <p><strong>Pressure:</strong> 1024 hPa</p>
+                            <p><strong>Humidity:</strong> 55%</p>
+                            <p><strong>Temperature:</strong> 55.44°F</p>
+                        </div>
                     </div>
+                    <p class="last-updated">Last Updated: Thu Oct 17 2024 14:05:32 GMT-0400 (Eastern Daylight Time)</p>
                 </div>
-                <p class="last-updated">Last Updated: Thu Oct 17 2024 14:05:32 GMT-0400 (Eastern Daylight Time)</p>
+
+                <!-- Music Section -->
+                <div class="column music">
+                    <h2>Suggested Spotify Playlists:</h2>
+                    <img src="spotify_icon.png" alt="Spotify Icon" class="spotify-icon">
+                    <ol>
+                        <li><a href="#">Pink Floyd - Best Of</a></li>
+                        <li><a href="#">Clouds Radio</a></li>
+                        <li><a href="#">Rainy Days ☔ Kids Songs about rain, clouds and puddles</a></li>
+                        <li><a href="#">Cloudy and rainy days</a></li>
+                        <li><a href="#">Strange Days (1995) Original Motion Picture Soundtrack</a></li>
+                    </ol>
+                </div>
             </div>
 
-            <!-- Music Section -->
-            <div class="music">
-                <h2>Suggested Spotify Playlists:</h2>
-                <img src="spotify_icon.png" alt="Spotify Icon" class="spotify-icon">
-                <ol>
-                    <li><a href="#">Pink Floyd - Best Of</a></li>
-                    <li><a href="#">Clouds Radio</a></li>
-                    <li><a href="#">Rainy Days ☔ Kids Songs about rain, clouds and puddles</a></li>
-                    <li><a href="#">Cloudy and rainy days</a></li>
-                    <li><a href="#">Strange Days (1995) Original Motion Picture Soundtrack</a></li>
-                </ol>
+            <!-- Third Row: Show More Info Button -->
+            <div class="row button-container">
+                <button id="showMoreInfo" class="show-more-info">Show More Info</button>
             </div>
-
-            <!-- Show More Info Button -->
-            <button id="showMoreInfo" class="show-more-info">Show More Info</button>
         </div>
 
         <footer>

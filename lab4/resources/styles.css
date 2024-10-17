@@ -1,113 +1,117 @@
-/* Existing Styles */
+/* General Body Styles */
 body {
    font-family: Arial, sans-serif;
-   background: linear-gradient(to bottom, #92B6F4, #C4E0F5);
-   text-align: center;
+   background: linear-gradient(to bottom right, #84b6f4, #e3e8fe);
    margin: 0;
    padding: 0;
+   text-align: center;
+}
+
+/* Container */
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+/* Header */
+header {
+   background-color: #3070A0;
+   color: white;
+   padding: 20px 0;
+   text-align: center;
+   border-bottom: 4px solid black;
 }
 
 h1 {
-   color: #000;
-   background-color: #3070A0;
-   padding: 20px;
+   font-size: 3em;
+   font-weight: bold;
    margin: 0;
-   font-size: 36px;
 }
 
-h1 .rpi {
+.rpi {
    color: red;
 }
 
+/* Fetch Button (Initial Page) */
 .fetch-button {
+   margin-top: 50px;
+   padding: 15px 30px;
    font-size: 18px;
-   padding: 10px 20px;
    background-color: #3070A0;
    color: white;
    border: none;
-   border-radius: 5px;
-   margin-top: 30px;
+   border-radius: 10px;
    cursor: pointer;
+   transition: background-color 0.3s;
 }
 
 .fetch-button:hover {
    background-color: #1D4A74;
 }
 
-.container {
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 20px;
-}
-
-.content {
-   display: flex;
-   justify-content: space-between;
-   margin-top: 40px;
-   padding: 20px;
-}
-
-.weather, .music {
-   width: 45%;
-   background-color: #eee;
-   padding: 20px;
-   border-radius: 10px;
-}
-
+/* Hide content initially */
 .hidden {
    display: none;
 }
 
-/* Footer styles */
-footer {
-   margin-top: 20px;
-   padding: 10px;
-   background-color: #3070A0;
-   color: white;
-   text-align: center;
-}
-
-.footer-icons img {
-   height: 30px;
-   margin: 0 10px;
-}
-
-/* Dropdown menu */
-/* Dropdown menu */
-.school-dropdown {
-   font-size: 18px;
-   padding: 10px;
-   margin: 10px 0;
-   border-radius: 5px;
-   border: 1px solid #3070A0;
-   background-color: white;
-   color: #000;
-}
-
-/* Center the dropdown */
+/* First Row: Dropdown Menu */
 .dropdown-container {
    text-align: center;
-   margin-bottom: 20px;
+   margin-top: 20px;
 }
 
-label {
-   font-size: 18px;
-   color: #000;
-   margin-right: 10px;
+/* Dropdown Styling */
+.school-dropdown {
+   padding: 10px;
+   font-size: 16px;
+   border-radius: 8px;
+   margin-left: 10px;
 }
 
-/* Style for focus */
-.school-dropdown:focus {
-   outline: none;
-   border-color: #1D4A74;
+/* General Layout */
+.row {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 20px 0;
 }
 
-/* Weather and Music sections should stay as they are */
+/* Second Row: Weather and Music (Side by Side Columns) */
+.column {
+   flex: 1;
+   margin: 0 20px;
+}
+
+.weather, .music {
+   border: 2px solid #000;
+   border-radius: 10px;
+   padding: 20px;
+   background-color: #1E3F66;
+   color: white;
+   width: 300px;
+   text-align: center;
+}
+
+/* Weather and Spotify Icons */
+.weather-icon, .spotify-icon {
+   width: 80px;
+   margin-bottom: 10px;
+}
+
+/* Last Updated Text */
+.last-updated {
+   color: #FFD700;
+   font-size: 12px;
+   margin-top: 10px;
+}
+
+/* Third Row: Show More Info Button */
+.button-container {
+   text-align: center;
+}
 
 /* Show More Info Button */
 .show-more-info {
-   display: block;
-   margin: 20px auto;
    padding: 10px 20px;
    background-color: #3070A0;
    color: white;
@@ -122,10 +126,28 @@ label {
    background-color: #1D4A74;
 }
 
-/* Ensure the button is centered */
-.show-more-info {
+/* Footer */
+footer {
+   margin-top: 50px;
+   color: white;
+   background-color: #3070A0;
+   padding: 10px 0;
    text-align: center;
 }
 
-/* Adjustments to other elements remain unchanged */
+.footer-icons img {
+   width: 30px;
+   margin: 0 10px;
+}
 
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+   .column {
+       width: 90%;
+       margin: 10px 0;
+   }
+
+   .row {
+       flex-direction: column;
+   }
+}

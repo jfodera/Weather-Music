@@ -51,11 +51,11 @@ How I used it: Deleted old dropbox section of CSS and replaced it with new, Upda
 Promt 8: Why did the show more info button go away, Add it back!
 How I used it: Concatenaated new section to the styles.css, updated the index.php with a full copy and paste
 
-Promt 9: 
-How I used it:
+Promt 9: Put the Pick a school button and description on a higher row than the current weather and suggested spotify playlists. Put the show more info Button on a lower row than the current weather and suggested spotify playlists. 
+How I used it: Pasted in only the index.html 
 
-Promt 11: 
-How I used it:
+Promt 11: list what the entire css file should currently be
+How I used it: pasted in whole new css 
 
 Promt 12: 
 How I used it:
