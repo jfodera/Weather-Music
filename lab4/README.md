@@ -81,8 +81,8 @@ How I used it: New index.php and backend.js
 Promt 19: When the user changes the pick a school dropdown, update the title shown on the page and the title of the tab accordingly 
 How I used it: New backend.js
 
-Promt 20: 
-How I used it: 
+Promt 20: When the user changes the dropdown menu, also change the placeholder data in Current weather and spotify playlist accordingly
+How I used it: new Backend.js
 
 Promt 21: 
 How I used it: 
