@@ -70,7 +70,22 @@ Promt 15: scripts.js should still exist tho
 How I used it: - 
 
 Promt 16: When I put all of these together, the click to show API button is gone, add it back
-How I used it:
+How I used it: Whole new index.php file 
+
+Promt 17: 
+How I used it: 
+
+Promt 18: 
+How I used it: 
+
+Promt 19: 
+How I used it: 
+
+Promt 20: 
+How I used it: 
+
+Promt 21: 
+How I used it: 
 
 
 

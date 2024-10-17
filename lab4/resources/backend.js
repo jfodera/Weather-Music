@@ -1,27 +1,26 @@
 // resources/backend.js
 
+// Event listener for the "Fetch From APIs!" button
 document.getElementById('fetch-btn').addEventListener('click', function() {
+   // Hide the initial page and show the main content
    document.getElementById('initial-page').classList.add('hidden');
    document.getElementById('main-content').classList.remove('hidden');
 });
 
+// Event listener for the "Show More Info" button
 document.getElementById('show-more-info-btn').addEventListener('click', function() {
-   // Show additional weather information
-   document.getElementById('feels-like').innerText = "54.0 °F"; // Placeholder value
-   document.getElementById('min-temp').innerText = "52.0 °F"; // Placeholder value
-   document.getElementById('max-temp').innerText = "58.0 °F"; // Placeholder value
-
-   // Show additional Spotify playlist information
-   document.getElementById('author-1').innerText = "Pink Floyd"; // Placeholder value
-   document.getElementById('author-2').innerText = "Clouds Inc."; // Placeholder value
-   document.getElementById('author-3').innerText = "Kiddo Tunes"; // Placeholder value
-   document.getElementById('author-4').innerText = "Mood Music"; // Placeholder value
-   document.getElementById('author-5').innerText = "Soundtrack Artists"; // Placeholder value
-
-   // Show playlist images (replace with actual paths)
-   document.querySelector('.spotify-icon').src = "path/to/playlist1-image.png"; // Placeholder image
-   document.querySelectorAll('.spotify-icon')[1].src = "path/to/playlist2-image.png"; // Placeholder image
-   document.querySelectorAll('.spotify-icon')[2].src = "path/to/playlist3-image.png"; // Placeholder image
-   document.querySelectorAll('.spotify-icon')[3].src = "path/to/playlist4-image.png"; // Placeholder image
-   document.querySelectorAll('.spotify-icon')[4].src = "path/to/playlist5-image.png"; // Placeholder image
+   const extraWeatherInfo = document.getElementById('extra-weather-info');
+   const extraSpotifyInfo = document.getElementById('extra-spotify-info');
+   
+   if (extraWeatherInfo.classList.contains('hidden')) {
+       // Show extra info
+       extraWeatherInfo.classList.remove('hidden');
+       extraSpotifyInfo.classList.remove('hidden');
+       this.innerText = 'Show Less Info'; // Change button text
+   } else {
+       // Hide extra info
+       extraWeatherInfo.classList.add('hidden');
+       extraSpotifyInfo.classList.add('hidden');
+       this.innerText = 'Show More Info'; // Change button text back
+   }
 });
