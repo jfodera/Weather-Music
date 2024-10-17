@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R.P.I. Weather & Music</title>
     <link rel="stylesheet" type="text/css" href="resources/styles.css">
+    <script src="resources/scripts.js" defer></script> <!-- Include the JavaScript -->
 </head>
 <body>
     <div class="container">
@@ -12,7 +13,11 @@
             <h1><span class="rpi">R.P.I.</span> Weather & Music!</h1>
         </header>
 
-        <div class="content">
+        <!-- Button to fetch content -->
+        <button id="fetchButton" class="fetch-button">Click to Fetch From APIs!</button>
+
+        <!-- Content that is initially hidden -->
+        <div id="contentSection" class="content hidden">
             <!-- Weather Section -->
             <div class="weather">
                 <h2>Current Weather:</h2>
@@ -43,10 +48,8 @@
             </div>
         </div>
 
-        <button class="info-button">Show More Info</button>
-
         <footer>
-            <p>©2024 Foden Sites</p>
+            <p>©2024 Fodera Sites</p>
             <div class="footer-icons">
                 <img src="discord_icon.png" alt="Discord Icon">
                 <img src="controller_icon.png" alt="Controller Icon">
