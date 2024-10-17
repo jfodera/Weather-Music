@@ -24,56 +24,56 @@ How I used it: Created the files in my repo and pasted in the .php and .css. Mad
 Prompt 2: The styles.css is in a folder called 'resources' change entire php file accordingly
 How I used it: Literally just replaced index.php with new index.php
  
-Promt 3: change foden sites to fodera sites
+Prompt 3: change foden sites to fodera sites
 How I used it: Literally just replaced index.php with new index.php
 
-Promt 4: Create an initial page in which basically everything currently in index.php is hidden. All that should appear is a button that says  "click to fetch from API's!". Once that button is clicked everything that was hidden in index.php whould appear. Write a new backend javascript file (also in the resources folder), along with updating the current css and php files to complete this task. The initial page I am describing that had the button should look like the image I provided
+Prompt 4: Create an initial page in which basically everything currently in index.php is hidden. All that should appear is a button that says  "click to fetch from API's!". Once that button is clicked everything that was hidden in index.php whould appear. Write a new backend javascript file (also in the resources folder), along with updating the current css and php files to complete this task. The initial page I am describing that had the button should look like the image I provided
    *included init.png* (lab4/resources) 
 How I used it: Copied and pasted everything in, also created new js file in resources, matching the name given to me by chatgpt 
 
-Promt 5: I'm going to refer to the page that shows up after you click the API's button as page 2
+Prompt 5: I'm going to refer to the page that shows up after you click the API's button as page 2
 How I used it: -
 
-Promt 6: On page 2, add a dropdown menu with 3 options, RPI, Clemson, Umiami
+Prompt 6: On page 2, add a dropdown menu with 3 options, RPI, Clemson, Umiami
 How I used it: Copied and pasted everything in, added the new css to the bottom of existing 
 
-Promt 7: Center this dropbox at the top of the page, above the current weather and suggested spotify playlists
+Prompt 7: Center this dropbox at the top of the page, above the current weather and suggested spotify playlists
 How I used it: Deleted old dropbox section of CSS and replaced it with new, Updated entire index.php
 
-Promt 8: Why did the show more info button go away, Add it back!
+Prompt 8: Why did the show more info button go away, Add it back!
 How I used it: Concatenaated new section to the styles.css, updated the index.php with a full copy and paste
 
-Promt 9: Put the Pick a school button and description on a higher row than the current weather and suggested spotify playlists. Put the show more info Button on a lower row than the current weather and suggested spotify playlists. 
+Prompt 9: Put the Pick a school button and description on a higher row than the current weather and suggested spotify playlists. Put the show more info Button on a lower row than the current weather and suggested spotify playlists. 
 How I used it: Pasted in only the index.html 
 
-Promt 11: list what the entire css file should currently be
+Prompt 11: list what the entire css file should currently be
 How I used it: pasted in whole new css 
 
-Promt 12: When I click the show more info button, for the weather section show the "feels like", 'min temp', and 'max temp'. For the spotify section, show an author for each entry along with an image of the playlist. Just make up random 'placeholder values' for these fields. 
+Prompt 12: When I click the show more info button, for the weather section show the "feels like", 'min temp', and 'max temp'. For the spotify section, show an author for each entry along with an image of the playlist. Just make up random 'placeholder values' for these fields. 
 How I used it: Whole new index.php, 
 
-Promt 13: give me the full js file 
+Prompt 13: give me the full js file 
 How I used it: added new file called backend.js
 
-Promt 14: should backend.js be a new file 
+Prompt 14: should backend.js be a new file 
 How I used it: - 
 
-Promt 15: scripts.js should still exist tho
+Prompt 15: scripts.js should still exist tho
 How I used it: - 
 
-Promt 16: When I put all of these together, the click to show API button is gone, add it back
+Prompt 16: When I put all of these together, the click to show API button is gone, add it back
 How I used it: Whole new index.php file 
 
-Promt 17: add links to actual image files across the web to curate the page, also this extra info should only appear when I click the show more info button. When it is clicked the button should then read show less info, when that is clicked the info should go away. It should act as a toggle. 
+Prompt 17: add links to actual image files across the web to curate the page, also this extra info should only appear when I click the show more info button. When it is clicked the button should then read show less info, when that is clicked the info should go away. It should act as a toggle. 
 How I used it: New index.php and backend.js 
 
-Promt 18: Now connect the extra info associated with the spotify playlists to the same button 
+Prompt 18: Now connect the extra info associated with the spotify playlists to the same button 
 How I used it: New index.php and backend.js 
 
-Promt 19: When the user changes the pick a school dropdown, update the title shown on the page and the title of the tab accordingly 
+Prompt 19: When the user changes the pick a school dropdown, update the title shown on the page and the title of the tab accordingly 
 How I used it: New backend.js
 
-Promt 20: When the user changes the dropdown menu, also change the placeholder data in Current weather and spotify playlist accordingly
+Prompt 20: When the user changes the dropdown menu, also change the placeholder data in Current weather and spotify playlist accordingly
 How I used it: new Backend.js
 
 
