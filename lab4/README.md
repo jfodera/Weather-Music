@@ -1,29 +1,21 @@
 Lab 4 notes: 
 
-https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3
-
-Summary: 
+https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab4
 
 
 
 Plan: 
    Only pick a subset of the functionality to make because we only have 50 mins. 
-   half a page for the limitations 
    Only Chat GPT and must explicitly say when stiching together 
    MUST HAVE NO RED FLAGS ON ZAP -> upload the report 
 
 
-My Subset: Dynamically changing page based on user interactions/styling
-   I plan on my subset being a page that looks very similar to my original RPI Page. I want to have an initial page that has a "click to fetch API's button". I want this button to have functionality. Once I get to the main page, I want to be able to have a dropdown bar to switch between schools, include the same schools as original (RPI, Clemson, Umiami), along with a more info button that actually changes what is displayed. 
+My Subset: Dynamically changing page based on user interactions
+   I plan on my subset being focusing on dynamic changes to what is displayed on the page based on user interactions. I want to have an initial page that has a "click to fetch API's button". I want this button to have functionality. Once I get to the main page, I want to be able to have a dropdown bar to switch between schools, include the same schools as original (RPI, Clemson, Umiami), along with a more info button that actually changes what is displayed. 
+   
+   I set a 50min timer for actually working on the website and got the functionality as close to my actual website as I could. 
 
-
-
-Questions: 
-
-Promt log: 
-
-Promt : 
-How I used it: 
+Prompt log (I used chatGPT the entire time): 
 
 Prompt 1: Write a seperate php file and CSS script to make a website page that looks like this
    *included back.png* (lab4/resources) 
@@ -84,13 +76,8 @@ How I used it: New backend.js
 Promt 20: When the user changes the dropdown menu, also change the placeholder data in Current weather and spotify playlist accordingly
 How I used it: new Backend.js
 
-Promt 21: 
-How I used it: 
-
 
 
 Citations:
+   https://chatgpt.com
 
-
-
-Helpful Code Chunks: 
