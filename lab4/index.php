@@ -7,8 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R.P.I. Weather & Music!</title>
     <link rel="stylesheet" href="resources/styles.css">
+    <script src="resources/scripts.js" defer></script> <!-- Existing scripts.js -->
+    <script src="resources/backend.js" defer></script> <!-- New backend.js -->
+    <title>R.P.I. Weather & Music!</title>
 </head>
 <body>
 
@@ -17,10 +19,12 @@
 </header>
 
 <div class="container">
-    <div class="hidden" id="initial-page">
+    <!-- Initial page with the fetch button -->
+    <div id="initial-page">
         <button class="fetch-button" id="fetch-btn">Click to Fetch From APIs!</button>
     </div>
 
+    <!-- Main content initially hidden -->
     <div class="hidden" id="main-content">
         <div class="dropdown-container">
             <label for="school-select">Pick a school!</label>
@@ -97,6 +101,5 @@
     <p>&copy; 2024 Fodera Sites</p>
 </footer>
 
-<script src="resources/backend.js"></script>
 </body>
 </html>

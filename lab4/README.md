@@ -63,13 +63,13 @@ How I used it: Whole new index.php,
 Promt 13: give me the full js file 
 How I used it: added new file called backend.js
 
-Promt 14: 
-How I used it:
+Promt 14: should backend.js be a new file 
+How I used it: - 
 
-Promt 15: 
-How I used it:
+Promt 15: scripts.js should still exist tho
+How I used it: - 
 
-Promt 16: 
+Promt 16: When I put all of these together, the click to show API button is gone, add it back
 How I used it:
 
 
