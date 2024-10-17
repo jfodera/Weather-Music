@@ -12,7 +12,8 @@ document.getElementById('show-more-info-btn').addEventListener('click', function
    const extraWeatherInfo = document.getElementById('extra-weather-info');
    const extraSpotifyInfo = document.getElementById('extra-spotify-info');
    
-   if (extraWeatherInfo.classList.contains('hidden')) {
+   // Toggle visibility of extra information for both weather and Spotify
+   if (extraWeatherInfo.classList.contains('hidden') && extraSpotifyInfo.classList.contains('hidden')) {
        // Show extra info
        extraWeatherInfo.classList.remove('hidden');
        extraSpotifyInfo.classList.remove('hidden');

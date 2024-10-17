@@ -72,11 +72,11 @@ How I used it: -
 Promt 16: When I put all of these together, the click to show API button is gone, add it back
 How I used it: Whole new index.php file 
 
-Promt 17: 
-How I used it: 
+Promt 17: add links to actual image files across the web to curate the page, also this extra info should only appear when I click the show more info button. When it is clicked the button should then read show less info, when that is clicked the info should go away. It should act as a toggle. 
+How I used it: New index.php and backend.js 
 
-Promt 18: 
-How I used it: 
+Promt 18: Now connect the extra info associated with the spotify playlists to the same button 
+How I used it: New index.php and backend.js 
 
 Promt 19: 
 How I used it: 

@@ -86,7 +86,11 @@
 
                     <!-- New Fields for Spotify (initially hidden) -->
                     <div id="extra-spotify-info" class="hidden">
-                        <p>More playlists will show here...</p>
+                        <p>1. Playlist 1 Image: <img src="https://upload.wikimedia.org/wikipedia/en/e/e7/Pink_Floyd_-_The_Dark_Side_of_the_Moon.png" alt="Playlist 1" class="spotify-icon"></p>
+                        <p>2. Playlist 2 Image: <img src="https://upload.wikimedia.org/wikipedia/en/b/b5/Cloudy_Weather.jpg" alt="Playlist 2" class="spotify-icon"></p>
+                        <p>3. Playlist 3 Image: <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Children%27s_Songs_About_Rain.jpg" alt="Playlist 3" class="spotify-icon"></p>
+                        <p>4. Playlist 4 Image: <img src="https://upload.wikimedia.org/wikipedia/en/5/58/Cloudy_and_Rainy_Days.jpg" alt="Playlist 4" class="spotify-icon"></p>
+                        <p>5. Playlist 5 Image: <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Strange_Days_OST.jpg" alt="Playlist 5" class="spotify-icon"></p>
                     </div>
                 </div>
             </div>
