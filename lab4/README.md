@@ -22,10 +22,15 @@ Questions:
 
 Promt log: 
 
-Promt 1: Write a seperate php file and CSS script to make a website page that looks like this
-   *included back.png* (lab4/resources) 
+Promt : 
+How I used it: 
 
+Prompt 1: Write a seperate php file and CSS script to make a website page that looks like this
+   *included back.png* (lab4/resources) 
 How I used it: Created the files in my repo and pasted in the .php and .css. Made a resources folder for the css
+
+Prompt 2: The styles.css is in a folder called 'resources' change entire php file accordingly
+How I used it: Literally just replaced index.php with new index.php
  
 
 
