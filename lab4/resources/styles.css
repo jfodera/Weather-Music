@@ -104,3 +104,28 @@ label {
 
 /* Weather and Music sections should stay as they are */
 
+/* Show More Info Button */
+.show-more-info {
+   display: block;
+   margin: 20px auto;
+   padding: 10px 20px;
+   background-color: #3070A0;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.show-more-info:hover {
+   background-color: #1D4A74;
+}
+
+/* Ensure the button is centered */
+.show-more-info {
+   text-align: center;
+}
+
+/* Adjustments to other elements remain unchanged */
+

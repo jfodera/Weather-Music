@@ -48,13 +48,28 @@ How I used it: Copied and pasted everything in, added the new css to the bottom 
 Promt 7: Center this dropbox at the top of the page, above the current weather and suggested spotify playlists
 How I used it: Deleted old dropbox section of CSS and replaced it with new, Updated entire index.php
 
-Promt 8: 
-How I used it:
+Promt 8: Why did the show more info button go away, Add it back!
+How I used it: Concatenaated new section to the styles.css, updated the index.php with a full copy and paste
 
 Promt 9: 
 How I used it:
 
-Promt 10: 
+Promt 11: 
+How I used it:
+
+Promt 12: 
+How I used it:
+
+Promt 13: 
+How I used it:
+
+Promt 14: 
+How I used it:
+
+Promt 15: 
+How I used it:
+
+Promt 16: 
 How I used it:
 
 

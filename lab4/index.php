@@ -57,6 +57,9 @@
                     <li><a href="#">Strange Days (1995) Original Motion Picture Soundtrack</a></li>
                 </ol>
             </div>
+
+            <!-- Show More Info Button -->
+            <button id="showMoreInfo" class="show-more-info">Show More Info</button>
         </div>
 
         <footer>
