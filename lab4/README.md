@@ -57,11 +57,11 @@ How I used it: Pasted in only the index.html
 Promt 11: list what the entire css file should currently be
 How I used it: pasted in whole new css 
 
-Promt 12: 
-How I used it:
+Promt 12: When I click the show more info button, for the weather section show the "feels like", 'min temp', and 'max temp'. For the spotify section, show an author for each entry along with an image of the playlist. Just make up random 'placeholder values' for these fields. 
+How I used it: Whole new index.php, 
 
-Promt 13: 
-How I used it:
+Promt 13: give me the full js file 
+How I used it: added new file called backend.js
 
 Promt 14: 
 How I used it:

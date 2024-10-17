@@ -1,79 +1,102 @@
+<?php
+// index.php
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R.P.I. Weather & Music</title>
-    <link rel="stylesheet" type="text/css" href="resources/styles.css">
-    <script src="resources/scripts.js" defer></script> <!-- Include the JavaScript -->
+    <title>R.P.I. Weather & Music!</title>
+    <link rel="stylesheet" href="resources/styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1><span class="rpi">R.P.I.</span> Weather & Music!</h1>
-        </header>
 
-        <!-- Button to fetch content -->
-        <button id="fetchButton" class="fetch-button">Click to Fetch From APIs!</button>
+<header>
+    <h1><span class="rpi">R.P.I.</span> Weather & Music!</h1>
+</header>
 
-        <!-- Content that is initially hidden (Page 2) -->
-        <div id="contentSection" class="content hidden">
+<div class="container">
+    <div class="hidden" id="initial-page">
+        <button class="fetch-button" id="fetch-btn">Click to Fetch From APIs!</button>
+    </div>
 
-            <!-- First Row: Dropdown Menu to Select School -->
-            <div class="row dropdown-container">
-                <label for="schoolSelect">Pick a school!!</label>
-                <select id="schoolSelect" class="school-dropdown">
-                    <option value="RPI">RPI</option>
-                    <option value="Clemson">Clemson</option>
-                    <option value="Umiami">Umiami</option>
-                </select>
-            </div>
+    <div class="hidden" id="main-content">
+        <div class="dropdown-container">
+            <label for="school-select">Pick a school!</label>
+            <select id="school-select" class="school-dropdown">
+                <option value="rpi">RPI</option>
+                <option value="clemson">Clemson</option>
+                <option value="umiami">UMiami</option>
+            </select>
+        </div>
 
-            <!-- Second Row: Weather and Music Sections (Side by Side) -->
-            <div class="row">
-                <!-- Weather Section -->
-                <div class="column weather">
+        <div class="row">
+            <div class="column">
+                <div class="weather">
+                    <img src="path/to/weather-icon.png" alt="Weather Icon" class="weather-icon">
                     <h2>Current Weather:</h2>
-                    <div class="weather-content">
-                        <img src="cloud_icon.png" alt="Weather Icon" class="weather-icon">
-                        <div class="weather-info">
-                            <p>Clouds</p>
-                            <p><strong>Wind Speed:</strong> 3 mph</p>
-                            <p><strong>Pressure:</strong> 1024 hPa</p>
-                            <p><strong>Humidity:</strong> 55%</p>
-                            <p><strong>Temperature:</strong> 55.44°F</p>
-                        </div>
-                    </div>
-                    <p class="last-updated">Last Updated: Thu Oct 17 2024 14:05:32 GMT-0400 (Eastern Daylight Time)</p>
-                </div>
+                    <p>Condition: <span id="weather-condition">Clouds</span></p>
+                    <p>Wind Speed: <span id="wind-speed">3 mph</span></p>
+                    <p>Pressure: <span id="pressure">1024 hPa</span></p>
+                    <p>Humidity: <span id="humidity">55 %</span></p>
+                    <p>Temperature: <span id="temperature">55.44 °F</span></p>
 
-                <!-- Music Section -->
-                <div class="column music">
-                    <h2>Suggested Spotify Playlists:</h2>
-                    <img src="spotify_icon.png" alt="Spotify Icon" class="spotify-icon">
-                    <ol>
-                        <li><a href="#">Pink Floyd - Best Of</a></li>
-                        <li><a href="#">Clouds Radio</a></li>
-                        <li><a href="#">Rainy Days ☔ Kids Songs about rain, clouds and puddles</a></li>
-                        <li><a href="#">Cloudy and rainy days</a></li>
-                        <li><a href="#">Strange Days (1995) Original Motion Picture Soundtrack</a></li>
-                    </ol>
+                    <!-- New Fields -->
+                    <p>Feels Like: <span id="feels-like">54.0 °F</span></p>
+                    <p>Min Temp: <span id="min-temp">52.0 °F</span></p>
+                    <p>Max Temp: <span id="max-temp">58.0 °F</span></p>
                 </div>
             </div>
 
-            <!-- Third Row: Show More Info Button -->
-            <div class="row button-container">
-                <button id="showMoreInfo" class="show-more-info">Show More Info</button>
+            <div class="column">
+                <div class="music">
+                    <h2>Suggested Spotify Playlists:</h2>
+                    <div class="playlist">
+                        <img src="path/to/playlist1-image.png" alt="Playlist 1" class="spotify-icon">
+                        <p>1. Pink Floyd - Best Of</p>
+                        <p>Author: <span id="author-1">Pink Floyd</span></p>
+                    </div>
+                    <div class="playlist">
+                        <img src="path/to/playlist2-image.png" alt="Playlist 2" class="spotify-icon">
+                        <p>2. Clouds Radio</p>
+                        <p>Author: <span id="author-2">Clouds Inc.</span></p>
+                    </div>
+                    <div class="playlist">
+                        <img src="path/to/playlist3-image.png" alt="Playlist 3" class="spotify-icon">
+                        <p>3. Rainy Days 🌧️ Kids Songs about rain, clouds and puddles</p>
+                        <p>Author: <span id="author-3">Kiddo Tunes</span></p>
+                    </div>
+                    <div class="playlist">
+                        <img src="path/to/playlist4-image.png" alt="Playlist 4" class="spotify-icon">
+                        <p>4. Cloudy and Rainy Days</p>
+                        <p>Author: <span id="author-4">Mood Music</span></p>
+                    </div>
+                    <div class="playlist">
+                        <img src="path/to/playlist5-image.png" alt="Playlist 5" class="spotify-icon">
+                        <p>5. Strange Days (1995) Original Motion Picture Soundtrack</p>
+                        <p>Author: <span id="author-5">Soundtrack Artists</span></p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <footer>
-            <p>©2024 Fodera Sites</p>
-            <div class="footer-icons">
-                <img src="discord_icon.png" alt="Discord Icon">
-                <img src="controller_icon.png" alt="Controller Icon">
-            </div>
-        </footer>
+        <div class="button-container">
+            <button class="show-more-info" id="show-more-info-btn">Show More Info</button>
+        </div>
+
+        <div class="last-updated">Last Updated: <span id="last-updated">Thu Oct 17 2024 14:05:62 GMT-0400 (Eastern Daylight Time)</span></div>
     </div>
+</div>
+
+<footer>
+    <div class="footer-icons">
+        <img src="path/to/discord-icon.png" alt="Discord">
+        <img src="path/to/github-icon.png" alt="GitHub">
+    </div>
+    <p>&copy; 2024 Fodera Sites</p>
+</footer>
+
+<script src="resources/backend.js"></script>
 </body>
 </html>
