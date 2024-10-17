@@ -25,3 +25,14 @@ document.getElementById('show-more-info-btn').addEventListener('click', function
        this.innerText = 'Show More Info'; // Change button text back
    }
 });
+
+// Event listener for the school dropdown menu
+document.getElementById('school-select').addEventListener('change', function() {
+   const selectedSchool = this.options[this.selectedIndex].text;
+
+   // Update the page title and tab title
+   const pageTitle = `${selectedSchool} Weather & Music!`;
+   
+   document.querySelector('h1').innerHTML = `<span class="rpi">${selectedSchool}</span> Weather & Music!`;
+   document.title = pageTitle;
+});

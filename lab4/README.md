@@ -78,8 +78,8 @@ How I used it: New index.php and backend.js
 Promt 18: Now connect the extra info associated with the spotify playlists to the same button 
 How I used it: New index.php and backend.js 
 
-Promt 19: 
-How I used it: 
+Promt 19: When the user changes the pick a school dropdown, update the title shown on the page and the title of the tab accordingly 
+How I used it: New backend.js
 
 Promt 20: 
 How I used it: 
