@@ -86,6 +86,12 @@ function popHTML(weathDat, plays){
    $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
    $("#titlFive").html(plays.playlists.items[4].name);
    $("#auFive").html(plays.playlists.items[4].owner.display_name);
+
+   //rate info 
+
+   if(weathDat.weather[0].main.toLowerCase().includes("cloud")){
+      $("#weathItem").html("Umbrella");
+   }
 }
 
 /*API CALL FUNCTIONS*/
