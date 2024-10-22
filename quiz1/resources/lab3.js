@@ -116,6 +116,13 @@ async function getSpotKey(){
    return(key);
 }
 
+async function getRates(){
+   var fetchRes = await fetch("https://api.frankfurter.app/latest");
+   var jsonRes = await fetchRes.json();
+   return(jsonRes); 
+}
+
+
 
 /*Fetches the weather data from the API and returns a promise of it converted into JSON */ 
 async function getWeath(lat,lon){
@@ -293,6 +300,8 @@ async function apiBut(){
    var auth = 'Bearer ' + key; 
    var searchTerm = weatherData.weather[0].main + " day"; 
    const plays = await getPlays(auth,searchTerm);
+   const rates = await getRates() 
+   console.log(rates); 
 
    //insert into database
    const weathID = await insert(weatherData); 
