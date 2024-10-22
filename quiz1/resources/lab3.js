@@ -7,7 +7,8 @@
 var weathCt = 1; 
 var SPOTIFYKEY;
 var WEATHERID = 0; 
-var PLAYID = 0; 
+var PLAYID = 0;
+var RATESID = 0; 
 
 
 /*FUNCTIONS*/
@@ -301,19 +302,22 @@ async function apiBut(){
    var searchTerm = weatherData.weather[0].main + " day"; 
    const plays = await getPlays(auth,searchTerm);
    const rates = await getRates() 
-   console.log(rates); 
+   
 
    //insert into database
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
+   const ratesID = await insert(rates); 
 
    //setting globs for future calls
    WEATHERID = weathID; 
    PLAYID = playsID; 
+   RATESID = ratesID; 
 
    //init retrieve and populate 
    const initWeath = await retrieve(weathID);
    const initPlays = await retrieve(playsID);
+   const initRates = await retrieve(ratesID); 
 
    // populate screen 
    popHTML(initWeath,initPlays);
