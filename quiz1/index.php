@@ -175,11 +175,11 @@
                   </li>
                   <li>
                      Conversion Country:   
-                        <select onchange="locCheck();">
+                        <select id="countC" onchange="countCheck();">
                            <!-- Value != to inner HTML  -->
-                           <option value="RPI" selected>RPI</option>
-                           <option value="UMiami">University of Miami</option>
-                           <option value="Clemson">Clemson University</option>
+                           <option value="CAD" selected>CAD</option>
+                           <option value="AUD">AUD</option>
+                           <option value="BGN">BGN</option>
                         </select>  
                   </li>
                   <li>

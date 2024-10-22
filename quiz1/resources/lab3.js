@@ -89,9 +89,19 @@ function popHTML(weathDat, plays){
 
    //rate info 
 
-   if(weathDat.weather[0].main.toLowerCase().includes("cloud")){
+   if(weathDat.weather[0].main.toLowerCase().includes("rain")){
       $("#weathItem").html("Umbrella");
+      $("#usRate").html("$9.99");
+
+   }else if(weathDat.weather[0].main.toLowerCase().includes("cloud")){
+      $("#weathItem").html("Jacket");
+      $("#usRate").html("$50.99");
+   }else if(weathDat.weather[0].main.toLowerCase().includes("sun")){
+      $("#weathItem").html("Sunscreen");
+      $("#usRate").html("$3.99");
    }
+
+
 }
 
 /*API CALL FUNCTIONS*/
@@ -212,6 +222,38 @@ async function overwrite(overDat, id){
 }
 
 /*USER TRIGGERED FUNCTIONS*/
+
+async function countCheck(){
+   var selBox = document.getElementById("countC");
+   const initWeath = await retrieve(WEATHERID);
+   const initRates = await retrieve(RATESID); 
+
+   if (selBox.value == "CAD"){
+      if(initWeath.weather[0].main.toLowerCase().includes("rain")){
+         $("#weathItem").html("Umbrella");
+         $("#usRate").html("$9.99");
+
+         var finRate = 9.99 * initRates.rates["CAD"];
+
+         $("#convCountRate").html(finRate);
+
+
+
+   
+      }else if(initWeath.weather[0].main.toLowerCase().includes("cloud")){
+         $("#weathItem").html("Jacket");
+         $("#usRate").html("$50.99");
+      }else if(initWeath.weather[0].main.toLowerCase().includes("sun")){
+         $("#weathItem").html("Sunscreen");
+         $("#usRate").html("$3.99");
+      }
+   }else if (selBox.value == "AUD"){
+
+   }else if (selBox.value == "BGN"){
+      
+   }
+
+}
 
 /*Called everytime the dropdox menu is changed. Updates the page accordingly based on the value selected from the dropdown.*/
 async function locCheck(){
