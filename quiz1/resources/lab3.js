@@ -243,6 +243,10 @@ async function countCheck(){
       }else if(initWeath.weather[0].main.toLowerCase().includes("cloud")){
          $("#weathItem").html("Jacket");
          $("#usRate").html("$50.99");
+
+         var finRate = 9.99 * initRates.rates["CAD"];
+
+         $("#convCountRate").html(finRate);
       }else if(initWeath.weather[0].main.toLowerCase().includes("sun")){
          $("#weathItem").html("Sunscreen");
          $("#usRate").html("$3.99");
