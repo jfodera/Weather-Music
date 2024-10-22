@@ -165,7 +165,10 @@
 
             </ul>
          </div>
+         <div id="rates">
+            hello there
 
+         </div>
       </div>
       <a class="mainBut" id="show" onclick="showMore();">Show More Info</a>
    </div>
