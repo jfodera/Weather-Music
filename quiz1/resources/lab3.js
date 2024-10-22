@@ -117,7 +117,7 @@ async function getSpotKey(){
 }
 
 async function getRates(){
-   var fetchRes = await fetch("https://api.frankfurter.app/latest");
+   var fetchRes = await fetch("https://api.frankfurter.app/latest?base=USD");
    var jsonRes = await fetchRes.json();
    return(jsonRes); 
 }
