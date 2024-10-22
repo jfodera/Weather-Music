@@ -45,7 +45,7 @@ function showMore(){
 
 /* Given weather and playlist JSON's, this function populates the page
 with the information from these JSONS*/
-function popHTML(weathDat, plays){
+function popHTML(weathDat, plays, initRates){
 
    //weather info
    const pngUrl = "https://openweathermap.org/img/wn/" + weathDat.weather[0].icon +  "@2x.png";
@@ -93,12 +93,23 @@ function popHTML(weathDat, plays){
       $("#weathItem").html("Umbrella");
       $("#usRate").html("$9.99");
 
+      var finRate = 9.99 * initRates.rates["BGN"];
+
+      $("#convCountRate").html(finRate);
+
    }else if(weathDat.weather[0].main.toLowerCase().includes("cloud")){
       $("#weathItem").html("Jacket");
       $("#usRate").html("$50.99");
+
+      var finRate = 50.99 * initRates.rates["BGN"];
+      $("#convCountRate").html(finRate);
    }else if(weathDat.weather[0].main.toLowerCase().includes("sun")){
       $("#weathItem").html("Sunscreen");
       $("#usRate").html("$3.99");
+
+      var finRate = 3.99 * initRates.rates["BGN"];
+      $("#convCountRate").html(finRate);
+
    }
 
 
@@ -237,24 +248,75 @@ async function countCheck(){
 
          $("#convCountRate").html(finRate);
 
-
-
-   
       }else if(initWeath.weather[0].main.toLowerCase().includes("cloud")){
          $("#weathItem").html("Jacket");
          $("#usRate").html("$50.99");
 
-         var finRate = 9.99 * initRates.rates["CAD"];
-
+         var finRate = 50.99 * initRates.rates["CAD"];
          $("#convCountRate").html(finRate);
       }else if(initWeath.weather[0].main.toLowerCase().includes("sun")){
          $("#weathItem").html("Sunscreen");
          $("#usRate").html("$3.99");
+
+         var finRate = 3.99 * initRates.rates["CAD"];
+         $("#convCountRate").html(finRate);
+
       }
    }else if (selBox.value == "AUD"){
 
-   }else if (selBox.value == "BGN"){
+
+      if(initWeath.weather[0].main.toLowerCase().includes("rain")){
+         $("#weathItem").html("Umbrella");
+         $("#usRate").html("$9.99");
+
+         var finRate = 9.99 * initRates.rates["AUD"];
+
+         $("#convCountRate").html(finRate);
+
+      }else if(initWeath.weather[0].main.toLowerCase().includes("cloud")){
+         $("#weathItem").html("Jacket");
+         $("#usRate").html("$50.99");
+
+         var finRate = 50.99 * initRates.rates["AUD"];
+         $("#convCountRate").html(finRate);
+      }else if(initWeath.weather[0].main.toLowerCase().includes("sun")){
+         $("#weathItem").html("Sunscreen");
+         $("#usRate").html("$3.99");
+
+         var finRate = 3.99 * initRates.rates["AUD"];
+         $("#convCountRate").html(finRate);
+
+      }
       
+
+   }else if (selBox.value == "BGN"){
+
+      if(initWeath.weather[0].main.toLowerCase().includes("rain")){
+         $("#weathItem").html("Umbrella");
+         $("#usRate").html("$9.99");
+
+         var finRate = 9.99 * initRates.rates["BGN"];
+
+         $("#convCountRate").html(finRate);
+
+      }else if(initWeath.weather[0].main.toLowerCase().includes("cloud")){
+         $("#weathItem").html("Jacket");
+         $("#usRate").html("$50.99");
+
+         var finRate = 50.99 * initRates.rates["BGN"];
+         $("#convCountRate").html(finRate);
+      }else if(initWeath.weather[0].main.toLowerCase().includes("sun")){
+         $("#weathItem").html("Sunscreen");
+         $("#usRate").html("$3.99");
+
+         var finRate = 3.99 * initRates.rates["BGN"];
+         $("#convCountRate").html(finRate);
+
+      }
+
+
+
+
    }
 
 }
@@ -372,7 +434,7 @@ async function apiBut(){
    const initRates = await retrieve(ratesID); 
 
    // populate screen 
-   popHTML(initWeath,initPlays);
+   popHTML(initWeath,initPlays, initRates);
 
 
    //so that user cannot make box selection before global ID's are set
