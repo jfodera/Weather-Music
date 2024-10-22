@@ -169,13 +169,13 @@
       </div>
       <div id="rates">
             <h2>Weather Money Rates</h2>
-               <ul class="miscList" id="initHideW">
+               <ul class="miscList">
                   <li>
                      Item: <span id="weathItem"></span>
                   </li>
                   <li>
                      Conversion Country:   
-                        <select id="locSel" onchange="locCheck();">
+                        <select onchange="locCheck();">
                            <!-- Value != to inner HTML  -->
                            <option value="RPI" selected>RPI</option>
                            <option value="UMiami">University of Miami</option>
