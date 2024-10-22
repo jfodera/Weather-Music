@@ -11,7 +11,10 @@ Use this call to get the base currency in USD:
  https://api.frankfurter.app/latest?base=USD 
 
 Use it to display it's own widget box that says: 
-   Your home country is: "base" 
+   Item: umbrella 
+   Conversion Country: *dropdown*
+   US Rate: 
+   Conversion Country Rate: 
 
 If it's rainy or anything related present: 
    the cost of a *us price* umbrella in *dropdown* would be *number* *base* dollars 

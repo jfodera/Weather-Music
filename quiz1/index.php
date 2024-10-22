@@ -165,10 +165,30 @@
 
             </ul>
          </div>
-         <div id="rates">
-            hello there
 
-         </div>
+      </div>
+      <div id="rates">
+            <h2>Weather Money Rates</h2>
+               <ul class="miscList" id="initHideW">
+                  <li>
+                     Item: <span id="weathItem"></span>
+                  </li>
+                  <li>
+                     Conversion Country:   
+                        <select id="locSel" onchange="locCheck();">
+                           <!-- Value != to inner HTML  -->
+                           <option value="RPI" selected>RPI</option>
+                           <option value="UMiami">University of Miami</option>
+                           <option value="Clemson">Clemson University</option>
+                        </select>  
+                  </li>
+                  <li>
+                     US Rate:  <span id="usRate"></span>
+                  </li>
+                  <li>
+                     Conversion Country Rate:  <span id="convCountRate"></span>
+                  </li>
+               </ul> 
       </div>
       <a class="mainBut" id="show" onclick="showMore();">Show More Info</a>
    </div>
