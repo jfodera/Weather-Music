@@ -1,9 +1,9 @@
 <?php
 
-   require 'vendor/autoload.php';
+   require '../vendor/autoload.php';
 
    // Concatenation because it's not in this directory
-   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
    $dotenv->load();
 
 // Makes initial Entry to the Database when the Website Starts up 
