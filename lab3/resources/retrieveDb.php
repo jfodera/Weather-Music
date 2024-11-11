@@ -1,10 +1,11 @@
 <?php
-// retrieves JSON data at the given ID from the database 
-   require 'vendor/autoload.php';
+   // retrieves JSON data at the given ID from the database 
+   require '../vendor/autoload.php';
 
    // Concatenation because it's not in this directory
    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
    $dotenv->load();
+
 
    if(isset($_POST)){
       //the php:// makes it so that it reads raw data from the post requests body 

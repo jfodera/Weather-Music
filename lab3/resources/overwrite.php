@@ -1,6 +1,6 @@
 <?php
-// Overwrites Existing Entry in the database given an entry-specific ID, and JSON Data to overwrite with 
-   require 'vendor/autoload.php';
+   // Overwrites Existing Entry in the database given an entry-specific ID, and JSON Data to overwrite with 
+   require '../vendor/autoload.php';
 
    // Concatenation because it's not in this directory
    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
