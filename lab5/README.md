@@ -42,4 +42,8 @@ Possible things I can do:
 
 
 
-   
+What I did: 
+   Added .env file for database connection. Made sure to not commit to github and edited it manually within my server. I put this within my lab 3 folder. I learned about this on page 57 of the book. 
+
+Citations: 
+   .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
