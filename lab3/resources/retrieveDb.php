@@ -16,7 +16,8 @@
       $db_name = $_ENV['DB_NAME'];
 
 
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      $db = new mysqli($db_host, $db_user, $db_pass, $db_name);
+      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
       //error handling 
       if ($db->connect_error) {
