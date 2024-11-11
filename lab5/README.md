@@ -14,30 +14,30 @@ Overall Notes on book related to my server:
    standards. The CCM can also be used to document security responsibilities.
 
 Possible things I can do: 
-   page 41 -> Make registry for website; see bullets
-   page 45 -> make a policy 
-   page 46 -> control objs 
-   page 57 -> add .env files for database connection 
-   page 58 -> make cloud risk profile 
-   page 66 -> cloud register 
-   page 74 -> See if I voilate any compliance links 
-   page 79 -> risk register 
-   page 81 -> make SBOM 
-      184
-   page 94 -> cpsm tool run it 
-   page 109-> add oauth 
-   page 110 -> http required sign in 
-   page 113 -> add sso auth, no password 
-   page 121 -> implement alert for specific actions that locks the user out of the application.  
+   Make registry for website; see bullets
+   make a policy 
+   control objs 
+   add .env files for database connection 
+   make cloud risk profile 
+   cloud register 
+   See if I voilate any compliance links 
+   risk register 
+   make SBOM 
+   
+   cpsm tool run it 
+   add oauth 
+   http required sign in 
+   add sso auth, no password 
+   implement alert for specific actions that locks the user out of the application.  
       like cooldown timer on finder 
-   page 122 -> login system as IAM is very important, This allows for only people at RPI to Acsess the weather informatio
-   page 123 -> MFA, on RPI weather website for rpi email 
-   page 123 -> add documentation of security measures 
-   page 146 -> canary and honey tokens 
-   page 160 -> prevent Cross-site scripting, 
-   page 171 -> mabye put time limited credentials on finder
-   page 189 -> scan vm website and fix any errors shown 
-   page 199 -> add encryption to user associated keys (like password on finder)  
+   login system as IAM is very important, This allows for only people at RPI to Acsess the weather informatio
+   MFA, on RPI weather website for rpi email 
+   add documentation of security measures 
+   canary and honey tokens 
+   prevent Cross-site scripting, 
+   mabye put time limited credentials on finder
+   scan vm website and fix any errors shown 
+   add encryption to user associated keys (like password on finder)  
       
 
 
