@@ -1,5 +1,10 @@
 <?php
 // Overwrites Existing Entry in the database given an entry-specific ID, and JSON Data to overwrite with 
+   require 'vendor/autoload.php';
+
+   // Concatenation because it's not in this directory
+   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+   $dotenv->load();
 
    if(isset($_POST)){
       //the php:// makes it so that it reads raw data from the post requests body 
@@ -32,7 +37,13 @@
 
       }
 
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      $db_host = $_ENV['DB_HOST'];
+      $db_user = $_ENV['DB_USER'];
+      $db_pass = $_ENV['DB_PASS'];
+      $db_name = $_ENV['DB_NAME'];
+
+
+      $db = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
       //error handling 
       if ($db->connect_error) {

@@ -1,4 +1,11 @@
 <?php
+
+   require 'vendor/autoload.php';
+
+   // Concatenation because it's not in this directory
+   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+   $dotenv->load();
+
 // Makes initial Entry to the Database when the Website Starts up 
 
 // If the server has recieved a post request (it has gotten called from lab3.js)
@@ -18,8 +25,13 @@
          }
       }
    
+      $db_host = $_ENV['DB_HOST'];
+      $db_user = $_ENV['DB_USER'];
+      $db_pass = $_ENV['DB_PASS'];
+      $db_name = $_ENV['DB_NAME'];
 
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+
+      $db = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
       //error handling
       if ($db->connect_error) {
