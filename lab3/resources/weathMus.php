@@ -8,7 +8,7 @@
     <link rel="icon" href="back.jpg" >
     <title>RPI Weather & Music</title>
   </head>
-  <body>
+  <body onload="apiBut();">
 
    
     <!-- Header -->

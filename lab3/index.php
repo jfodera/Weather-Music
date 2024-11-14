@@ -20,8 +20,9 @@
          </h1>
       </div>
 
+      <!-- Technically lies, API stuff not fetched until next page -->
       <div id="firstSec">
-         <a class="mainBut" id="startB" onclick="apiBut();">Click to Fetch From APIs!</a>
+         <a class="mainBut" id="startB" href="resources/weathMus.php">Click to Fetch From APIs!</a>
       </div>
 
      <!-- Footer -->

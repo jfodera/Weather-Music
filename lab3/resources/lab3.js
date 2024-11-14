@@ -285,9 +285,6 @@ async function locCheck(){
 /*Call when fetch API data button is pressed. Calls each of the APIS with troy as the default and 
 populates the screen accordingly. */
 async function apiBut(){
-
-
-
    //Making calls
    const key = await getSpotKey()
    SPOTIFYKEY = key; 
@@ -300,26 +297,19 @@ async function apiBut(){
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 
+   //setting globs for future calls
+   WEATHERID = weathID; 
+   PLAYID = playsID; 
+
+   //init retrieve and populate 
+   const initWeath = await retrieve(weathID);
+   const initPlays = await retrieve(playsID);
+
+   // populate screen 
+   popHTML(initWeath,initPlays);
 
    //so that user cannot make box selection before global ID's are set
    $("#firstSec").fadeOut();
-   window.location.href = 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php';
+   $("#mainSec").fadeIn();
 }
 
-//once page is loaded this is called 
-window.onload = funciton() {
-   if (window.location.href == 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php'){
-      $("#mainSec").fadeIn();
-      
-      //setting globs for future calls
-      WEATHERID = weathID; 
-      PLAYID = playsID; 
-
-      //init retrieve and populate 
-      const initWeath = await retrieve(weathID);
-      const initPlays = await retrieve(playsID);
-
-      // populate screen 
-      popHTML(initWeath,initPlays);
-   }
-};
