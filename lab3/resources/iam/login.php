@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
                         exit();
                     }
-                    
+                    exit(); 
                 } 
             }else{
                 $_SESSION['error'] = "Account does not exist.";
@@ -147,7 +147,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             exit(); 
         }
     }
-    exit(); 
 }
 ?>
 
