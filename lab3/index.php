@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <input type="password" name="password" placeholder="Password" required>
                   <button type="submit" class="button button-account">Submit </button>
             </form>
-            <p>Already signed up? <a href="index.php">login here</a> </p>
+            <p>Already signed up? <a href="resources/iam/login.php">login here</a> </p>
          </div>
       </div>
 

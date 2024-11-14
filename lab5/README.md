@@ -113,12 +113,9 @@ What I did:
 
    SCAN -> remove reds page 189 
 
-   Prevented Cross Site Scripting
-
-   Prevented SQL injection 
-
    Prevented Path traversal 
-      Prevents from going to webpage 1 to 2 
+      Prevents from going to webpage 1 to 2 in URL 
+
       page 118, scanning for vunerabilitiies
 
 
