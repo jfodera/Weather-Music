@@ -108,12 +108,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          <div class="form">
             <h2> Enter your Email here! </h2> 
             <!-- If database connection not made, or any errors thown on submission  -->
-            <?php>
+            <?php
                if (isset($_SESSION['error'])) {
                   echo '<div class="error">' . $_SESSION['error'] . '</div>';
                   unset($_SESSION['error']);
                }
-            <?>
+            ?>
             <!-- Action calls the php above it to run  -->
             <form action="index.php" method="post">
                   <input type="email" name="email" placeholder="Email" required>
