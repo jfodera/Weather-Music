@@ -105,7 +105,7 @@ What I did:
          On signup, send verification when account created, notify user account created, verification email send, click here to log 
             in once verified 
 
-         on Login: error if account not verified, popup that says click here to resend verification email
+         on Login: error if account not verified, auto sends email 
 
          enter your email: 
          *Must verify email to get past* 
@@ -181,5 +181,9 @@ questions:
 
 Future additons: 
    put send verification email in its own script
-   nice messages specifying if password was wrong 
+   nice messages specifying if password was wrong
+   make login with verification email a tad nicer  
+                    $_SESSION['resend_verification'] = 'set'; 
+                    //once page reloaded verification email will be sent
+                    $_SESSION['mess'] = 'The email you entered is not verified, <a href="login.php"> click here </a> to send a verification email.';    
    

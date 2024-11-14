@@ -114,10 +114,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                    header("Location: ../weathMus.php");
                    exit();
                 } else{
-
-                    $_SESSION['resend_verification'] = 'set'; 
-                    //once page reloaded verification email will be sent
-                    $_SESSION['mess'] = 'The email you entered is not verified, <a href="login.php"> click here </a> to send a verification email.';    
+                    // Generate new verification token
+                    unset($_SESSION['mess']); //clears var before send call 
+                    $new_verification_token = bin2hex(random_bytes(32));
+                    
+                    // Update the token in database
+                    $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
+                    $update_stmt->execute([$new_verification_token, $email]);
+                    
+                    sendVerificationEmail($email, $verification_token);
                     header("Location: login.php");
                     exit();
                 }
@@ -132,22 +137,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             header("Location: login.php");
             exit(); 
         }
-    }
-}else{
-    //for when they click resend verification email 
-    if (isset($_SESSION['resend_verification'])) {
-        // Generate new verification token
-        unset($_SESSION['mess']); //clears var before send call 
-        unset($_SESSION['resend_verificaiton']); 
-        $new_verification_token = bin2hex(random_bytes(32));
-        
-        // Update the token in database
-        $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
-        $update_stmt->execute([$new_verification_token, $email]);
-        
-        sendVerificationEmail($email, $verification_token);
-        header("Location: login.php");
-        exit();
     }
 }
 ?>
