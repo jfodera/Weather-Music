@@ -309,7 +309,7 @@ async function apiBut(){
    popHTML(initWeath,initPlays);
 
    //so that user cannot make box selection before global ID's are set
-   $("#firstSec").fadeOut();
    $("#mainSec").fadeIn();
+   $("footer").css('display', 'block');
 }
 
