@@ -57,15 +57,15 @@ function sendVerificationEmail($email, $token) {
            'text/html'
        );
 
-   try {
-       $result = $mailer->send($message);
-       return true;
-   } catch (Exception $e) {
-      //adds to error log in php
-      $_SESSION['error'] = "Failed to send verification email: " . $e->getMessage();
-      header("Location: login.php");
-       return false;
-   }
+   // try {
+   //     $result = $mailer->send($message);
+   //     return true;
+   // } catch (Exception $e) {
+   //    //adds to error log in php
+   //    $_SESSION['error'] = "Failed to send verification email: " . $e->getMessage();
+   //    header("Location: login.php");
+   //     return false;
+   // }
 }
 
 //form always calls using post
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO users (email, password, verification_token) VALUES (?, ?, ?)");
         $stmt->execute([$email, $hashed_password, $verification_token]);
         
-      //   sendVerificationEmail($email, $verification_token);
+        sendVerificationEmail($email, $verification_token);
         
         $_SESSION['mess']= "Verification Email Sent. Must verify to log in!";
 
