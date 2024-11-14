@@ -81,6 +81,24 @@ function sendVerificationEmail($email, $token) {
 }
 
 
+
+//User is not verified 
+// Resend verification email if requested, uses session 
+if (isset($_SESSION['resend_verification'])) {
+    // Generate new verification token
+    unset($_SESSION['mess']); //clears var before send call 
+    unset($SESSION['resend_verificaiton']); 
+    $new_verification_token = bin2hex(random_bytes(32));
+    
+    // Update the token in database
+    $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
+    $update_stmt->execute([$new_verification_token, $email]);
+    
+    sendVerificationEmail($email, $verification_token);
+    header("Location: login.php");
+    exit();
+}
+
 //actually getting in 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -112,27 +130,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                    header("Location: ../weathMus.php");
                    exit();
                 } else{
-                    //User is not verified 
-                    // Resend verification email if requested, uses session 
-                    if (isset($_SESSION['resend_verification'])) {
-                        // Generate new verification token
-                        unset($_SESSION['mess']); //clears var
-                        $new_verification_token = bin2hex(random_bytes(32));
-                        
-                        // Update the token in database
-                        $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
-                        $update_stmt->execute([$new_verification_token, $email]);
-                        
-                        sendVerificationEmail($email, $verification_token);
-                        header("Location: login.php");
-                        exit();
-                    } else {
-                        $_SESSION['resend_verification'] = 'set'; 
-                        //once page reloaded verification email will be sent
-                        $_SESSION['mess'] = 'The email you entered is not verified, <a href="login.php"> click here </a> to send a verification email.';    
-                        header("Location: login.php");
-                        exit();
-                    }
+
+                    $_SESSION['resend_verification'] = 'set'; 
+                    //once page reloaded verification email will be sent
+                    $_SESSION['mess'] = 'The email you entered is not verified, <a href="login.php"> click here </a> to send a verification email.';    
+                    header("Location: login.php");
+                    exit();
+                }
                     exit(); 
                 } 
             }else{
