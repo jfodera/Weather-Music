@@ -24,66 +24,12 @@ try {
 }
 
 
-//verification email 
-
-
-//sending verificaiton email, returns true if worked, false if didn't and reloads page
-function sendVerificationEmail($email, $token) {
-   //last arg is encryption protocol, 
-   //sets email configs, creating new email 
-
-   try{
-      $transport = (new Swift_SmtpTransport($_ENV['SMTP_HOST'], $_ENV['SMTP_PORT'], 'tls'))
-         ->setUsername($_ENV['SMTP_USER'])
-         ->setPassword($_ENV['SMTP_PASS']); 
-
-      $mailer = new Swift_Mailer($transport);
-
-      //yourfomain for testing, if not running in server 
-      $domain = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'yourdomain.com';
-      //so it gets protol right (https, http)
-      $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
-      
-      // makes the link to send to our emails, url encode so it works 
-      $verificationLink = $protocol . $domain . "/" . $_ENV['URL'] . "/resources/iam/verify.php?email=" . urlencode($email) . "&token=" . $token;
-
-      //arg is subject line, text/html renders as webpage
-      $message = (new Swift_Message('Verify your Weather & Music Account!'))
-         //=> allows putting name 
-         ->setFrom([$_ENV['SMTP_USER'] => 'Weather & Music'])
-         ->setTo([$email])
-         ->setBody(
-            '<html>' .
-            '<body>' .
-            '<h1>Welcome to Weather & Music!</h1>' .
-            '<p>Please click the link below to verify your account:</p>' .
-            '<p><a href="' . $verificationLink . '">Verify Account Here!</a></p>' .
-            '</body>' .
-            '</html>',
-            'text/html'
-         );
-   } catch (Exception $e){
-      $_SESSION['error'] = "Failed to send email:" . $e->getMessage();
-      header("Location: index.php");
-         return false;
-   }
-
-   try {
-       $result = $mailer->send($message);
-       $_SESSION['mess']= "Verification Email Sent! Must verify to log in!";
-       return true;
-   } catch (Exception $e) {
-      //adds to error log in php
-      $_SESSION['error'] = "Failed to send verification email: " . $e->getMessage();
-      header("Location: index.php");
-       return false;
-   }
-}
+//verification email
 
 
 //actually getting in 
 // Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
    //defining var
    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
    $password = $_POST['password'];
@@ -91,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
    //cant happen because already setup 
    if (empty($email) || empty($password)) {
        $error = "All fields are required";
-    }else {
+   } else {
       //makes a query to db 
        try {
          //add is verified when doing MFA
@@ -129,19 +75,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         
                         $_SESSION['resend_verification'] = 'set'; 
                         //once page reloaded verification email will be sent
-                        $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
+                        $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.'; 
+                        
                     }
-                } else {
-                    $_SESSION['error'] = "Account does not exist.";
-                    header("Location: login.php");
-                }
-            } catch (PDOException $e) {
-                //db didn't connect 
-                $_SESSION['error'] = "Database error: " . $e->getMessage();
+
+        
+            } else {
+                $_SESSION['error'] = "Account does not exist.";
                 header("Location: login.php");
             }
-        }
-    }
+       } catch (PDOException $e) {
+         //db didn't connect 
+           $_SESSION['error'] = "Database error: " . $e->getMessage();
+           header("Location: login.php");
+       }
+   }
 }
 ?>
 
