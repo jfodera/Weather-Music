@@ -131,6 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION['resend_verification'] = 'set'; 
                         //once page reloaded verification email will be sent
                         $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
+                        header("Location: login.php");
                         exit();
                     }
                     exit(); 

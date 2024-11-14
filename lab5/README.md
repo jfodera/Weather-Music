@@ -170,6 +170,7 @@ Things I leaned:
    cannot use GMAIL as won't work with 'less secure' 
    Must use an app password on gmail to connect swiftmailer 
    if statements must exit after all conditions 
+   Whenever resetting session var, must reload page
 
 Current: 
    Getting gmail to work: 
