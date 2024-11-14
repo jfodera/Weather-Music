@@ -86,6 +86,10 @@ What I did:
       plan: 
          sends verification email as soon as you enter email 
          split click to fetch apis and other page into 2 pages
+
+         enter your email: 
+         *Must verify email to get past* 
+
          Will be vital: 
             <?php 
                session_start();
