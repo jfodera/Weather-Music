@@ -304,19 +304,22 @@ async function apiBut(){
    //so that user cannot make box selection before global ID's are set
    $("#firstSec").fadeOut();
    window.location.href = 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php';
-   $("#mainSec").fadeIn();
-   
-   //setting globs for future calls
-   WEATHERID = weathID; 
-   PLAYID = playsID; 
-
-   //init retrieve and populate 
-   const initWeath = await retrieve(weathID);
-   const initPlays = await retrieve(playsID);
-
-   // populate screen 
-   popHTML(initWeath,initPlays);
-
-
-
 }
+
+//once page is loaded this is called 
+window.onload = funciton() {
+   if (window.location.href == 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php'){
+      $("#mainSec").fadeIn();
+      
+      //setting globs for future calls
+      WEATHERID = weathID; 
+      PLAYID = playsID; 
+
+      //init retrieve and populate 
+      const initWeath = await retrieve(weathID);
+      const initPlays = await retrieve(playsID);
+
+      // populate screen 
+      popHTML(initWeath,initPlays);
+   }
+};
