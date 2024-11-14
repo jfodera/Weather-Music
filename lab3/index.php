@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+session_start(); //resumes sesh
 require_once 'vendor/autoload.php';
 
 //Getting DB connnect

@@ -1,3 +1,16 @@
+<?php 
+
+//ensuring actual user 
+//resumes sesh
+   session_start();
+
+   // Check if user is logged in
+   if (!isset($_SESSION['user_id'])) {
+      header("Location: iam/login.php");
+      exit();
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>

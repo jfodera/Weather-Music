@@ -1,6 +1,6 @@
 
 <?php 
-//still new session, not in yet 
+//resumes sesh
 session_start();
 require_once '../../vendor/autoload.php';
 
