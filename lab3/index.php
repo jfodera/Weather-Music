@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$email]);
         //checks if actually returned anything (email is in DB) 
         if ($stmt->fetch()) {
-            $_SESSION['error'] = "Email already exists";
+            $_SESSION['error'] = "Email Already Exists";
             //reloads and displays error
             header("Location: index.php");
             exit();
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //   sendVerificationEmail($email, $verification_token);
         
       //change to login 
-        header("Location: index.php");
+        header("Location: login.php");
         exit();
         
     } catch (PDOException $e) {

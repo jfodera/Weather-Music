@@ -68,6 +68,7 @@ key:
    page 189 -> scan vm website and fix any errors shown 
    page 199 -> add encryption to user associated keys (like password on finder)  
    page 209 -> MFA, on RPI weather website verify Email 
+   page 284 -> proper data management 
 
 
 What I did: 
@@ -97,10 +98,9 @@ What I did:
          enter your email: 
          *Must verify email to get past* 
 
-         Will be vital: 
+         Will be vital top of any pages that sound not have acsess: 
             <?php 
                session_start();
-               include 'header.php';
 
                // Check if user is logged in
                if (!isset($_SESSION['user_id'])) {
