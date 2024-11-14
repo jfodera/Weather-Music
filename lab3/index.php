@@ -22,21 +22,21 @@
 
       <!-- Technically lies, API stuff not fetched until next page -->
       <div id="firstSec">
-         <a class="mainBut" id="startB" href="resources/weathMus.php">Click to Fetch From APIs!</a>
-      </div>
+      
 
-      <div class="form">
-         <!-- If database connection not made -->
-         <?php if (isset($error)): ?>
-               <div class="error"><?php echo $error; ?></div>
-         <?php endif; ?>
-         <!-- Action calls the php above it to run  -->
-         <form action="index.php" method="post">
-               <input type="email" name="email" placeholder="Email" required>
-               <input type="password" name="password" placeholder="Password" required>
-               <button type="submit" class="button button-account">Submit </button>
-         </form>
-      <div>
+         <div class="form">
+            <!-- If database connection not made -->
+            <?php if (isset($error)): ?>
+                  <div class="error"><?php echo $error; ?></div>
+            <?php endif; ?>
+            <!-- Action calls the php above it to run  -->
+            <form action="index.php" method="post">
+                  <input type="email" name="email" placeholder="Email" required>
+                  <input type="password" name="password" placeholder="Password" required>
+                  <button type="submit" class="button button-account">Submit </button>
+            </form>
+         </div>
+      </div>
 
      <!-- Footer -->
       <footer> 

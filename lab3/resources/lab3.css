@@ -21,6 +21,9 @@ body {
    backdrop-filter: blur(10px);
    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
    width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 50px;
 }
 
 #mainSec{
@@ -256,26 +259,7 @@ h5{
    padding-bottom: 10%;
 }
 
-.mainBut{
-   margin-top: 50px;
-   display: block; 
-   width: fit-content;
-   margin-left: auto;
-   margin-right: auto;
-   margin-bottom: 20px; 
-   text-decoration: none;
-   color: white; 
-   font-size: 2.5em;
-   padding: 15px; 
-   border-radius: 30px;
-   background-color: #3b7ffe;
-}
 
-.mainBut:hover{
-   border: 5px solid black;
-   margin-bottom: 15px;
-   padding-top: 10px;
-}
 
 /*Footer*/
 footer {
