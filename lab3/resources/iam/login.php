@@ -4,24 +4,24 @@
 session_start();
 require_once '../../vendor/autoload.php';
 
-// //Getting DB connnect
-// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-// $dotenv->load();
+//Getting DB connnect
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
 
-// $host = $_ENV['DB_HOST'];
-// $dbname = $_ENV['DB_NAME'];
-// $username = $_ENV['DB_USER'];
-// $password = $_ENV['DB_PASS'];
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
 
-// //try catch so that php script doesn't end 
-// try {
-//     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-//     //so that I can acutually see da arrors 
-//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch(PDOException $e) {
-//    //shows database connection error
-//     die("Connection failed: " . $e->getMessage());
-// }
+//try catch so that php script doesn't end 
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    //so that I can acutually see da arrors 
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+   //shows database connection error
+    die("Connection failed: " . $e->getMessage());
+}
 
 
 //verification email 
