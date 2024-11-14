@@ -60,7 +60,7 @@ function sendVerificationEmail($email, $token) {
          );
    } catch (Exception $e){
       $_SESSION['error'] = "Failed to send email:" . $e->getMessage();
-      header("Location: login.php");
+      header("Location: index.php");
          return false;
    }
 
@@ -70,7 +70,7 @@ function sendVerificationEmail($email, $token) {
    } catch (Exception $e) {
       //adds to error log in php
       $_SESSION['error'] = "Failed to send verification email: " . $e->getMessage();
-      header("Location: login.php");
+      header("Location: index.php");
        return false;
    }
 }
