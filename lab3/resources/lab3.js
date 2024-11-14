@@ -147,7 +147,7 @@ async function insert(jsonDat){
    //send json to PHP
    //URL relative to page running on (index.php)
    //Makes post request to php file, basically sends it the JSON 
-   var res = await fetch("resources/initInDb.php", {
+   var res = await fetch("initInDb.php", {
       "method" : "POST",
       "headers" : {
          //Tells php that the body of the request is json 
@@ -167,7 +167,7 @@ async function insert(jsonDat){
 the id given */
 async function retrieve(id){
  
-   var res = await fetch("resources/retrieveDb.php", {
+   var res = await fetch("retrieveDb.php", {
       "method" : "POST",
       "headers" : {
          "Content-Type" : "application/json; charset=utf-8"
@@ -184,7 +184,7 @@ async function retrieve(id){
 succesfull and 0 if not */
 async function overwrite(overDat, id){
 
-   var res = await fetch("resources/overwrite.php", {
+   var res = await fetch("overwrite.php", {
       "method" : "POST",
       "headers" : {
          "Content-Type" : "application/json; charset=utf-8"
@@ -312,5 +312,6 @@ async function apiBut(){
 
    //so that user cannot make box selection before global ID's are set
    $("#firstSec").fadeOut();
+   window.location.href = 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php';
    $("#mainSec").fadeIn();
 }

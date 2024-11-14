@@ -85,7 +85,7 @@ What I did:
    Added MFA so users can only acsess by adding email 
       plan: 
          sends verification email as soon as you enter email 
-         split click to fetch apis and other page into o2 pages
+         split click to fetch apis and other page into 2 pages
          Will be vital: 
             <?php 
                session_start();
@@ -104,3 +104,4 @@ What I did:
 
 Citations: 
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
+   changing the page url in js: https://www.tabnine.com/academy/javascript/how-to-redirect-url-javascript/
