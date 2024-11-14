@@ -174,3 +174,6 @@ Current:
 
 questions: 
    how are .env's not acsessible from the browser 
+
+Future additons: 
+   put send verification email in its own script

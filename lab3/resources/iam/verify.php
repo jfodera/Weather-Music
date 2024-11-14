@@ -45,7 +45,7 @@ if (isset($_GET['email']) && isset($_GET['token'])) {
         $_SESSION['error'] = "Database error occurred.";
         error_log($e->getMessage());
     }
-    $_SESSION['mess']= "Email has been verified! Can now log in";
+    $_SESSION['mess']= "Email has been verified! Can now log in!";
     header("Location: login.php");
     exit();
 } else {
