@@ -81,67 +81,67 @@ function sendVerificationEmail($email, $token) {
 }
 
 
-// //actually getting in 
-// // Check if form is submitted
-// if ($_SERVER["REQUEST_METHOD"] == "POST"){
-//    //defining var
-//    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-//    $password = $_POST['password'];
+//actually getting in 
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+   //defining var
+   $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+   $password = $_POST['password'];
    
-//    //cant happen because already setup 
-//    if (empty($email) || empty($password)) {
-//        $error = "All fields are required";
-//     }else {
-//       //makes a query to db 
-//        try {
-//          //add is verified when doing MFA
-//            $stmt = $pdo->prepare("SELECT user_id, email, password FROM users WHERE email = ?");
-//            $stmt->execute([$email]);
-//            $user = $stmt->fetch();
+   //cant happen because already setup 
+   if (empty($email) || empty($password)) {
+       $error = "All fields are required";
+    }else {
+      //makes a query to db 
+       try {
+         //add is verified when doing MFA
+           $stmt = $pdo->prepare("SELECT user_id, email, password FROM users WHERE email = ?");
+           $stmt->execute([$email]);
+           $user = $stmt->fetch();
 
-//            //if something is fetched (in db) (actually returned), and the password entered matches the password from the fetch 
-//            if ($user && password_verify($password, $user['password'])) {
-//                // Check if user is recorder (they don't need verification)
+           //if something is fetched (in db) (actually returned), and the password entered matches the password from the fetch 
+           if ($user && password_verify($password, $user['password'])) {
+               // Check if user is recorder (they don't need verification)
 
                
-//                //check verification, value is a boolean
-//                 if ($user['is_verified']) {
-//                    $_SESSION['user_id'] = $user['user_id'];
-//                    $_SESSION['email'] = $user['email'];
+               //check verification, value is a boolean
+                if ($user['is_verified']) {
+                   $_SESSION['user_id'] = $user['user_id'];
+                   $_SESSION['email'] = $user['email'];
                    
-//                    header("Location: ../weathMus.php");
-//                    exit();
-//                 } else if {
-//                     //User is not verified 
-//                     // Resend verification email if requested, uses session 
-//                     if (isset($_SESSION['resend_verification'])) {
-//                         // Generate new verification token
-//                         $_SESSION['mess'] = 'Verification Email Sent! Must verify to log in!'; 
-//                         unset($_SESSION['error']); //clears var
-//                         $new_verification_token = bin2hex(random_bytes(32));
+                   header("Location: ../weathMus.php");
+                   exit();
+                } else if {
+                    //User is not verified 
+                    // Resend verification email if requested, uses session 
+                    if (isset($_SESSION['resend_verification'])) {
+                        // Generate new verification token
+                        $_SESSION['mess'] = 'Verification Email Sent! Must verify to log in!'; 
+                        unset($_SESSION['error']); //clears var
+                        $new_verification_token = bin2hex(random_bytes(32));
                         
-//                         // Update the token in database
-//                         $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
-//                         $update_stmt->execute([$new_verification_token, $email]);
+                        // Update the token in database
+                        $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
+                        $update_stmt->execute([$new_verification_token, $email]);
                         
-//                         sendVerificationEmail($email, $verification_token);
-//                     } else {
-//                         $_SESSION['resend_verification'] = 'set'; 
-//                         //once page reloaded verification email will be sent
-//                         $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
-//                     }
-//                 } else {
-//                     $_SESSION['error'] = "Account does not exist.";
-//                     header("Location: login.php");
-//                 }
-//             } catch (PDOException $e) {
-//                 //db didn't connect 
-//                 $_SESSION['error'] = "Database error: " . $e->getMessage();
-//                 header("Location: login.php");
-//             }
-//         }
-//     }
-// }
+                        sendVerificationEmail($email, $verification_token);
+                    } else {
+                        $_SESSION['resend_verification'] = 'set'; 
+                        //once page reloaded verification email will be sent
+                        $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
+                    }
+                } else {
+                    $_SESSION['error'] = "Account does not exist.";
+                    header("Location: login.php");
+                }
+            } catch (PDOException $e) {
+                //db didn't connect 
+                $_SESSION['error'] = "Database error: " . $e->getMessage();
+                header("Location: login.php");
+            }
+        }
+    }
+}
 ?>
 
 <!doctype html>
