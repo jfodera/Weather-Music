@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (isset($_SESSION['resend_verification'])) {
         // Generate new verification token
         unset($_SESSION['mess']); //clears var before send call 
-        unset($SESSION['resend_verificaiton']); 
+        unset($_SESSION['resend_verificaiton']); 
         $new_verification_token = bin2hex(random_bytes(32));
         
         // Update the token in database
