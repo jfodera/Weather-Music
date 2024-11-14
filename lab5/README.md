@@ -121,6 +121,12 @@ What I did:
       Prevents from going to webpage 1 to 2 
       page 118, scanning for vunerabilitiies
 
+
+   Proper Data management: 
+      Do not allow for incorrect emails to be stored
+      along with the same email used for 2 different accounts not allowes
+      Page 284 
+
 Citations: 
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
    changing the page url in js: https://www.tabnine.com/academy/javascript/how-to-redirect-url-javascript/

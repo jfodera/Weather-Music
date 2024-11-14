@@ -1,6 +1,6 @@
 
 <?php
-// session_start();
+session_start();
 require_once 'vendor/autoload.php';
 
 //Getting DB connnect
@@ -108,9 +108,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          <div class="form">
             <h2> Enter your Email here! </h2> 
             <!-- If database connection not made, or any errors thown on submission  -->
-            <?php if (isset($error)): ?>
-                  <div class="error"><?php echo $error; ?></div>
-            <?php endif; ?>
+            <?php>
+               if (isset($_SESSION['error'])) {
+                  echo '<div class="error">' . $_SESSION['error'] . '</div>';
+                  unset($_SESSION['error']);
+               }
+            <?>
             <!-- Action calls the php above it to run  -->
             <form action="index.php" method="post">
                   <input type="email" name="email" placeholder="Email" required>
