@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO users (email, password, verification_token) VALUES (?, ?, ?)");
         $stmt->execute([$email, $hashed_password, $verification_token]);
         
-        sendVerificationEmail($email, $verification_token);
+      //   sendVerificationEmail($email, $verification_token);
         
         $_SESSION['mess']= "Verification Email Sent. Must verify to log in!";
 
