@@ -53,7 +53,7 @@ function sendVerificationEmail($email, $token) {
             '<body>' .
             '<h1>Welcome to Weather & Music!</h1>' .
             '<p>Please click the link below to verify your account:</p>' .
-            '<p><a href="' . $verificationLink . '">Verify AccountHere!</a></p>' .
+            '<p><a href="' . $verificationLink . '">Verify Account Here!</a></p>' .
             '</body>' .
             '</html>',
             'text/html'

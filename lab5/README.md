@@ -6,6 +6,7 @@ Link to my annotations of the book: https://drive.google.com/file/d/1i_00apE6WbR
 Before Submitting:  
    put in ZAP report
    make .env on actual server
+   general testing 
    line 52 verify.php
 
 
