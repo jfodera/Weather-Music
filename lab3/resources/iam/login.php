@@ -114,10 +114,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 } else{
                     //User is not verified 
                     // Resend verification email if requested, uses session 
-                    if ($_SESSION['resend_verification'] == 'set') {
-                        $_SESSION['resend_verification'] = 'done';
+                    if (isset($_SESSION['resend_verification'])) {
                         // Generate new verification token
-                        unset($_SESSION['error']); //clears var
+                        unset($_SESSION['mess']); //clears var
                         $new_verification_token = bin2hex(random_bytes(32));
                         
                         // Update the token in database
