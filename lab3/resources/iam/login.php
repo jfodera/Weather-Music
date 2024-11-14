@@ -91,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
    //cant happen because already setup 
    if (empty($email) || empty($password)) {
        $error = "All fields are required";
+       exit();
     }else {
       //makes a query to db 
        try {
@@ -124,14 +125,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         $update_stmt->execute([$new_verification_token, $email]);
                         
                         sendVerificationEmail($email, $verification_token);
+                        exit();
                     } else {
                         $_SESSION['resend_verification'] = 'set'; 
                         //once page reloaded verification email will be sent
                         $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
+                        exit();
                     }
                 } 
-                
-                
             }else{
                 $_SESSION['error'] = "Account does not exist.";
                 header("Location: login.php");
