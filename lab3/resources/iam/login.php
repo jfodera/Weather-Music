@@ -117,7 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION['resend_verification'] == 'init';
                     if ($_SESSION['resend_verification'] == 'set') {
                         // Generate new verification token
-                        $_SESSION['mess'] = 'Verification Email Sent! Must verify to log in!'; 
                         unset($_SESSION['error']); //clears var
                         $new_verification_token = bin2hex(random_bytes(32));
                         
@@ -126,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         $update_stmt->execute([$new_verification_token, $email]);
                         
                         sendVerificationEmail($email, $verification_token);
+                        header("Location: login.php");
                         exit();
                     } else {
                         $_SESSION['resend_verification'] = 'set'; 
