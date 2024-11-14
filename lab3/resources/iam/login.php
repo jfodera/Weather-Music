@@ -4,6 +4,12 @@
 session_start();
 require_once '../../vendor/autoload.php';
 
+   // Check if user is logged in
+if (isset($_SESSION['user_id'])) {
+    header("Location: ../weathMus.php");
+    exit();
+}
+
 //Getting DB connnect
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();

@@ -3,6 +3,11 @@
 session_start(); //resumes sesh
 require_once 'vendor/autoload.php';
 
+if (isset($_SESSION['user_id'])) {
+   header("Location: ../weathMus.php");
+   exit();
+}
+
 //Getting DB connnect
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
