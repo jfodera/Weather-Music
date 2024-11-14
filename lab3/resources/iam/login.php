@@ -83,7 +83,7 @@ function sendVerificationEmail($email, $token) {
 
 //actually getting in 
 // Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
    //defining var
    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
    $password = $_POST['password'];
@@ -135,10 +135,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['error'] = "Account does not exist.";
                     header("Location: login.php");
                 }
-        } catch (PDOException $e) {
-         //db didn't connect 
-           $_SESSION['error'] = "Database error: " . $e->getMessage();
-           header("Location: login.php");
+            } catch (PDOException $e) {
+                //db didn't connect 
+                $_SESSION['error'] = "Database error: " . $e->getMessage();
+                header("Location: login.php");
+            }
         }
     }
 }
