@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -25,6 +28,7 @@
       
 
          <div class="form">
+            <h2> Enter your Email here! </h2> 
             <!-- If database connection not made -->
             <?php if (isset($error)): ?>
                   <div class="error"><?php echo $error; ?></div>
@@ -35,6 +39,7 @@
                   <input type="password" name="password" placeholder="Password" required>
                   <button type="submit" class="button button-account">Submit </button>
             </form>
+            <p>Already signed up? <a href="resources/iam/login.php">login here</a> </p>
          </div>
       </div>
 

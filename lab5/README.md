@@ -59,14 +59,15 @@ key:
    page 113 -> add sso auth, no password 
    page 121 -> implement alert for specific actions that locks the user out of the application.  
       like cooldown timer on finder 
-   page 122 -> login system as IAM is very important, This allows for only people at RPI to Acsess the weather informatio
-   page 123 -> MFA, on RPI weather website for rpi email 
+   page 122 -> login system as IAM is very important, This allows for only people with an account to acsess site
+   
    page 123 -> add documentation of security measures 
    page 146 -> canary and honey tokens 
-   page 160 -> prevent Cross-site scripting, 
+   page 160 -> prevent Cross-site scripting, SQL injection
    page 171 -> mabye put time limited credentials on finder
    page 189 -> scan vm website and fix any errors shown 
    page 199 -> add encryption to user associated keys (like password on finder)  
+   page 209 -> MFA, on RPI weather website verify Email 
 
 
 What I did: 
@@ -82,10 +83,16 @@ What I did:
       the actual .env file) because the path returned by __DIR__ was the same as the one in the require statement and I got those confused initially. This makes my VM safer as the passwords are no longer visible by just viewing the source code. 
       I learned about this on page 57 of the book. 
 
+   Added an baseline IAM (Identity and Access Management) 
+      Created username and password conventions so that only people with an account can acsess the site.
+      plan: 
+         connect to db 
+         build register page (index)
+         then login page 
+
    Added MFA so users can only acsess by adding email 
       plan: 
-         sends verification email as soon as you enter email 
-         split click to fetch apis and other page into 2 pages
+         sends verification email as soon as you enter email, must verify to get past, once3 you do that login is good 
 
          enter your email: 
          *Must verify email to get past* 
@@ -101,6 +108,14 @@ What I did:
                   exit();
                }
             ?>
+         page 209 
+
+
+   SCAN -> remove reds page 189 
+
+   Prevented Cross Site Scripting
+
+   Prevented SQL injection 
 
    Prevented Path traversal 
       Prevents from going to webpage 1 to 2 
@@ -109,3 +124,10 @@ What I did:
 Citations: 
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
    changing the page url in js: https://www.tabnine.com/academy/javascript/how-to-redirect-url-javascript/
+   Intro To ITWS labs 
+   SQL insertion: 
+      https://security.stackexchange.com/questions/90040/how-to-secure-mysql-database-usernames-and-passwords-within-a-php-file
+   Sanitizing email: https://www.w3schools.com/php/filter_sanitize_email.asp#:~:text=Definition%20and%20Usage,characters%20from%20an%20email%20address.
+
+Things I leaned: 
+   Gap is really helpful for DIVS
