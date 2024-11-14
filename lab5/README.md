@@ -66,7 +66,8 @@ key:
    page 160 -> prevent Cross-site scripting, SQL injection
    page 171 -> mabye put time limited credentials on finder
    page 189 -> scan vm website and fix any errors shown 
-   page 199 -> add encryption to user associated keys (like password on finder)  
+   page 199 -> add encryption to user associated keys (like password on finder) 
+   page 207 -> vunerability assesments  
    page 209 -> MFA, on RPI weather website verify Email 
    page 284 -> proper data management 
 
@@ -90,6 +91,8 @@ What I did:
          connect to db 
          build register page (index)
          then login page 
+
+      Specified on page 122
 
    Added MFA so users can only acsess by adding email 
       plan: 
@@ -116,7 +119,7 @@ What I did:
    Prevented Path traversal 
       Prevents from going to webpage 1 to 2 in URL 
 
-      page 118, scanning for vunerabilitiies
+      87 -> aspect of IAM, only accounts with credentials can get to certain pointer 
 
 
    Proper Data management: 
@@ -124,7 +127,8 @@ What I did:
       along with the same email used for 2 different accounts not allowes
       Page 284 
 
-Citations: 
+Citations:
+    password verify unhashes: https://www.tutorialspoint.com/php/php_function_password_verify.htm#:~:text=The%20PHP%20Hashing%20password_verify(),output%20based%20on%20that%20input.
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
    changing the page url in js: https://www.tabnine.com/academy/javascript/how-to-redirect-url-javascript/
    Intro To ITWS labs 
