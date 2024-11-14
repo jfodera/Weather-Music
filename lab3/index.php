@@ -26,7 +26,9 @@
 
          <div class="form">
             <!-- If database connection not made -->
-
+            <?php if (isset($error)): ?>
+                  <div class="error"><?php echo $error; ?></div>
+            <?php endif; ?>
             <!-- Action calls the php above it to run  -->
             <form action="index.php" method="post">
                   <input type="email" name="email" placeholder="Email" required>
