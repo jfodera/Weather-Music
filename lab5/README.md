@@ -6,6 +6,7 @@ Link to my annotations of the book: https://drive.google.com/file/d/1i_00apE6WbR
 Before Submitting:  
    put in ZAP report
    make .env on actual server
+   line 52 verify.php
 
 
 Overall Notes on book related to my server:
@@ -150,6 +151,7 @@ Citations:
    pdo: https://www.simplilearn.com/tutorials/php-tutorial/pdo-in-php#:~:text=PDO%20in%20PHP%20(PHP%20Data,for%20accessing%20databases%20in%20PHP.
    sessions: https://www.w3schools.com/php/php_sessions.asp
    swiftmailer: https://mailtrap.io/blog/swiftmailer-sendmail/#Sending-a-message-with-Swift-Mailer
+   smtp understanding: https://mailmeteor.com/blog/gmail-smtp-settings
 Things I leaned: 
    Gap is really helpful for DIVS
    do not have to close pdo database connections
@@ -162,7 +164,12 @@ Things I leaned:
       must install on Webserver 
    if gets past try, skips catch and carrys on 
 
-
+   require_once 'vendor/autoload.php'; -> swiftmailer and .envs 
+   ERROR CATCHING IN PHP IS AMAZING 
+   cannot use GMAIL as won't work with 'less secure' 
+   Must use an app password on gmail to connect swiftmailer 
+Current: 
+   Getting gmail to work: 
 
 questions: 
    how are .env's not acsessible from the browser 

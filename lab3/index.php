@@ -66,6 +66,7 @@ function sendVerificationEmail($email, $token) {
 
    try {
        $result = $mailer->send($message);
+       $_SESSION['mess']= "Verification Email Sent. Must verify to log in!";
        return true;
    } catch (Exception $e) {
       //adds to error log in php
@@ -117,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         sendVerificationEmail($email, $verification_token);
         
-        $_SESSION['mess']= "Verification Email Sent. Must verify to log in!";
 
       //change to login 
         header("Location: resources/iam/login.php");
