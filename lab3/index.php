@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($email) || empty($password) ) {
       // Post returns with error, doesn't even let you do that because it's built into form html
         $_SESSION['error'] = "All fields are required";
-        header("Location: user_register.php");
+        header("Location: index.php");
         exit();
     }
 
@@ -65,13 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //   sendVerificationEmail($email, $verification_token);
         
       //change to login 
-        header("Location: login.php");
+        header("Location: resources/iam/login.php");
         exit();
         
     } catch (PDOException $e) {
       //why post won't work, something wrong with DB (like it's table or something )
       $_SESSION['error'] = "Database error: " . $e->getMessage();
-      header("Location: user_register.php");
+      header("Location: index.php");
       exit();
     }
 }

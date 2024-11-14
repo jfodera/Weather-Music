@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                }
             ?>
             <!-- Action calls the php above it to run  -->
-            <form action="index.php" method="post">
+            <form action="login.php" method="post">
                   <input type="email" name="email" placeholder="Email" required>
                   <input type="password" name="password" placeholder="Password" required>
                   <button type="submit" class="button button-account">Submit </button>
