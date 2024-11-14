@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
                     $update_stmt->execute([$new_verification_token, $email]);
                     
-                    sendVerificationEmail($email, $verification_token);
+                    sendVerificationEmail($email, $new_verification_token);
                     header("Location: login.php");
                     exit();
                 }
