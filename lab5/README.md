@@ -169,6 +169,8 @@ Things I leaned:
    ERROR CATCHING IN PHP IS AMAZING 
    cannot use GMAIL as won't work with 'less secure' 
    Must use an app password on gmail to connect swiftmailer 
+   if statements must exit after all conditions 
+
 Current: 
    Getting gmail to work: 
 
@@ -177,3 +179,4 @@ questions:
 
 Future additons: 
    put send verification email in its own script
+   
