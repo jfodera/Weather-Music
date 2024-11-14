@@ -171,6 +171,7 @@ Things I leaned:
    Must use an app password on gmail to connect swiftmailer 
    if statements must exit after all conditions 
    Whenever resetting session var, must reload page
+   do not need to predefine session vars 
 
 Current: 
    Getting gmail to work: 
