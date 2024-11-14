@@ -179,4 +179,5 @@ questions:
 
 Future additons: 
    put send verification email in its own script
+   nice messages specifying if password was wrong 
    
