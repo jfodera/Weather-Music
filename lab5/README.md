@@ -91,12 +91,19 @@ What I did:
          connect to db 
          build register page (index)
          then login page 
+      First thing I did was create a another table in my database called users
+
+      Note: php in page because of how form submission works
 
       Specified on page 122
 
    Added MFA so users can only acsess by adding email 
       plan: 
          sends verification email as soon as you enter email, must verify to get past, once3 you do that login is good 
+         On signup, send verification when account created, notify user account created, verification email send, click here to log 
+            in once verified 
+
+         on Login: error if account not verified, popup that says click here to resend verification email
 
          enter your email: 
          *Must verify email to get past* 
@@ -116,6 +123,9 @@ What I did:
 
    SCAN -> remove reds page 189 
 
+   Encrypted Passwords: 
+      page 26 data security
+
    Prevented Path traversal 
       Prevents from going to webpage 1 to 2 in URL 
 
@@ -129,14 +139,17 @@ What I did:
 
 Citations:
     password verify unhashes: https://www.tutorialspoint.com/php/php_function_password_verify.htm#:~:text=The%20PHP%20Hashing%20password_verify(),output%20based%20on%20that%20input.
+    
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
    changing the page url in js: https://www.tabnine.com/academy/javascript/how-to-redirect-url-javascript/
    Intro To ITWS labs 
    SQL insertion: 
       https://security.stackexchange.com/questions/90040/how-to-secure-mysql-database-usernames-and-passwords-within-a-php-file
    Sanitizing email: https://www.w3schools.com/php/filter_sanitize_email.asp#:~:text=Definition%20and%20Usage,characters%20from%20an%20email%20address.
+   Finder project
    pdo: https://www.simplilearn.com/tutorials/php-tutorial/pdo-in-php#:~:text=PDO%20in%20PHP%20(PHP%20Data,for%20accessing%20databases%20in%20PHP.
    sessions: https://www.w3schools.com/php/php_sessions.asp
+   swiftmailer: https://mailtrap.io/blog/swiftmailer-sendmail/#Sending-a-message-with-Swift-Mailer
 Things I leaned: 
    Gap is really helpful for DIVS
    do not have to close pdo database connections
@@ -145,4 +158,10 @@ Things I leaned:
    try and catch makes debugging a lot easier
    session start resumes session 
    session is reset when tab is closed or cache reset 
+   Swiftmailer: 
+      must install on Webserver 
 
+
+
+questions: 
+   how are .env's not acsessible from the browser 

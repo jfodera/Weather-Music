@@ -87,11 +87,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION['email'] = $user['email'];
               header("Location: ../weathMus.php");
            } else {
-               $error = "Invalid email or password";
+                $_SESSION['error'] = "Account does not exist.";
+                header("Location: login.php");
            }
        } catch (PDOException $e) {
          //db didn't connect 
-           $error = "Database error: " . $e->getMessage();
+           $_SESSION['error'] = "Database error: " . $e->getMessage();
+           header("Location: login.php");
        }
    }
 }
@@ -130,6 +132,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   echo '<div class="error">' . $_SESSION['error'] . '</div>';
                   unset($_SESSION['error']);
                }
+               //so they can see verif message
+               if (isset($_SESSION['mess'])) {
+                echo '<div class="error">' . $_SESSION['mess'] . '</div>';
+                unset($_SESSION['mess']);
+                }
             ?>
             <!-- Action calls the php above it to run  -->
             <form action="login.php" method="post">
