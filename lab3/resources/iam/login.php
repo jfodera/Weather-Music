@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    //cant happen because already setup 
    if (empty($email) || empty($password)) {
        $error = "All fields are required";
-   } else {
+    }else {
       //makes a query to db 
        try {
          //add is verified when doing MFA
@@ -129,21 +129,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         
                         $_SESSION['resend_verification'] = 'set'; 
                         //once page reloaded verification email will be sent
-                        $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.'; 
-                        
+                        $_SESSION['mess'] = 'The email you entered is not verified, <a href"login.php"> click here </a> to send a verification email.';    
                     }
-
-        
-            } else {
-                $_SESSION['error'] = "Account does not exist.";
-                header("Location: login.php");
-            }
-       } catch (PDOException $e) {
+                } else {
+                    $_SESSION['error'] = "Account does not exist.";
+                    header("Location: login.php");
+                }
+        } catch (PDOException $e) {
          //db didn't connect 
            $_SESSION['error'] = "Database error: " . $e->getMessage();
            header("Location: login.php");
-       }
-   }
+        }
+    }
 }
 ?>
 
