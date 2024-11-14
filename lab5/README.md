@@ -160,6 +160,7 @@ Things I leaned:
    session is reset when tab is closed or cache reset 
    Swiftmailer: 
       must install on Webserver 
+   if gets past try, skips catch and carrys on 
 
 
 
