@@ -128,6 +128,12 @@ Citations:
    SQL insertion: 
       https://security.stackexchange.com/questions/90040/how-to-secure-mysql-database-usernames-and-passwords-within-a-php-file
    Sanitizing email: https://www.w3schools.com/php/filter_sanitize_email.asp#:~:text=Definition%20and%20Usage,characters%20from%20an%20email%20address.
+   pdo: https://www.simplilearn.com/tutorials/php-tutorial/pdo-in-php#:~:text=PDO%20in%20PHP%20(PHP%20Data,for%20accessing%20databases%20in%20PHP.
 
 Things I leaned: 
    Gap is really helpful for DIVS
+   do not have to close pdo database connections
+   stmt just means SQL statement
+   must use execute and fetch togehter with PDO statements in order to actually retrieve things
+   try and catch makes debugging a lot easier}
+

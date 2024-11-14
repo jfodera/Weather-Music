@@ -29,12 +29,12 @@
 
          <div class="form">
             <h2> Enter your Email here! </h2> 
-            <!-- If database connection not made -->
+            <!-- If database connection not made, or any errors thown on submission  -->
             <?php if (isset($error)): ?>
                   <div class="error"><?php echo $error; ?></div>
             <?php endif; ?>
             <!-- Action calls the php above it to run  -->
-            <form action="index.php" method="post">
+            <form action="resources/iam/signup.php" method="post">
                   <input type="email" name="email" placeholder="Email" required>
                   <input type="password" name="password" placeholder="Password" required>
                   <button type="submit" class="button button-account">Submit </button>
