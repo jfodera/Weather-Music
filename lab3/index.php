@@ -10,6 +10,16 @@
   </head>
   <body>
 
+       <!-- Header -->
+      <div id="header">
+         <h1>
+            <span id="univTitle">
+               <span class="red">R.</span><span class="white">P.</span><span class="red">I.</span>
+            </span>
+            Weather & Music!
+         </h1>
+      </div>
+
       <div id="firstSec">
          <a class="mainBut" id="startB" onclick="apiBut();">Click to Fetch From APIs!</a>
       </div>

@@ -286,6 +286,8 @@ async function locCheck(){
 populates the screen accordingly. */
 async function apiBut(){
 
+
+
    //Making calls
    const key = await getSpotKey()
    SPOTIFYKEY = key; 
@@ -298,6 +300,12 @@ async function apiBut(){
    const weathID = await insert(weatherData); 
    const playsID = await insert(plays);
 
+
+   //so that user cannot make box selection before global ID's are set
+   $("#firstSec").fadeOut();
+   window.location.href = 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php';
+   $("#mainSec").fadeIn();
+   
    //setting globs for future calls
    WEATHERID = weathID; 
    PLAYID = playsID; 
@@ -310,8 +318,5 @@ async function apiBut(){
    popHTML(initWeath,initPlays);
 
 
-   //so that user cannot make box selection before global ID's are set
-   $("#firstSec").fadeOut();
-   window.location.href = 'https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php';
-   $("#mainSec").fadeIn();
+
 }
