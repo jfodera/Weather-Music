@@ -26,9 +26,7 @@
 
          <div class="form">
             <!-- If database connection not made -->
-            <?php if (isset($error)): ?>
-                  <div class="error"><?php echo $error; ?></div>
-            <?php endif; ?>
+
             <!-- Action calls the php above it to run  -->
             <form action="index.php" method="post">
                   <input type="email" name="email" placeholder="Email" required>
@@ -47,8 +45,5 @@
          <p id="cpright">©2024 Fodera Sites</p>
       </footer>
 
-
-    <script  src="resources/jquery-3.6.1.min.js"></script>
-    <script src="resources/lab3.js"></script>
   </body>
 </html>
