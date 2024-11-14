@@ -82,6 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                }
 
                */
+              //must set these with responses 
+              $_SESSION['user_id'] = $user['user_id'];
+              $_SESSION['email'] = $user['email'];
               header("Location: ../weathMus.php");
            } else {
                $error = "Invalid email or password";
@@ -141,8 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <!-- Footer -->
       <footer> 
          <div id="helpLogos" class="flex-container">
-         <a id="discLink" href="https://discord.gg/xBJHqEsM"><img id="discLogo" alt="Discord Logo" src="resources/discordlogo.svg"></a>
-         <a id="gitLink" href="https://github.com/RPI-ITWS/ITWS-2110-F24-foderj"><img id="gitLogo" alt="Github Logo" src="resources/github-mark.png"></a>
+         <a id="discLink" href="https://discord.gg/xBJHqEsM"><img id="discLogo" alt="Discord Logo" src="../discordlogo.svg"></a>
+         <a id="gitLink" href="https://github.com/RPI-ITWS/ITWS-2110-F24-foderj"><img id="gitLogo" alt="Github Logo" src="../github-mark.png"></a>
          </div>
          <p id="cpright">©2024 Fodera Sites</p>
       </footer>

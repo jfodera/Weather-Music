@@ -144,5 +144,5 @@ Things I leaned:
    must use execute and fetch togehter with PDO statements in order to actually retrieve things
    try and catch makes debugging a lot easier
    session start resumes session 
-   session is reset when tab is closed 
+   session is reset when tab is closed or cache reset 
 
