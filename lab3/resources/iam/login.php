@@ -2,10 +2,10 @@
 <?php 
 //still new session, not in yet 
 session_start();
-require_once 'vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
 //Getting DB connnect
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
 $host = $_ENV['DB_HOST'];
