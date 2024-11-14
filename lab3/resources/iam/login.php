@@ -132,13 +132,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 } 
                 
                 
-            }else{
-                $_SESSION['error'] = "Account does not exist.";
-                header("Location: login.php");
             }
         } catch (PDOException $e) {
-            //db didn't connect 
-            $_SESSION['error'] = "Database error: " . $e->getMessage();
+            //user not in db  
+            $_SESSION['error'] = "Account does not exist.";
             header("Location: login.php");
         }
     }
