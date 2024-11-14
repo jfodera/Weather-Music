@@ -82,22 +82,22 @@ function sendVerificationEmail($email, $token) {
 
 
 
-//User is not verified 
-// Resend verification email if requested, uses session 
-if (isset($_SESSION['resend_verification'])) {
-    // Generate new verification token
-    unset($_SESSION['mess']); //clears var before send call 
-    unset($SESSION['resend_verificaiton']); 
-    $new_verification_token = bin2hex(random_bytes(32));
+// //User is not verified 
+// // Resend verification email if requested, uses session 
+// if (isset($_SESSION['resend_verification'])) {
+//     // Generate new verification token
+//     unset($_SESSION['mess']); //clears var before send call 
+//     unset($SESSION['resend_verificaiton']); 
+//     $new_verification_token = bin2hex(random_bytes(32));
     
-    // Update the token in database
-    $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
-    $update_stmt->execute([$new_verification_token, $email]);
+//     // Update the token in database
+//     $update_stmt = $pdo->prepare("UPDATE users SET verification_token = ? WHERE email = ?");
+//     $update_stmt->execute([$new_verification_token, $email]);
     
-    sendVerificationEmail($email, $verification_token);
-    header("Location: login.php");
-    exit();
-}
+//     sendVerificationEmail($email, $verification_token);
+//     header("Location: login.php");
+//     exit();
+// }
 
 //actually getting in 
 // Check if form is submitted
