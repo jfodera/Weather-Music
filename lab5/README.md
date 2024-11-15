@@ -8,6 +8,7 @@ Link to my annotations of the book: https://drive.google.com/file/d/1i_00apE6WbR
 
 
 List of Ideas I can potentially implement from reading textbook: 
+```txt
    data security 
    Make registry for website; see bullets
    make a policy 
@@ -35,7 +36,7 @@ List of Ideas I can potentially implement from reading textbook:
    vunerability assesments  
    MFA, on RPI weather website verify Email 
    proper data management 
-
+```
 
 Full Descriptions of what I did: 
 
