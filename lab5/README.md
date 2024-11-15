@@ -75,6 +75,9 @@ key:
 
 
 What I did: 
+
+   
+
    Added .env file for database connection to my lab3: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/
       Main files edited: 
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/retrieveDb.php
@@ -97,6 +100,7 @@ What I did:
 
       Note: php in page because of how form submission works
 
+      get logged out automatically when browser is closed
       Specified on page 122
 
    Added MFA so users can only acsess by adding email 
@@ -128,10 +132,25 @@ What I did:
    Encrypted Passwords: 
       page 26 data security
 
-   Prevented Path traversal 
-      Prevents from going to webpage 1 to 2 in URL 
+   Prevented Path traversal:
+      Prevents from going to webpage 1 to 2 in URL when you shouldn't be able to. The first thing I did was disabling directory listing, 
+      this ensures no directories without an index.php can be seen unless travled to by links I put there. I did this by following 
+      my citation below and editing the directory section of my configuration file. Another thing I did to prevent path traversal is 
+      to put headers similar to this: 
+            <?php 
+               session_start();
 
-      87 -> aspect of IAM, only accounts with credentials can get to certain pointer 
+               // Check if user is logged in
+               if (!isset($_SESSION['user_id'])) {
+                  header("Location: login.php");
+                  exit();
+               }
+            ?>
+      at the top of files that should not be able to be acsess unless you are a user thats been authenticated by the IAM. For example, if someone
+      had not created an account and verified their email, they would not be able to view: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php . This fallows the governance policy mentioned on page 87 of the book stating "ensure that only authorized users have access to sensitive resouces 
+      and can perform actions within their remit. 
+      
+      Cites: page 87 
 
 
    Proper Data management: 
@@ -153,6 +172,7 @@ Citations:
    sessions: https://www.w3schools.com/php/php_sessions.asp
    swiftmailer: https://mailtrap.io/blog/swiftmailer-sendmail/#Sending-a-message-with-Swift-Mailer
    smtp understanding: https://mailmeteor.com/blog/gmail-smtp-settings
+   Path traversal remover: https://blog.qualys.com/vulnerabilities-threat-research/2021/10/27/apache-http-server-path-traversal-remote-code-execution-cve-2021-41773-cve-2021-42013
 Things I leaned: 
    Gap is really helpful for DIVS
    do not have to close pdo database connections
@@ -174,7 +194,9 @@ Things I leaned:
    do not need to predefine session vars 
 
 Current: 
-   Getting gmail to work: 
+   
+
+
 
 questions: 
    how are .env's not acsessible from the browser 
