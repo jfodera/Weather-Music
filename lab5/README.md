@@ -234,6 +234,7 @@ questions:
    how are .env's not acsessible from the browser 
 
 Future additons: 
+```txt
    put send verification email in its own script
    nice messages specifying if password was wrong
    make login with verification email a tad nicer  
