@@ -2,6 +2,8 @@ Lab 3 notes:
 
 https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3
 
+ALSO SEE: https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/tree/main/lab5
+
 Summary: 
 
    This lab was a lot of shaking the rust off/learning new as we didn't do a whole bunch of php/mySQL in Intro last year. All in all I'd say I learned a lot so it was good. 
