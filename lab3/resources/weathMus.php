@@ -178,7 +178,7 @@
 
 
    <!-- Footer -->
-   <footer> 
+   <footer class="mainFoot"> 
       <div id="helpLogos" class="flex-container">
         <a id="discLink" href="https://discord.gg/xBJHqEsM"><img id="discLogo" alt="Discord Logo" src="discordlogo.svg"></a>
         <a id="gitLink" href="https://github.com/RPI-ITWS/ITWS-2110-F24-foderj"><img id="gitLogo" alt="Github Logo" src="github-mark.png"></a>

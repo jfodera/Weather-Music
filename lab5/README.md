@@ -5,8 +5,7 @@ live site: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab5
 Link to my annotations of the book: https://drive.google.com/file/d/1i_00apE6WbRuG9NAQAKIfg13fG0OMvpt/view?usp=sharing
 
 Before Submitting:  
-   put in ZAP report
-   general testing 
+   general testing in final state
 
 
 
@@ -98,9 +97,14 @@ What I did:
       get logged out automatically when browser is closed
       Specified on page 122
 
-   Added MFA so users can only acsess by adding email 
+   Added MFA so users can only acsess by Verifying Email: 
+      
+      This was a very lengthy process that involved a lot of learning but good (all citations below). First, I added a token and boolean to my database for each user. 
+      the boolean represented weather or not they had been verified and the token was for the email verification link (the structure of DB can be seen in IAM section 
+      above). Then, when the user submit their signup form 
+      
       plan: 
-         sends verification email as soon as you enter email, must verify to get past, once3 you do that login is good 
+         sends verification email as soon as you enter email, must verify to get past, once you do that login is good 
          On signup, send verification when account created, notify user account created, verification email send, click here to log 
             in once verified 
 
@@ -119,23 +123,26 @@ What I did:
                   exit();
                }
             ?>
-         page 209 
+         
+      Cites: page 209 
 
 
    Use an Automated VM Scanner: 
       While reading, I had a nice relatabililty moment when it told us to use automated tools to scan VM's for vunerabilities as I was planning to do this with ZAP 
-      anyways to find some specific ones. Luckily I had no reds! I included the ZAP response right here: 
+      anyways to find some specific ones. Luckily I had no reds! I included the ZAP response right here: https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab5/zaplab5.png
 
       Cites: page 189
 
    Encrypted Passwords: 
 
-      One Example of encryption function (line 118): https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/index.php
+      One Example of encryption used (line 118): https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/index.php
+      Also used it in tls swiftmailer smtp calls (line 42): https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/iam/login.php
+
 
       When making the IAM, I obviously had to store user information in the mySQL database. In the book, it put a lot of ephasis on data security, especailly on page 199, 
       so when storing the users passwords I looked up a way to hash them (cited below). THis way, I or nobody else (that can't crack a hash) has no idea what there 
       password is. This helps the lazy users stay a bit more safe as they may use the same password for everything. Also manages the user encryption keys in a good fashion
-      as suggested on page 199. 
+      as suggested on page 199. I also used ecryption for some of the smtp calls by using tls. 
 
       Cites: page 199, 26
 

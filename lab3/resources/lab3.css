@@ -339,9 +339,12 @@ h5{
 
 
 /*Footer*/
+.mainFoot{
+   display: none; 
+}
 footer {
    /* Sizing */
-   display: none;
+   display: block;
    width: 100.2%;
    height: 125px;
    text-align: center;

@@ -310,6 +310,6 @@ async function apiBut(){
 
    //so that user cannot make box selection before global ID's are set
    $("#mainSec").fadeIn();
-   $("footer").css('display', 'block');
+   $(".mainFoot").fadeIn();
 }
 
