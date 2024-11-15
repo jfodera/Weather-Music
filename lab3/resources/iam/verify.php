@@ -1,7 +1,7 @@
 <?php
 
 //Information is transffered via url, when its entered into browser, its basically like a special call to this funciton 
-//The opening of this page will take you to the log in
+//The opening of this page will take you to the log in, basically a script
 
 session_start(); 
 require_once '../../vendor/autoload.php';

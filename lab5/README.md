@@ -1,23 +1,17 @@
-Cloud Computing security guidlines 
+Lab 5 Notes  
 
+live site: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab5
 
 Link to my annotations of the book: https://drive.google.com/file/d/1i_00apE6WbRuG9NAQAKIfg13fG0OMvpt/view?usp=sharing
 
 Before Submitting:  
    put in ZAP report
-   make .env on actual server
    general testing 
-   line 52 verify.php
 
 
-Overall Notes on book related to my server:
-   No need SSRM because users cannot log in or anything like that 
-
-   GO here if can't find anything in the book: ● The CAIQ is a standard template for CSPs to document their security and compliance controls.
-   ● The CCM lists cloud security controls and maps them to multiple security and compliance
-   standards. The CCM can also be used to document security responsibilities.
 
 Possible things I can do: 
+   data security 
    Make registry for website; see bullets
    make a policy 
    control objs 
@@ -45,6 +39,7 @@ Possible things I can do:
 
 Pick 5 Things: 
 key: 
+
    page 41 -> Make registry for website; see bullets
    page 45 -> make a policy 
    page 46 -> control objs 
@@ -76,9 +71,9 @@ key:
 
 What I did: 
 
-   
+   All work viewable at link at top of page, most new additions in lab3 directory folder as thats where I primarily built off of. 
 
-   Added .env file for database connection to my lab3: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/
+   Added .env file for database connection to my lab3
       Main files edited: 
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/retrieveDb.php
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/overwrite.php
@@ -127,15 +122,29 @@ What I did:
          page 209 
 
 
-   SCAN -> remove reds page 189 
+   Use an Automated VM Scanner: 
+      While reading, I had a nice relatabililty moment when it told us to use automated tools to scan VM's for vunerabilities as I was planning to do this with ZAP 
+      anyways to find some specific ones. Luckily I had no reds! I included the ZAP response right here: 
+
+      Cites: page 189
 
    Encrypted Passwords: 
-      page 26 data security
+
+      One Example of encryption function (line 118): https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/index.php
+
+      When making the IAM, I obviously had to store user information in the mySQL database. In the book, it put a lot of ephasis on data security, especailly on page 199, 
+      so when storing the users passwords I looked up a way to hash them (cited below). THis way, I or nobody else (that can't crack a hash) has no idea what there 
+      password is. This helps the lazy users stay a bit more safe as they may use the same password for everything. Also manages the user encryption keys in a good fashion
+      as suggested on page 199. 
+
+      Cites: page 199, 26
 
    Prevented Path traversal:
+      
       Prevents from going to webpage 1 to 2 in URL when you shouldn't be able to. The first thing I did was disabling directory listing, 
       this ensures no directories without an index.php can be seen unless travled to by links I put there. I did this by following 
-      my citation below and editing the directory section of my configuration file. Another thing I did to prevent path traversal is 
+      my citation below and editing the directory section of my configuration file. It now says forbidden when trying to acsess: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/
+       Another thing I did to prevent path traversal is 
       to put headers similar to this: 
             <?php 
                session_start();
@@ -146,7 +155,8 @@ What I did:
                   exit();
                }
             ?>
-      at the top of files that should not be able to be acsess unless you are a user thats been authenticated by the IAM. For example, if someone
+      at the top of files that should not be able to be acsess unless you are a user thats been authenticated by the IAM. Main edit was to file: https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/weathMus.php 
+      as that was my "protected page" so to speak. For example, if someone
       had not created an account and verified their email, they would not be able to view: https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3/resources/weathMus.php . This fallows the governance policy mentioned on page 87 of the book stating "ensure that only authorized users have access to sensitive resouces 
       and can perform actions within their remit. 
       
@@ -160,7 +170,7 @@ What I did:
 
 Citations:
     password verify unhashes: https://www.tutorialspoint.com/php/php_function_password_verify.htm#:~:text=The%20PHP%20Hashing%20password_verify(),output%20based%20on%20that%20input.
-    
+    password hashing: https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.php.net/manual/en/function.password-hash.php%23:~:text%3Dpassword_hash()%2520creates%2520a%2520new,algorithms%2520are%2520added%2520to%2520PHP.&ved=2ahUKEwjXpeukqN2JAxWNKVkFHX4_DI8QFnoECA4QAw&usg=AOvVaw2NTe7HNpHJZz9t9XRsTYOi
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
    changing the page url in js: https://www.tabnine.com/academy/javascript/how-to-redirect-url-javascript/
    Intro To ITWS labs 
