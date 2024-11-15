@@ -39,7 +39,7 @@ List of Ideas I can potentially implement from reading textbook:
 ```
 
 Full Descriptions of what I did: 
-
+```txt
    All work viewable at link at top of page, most new additions in lab3 directory folder as thats where I primarily built off of. 
 
    Added .env file for database connection to my lab3
@@ -56,9 +56,9 @@ Full Descriptions of what I did:
       lock into my project directory, which I did not do initially but eventually figured out. I also had to mess with the require statments and dotenv statements (to load
       the actual .env file) because the path returned by __DIR__ was the same as the one in the require statement and I got those confused initially. This makes my VM safer as the passwords are no longer visible by just viewing the source code. 
       I learned about this on page 57 of the book. 
-
+```
    Added an IAM (Identity and Access Management):  
-
+```txt
       Main files edited/created: 
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/apiDat.sql
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/weathMus.php
@@ -84,9 +84,9 @@ Full Descriptions of what I did:
          get logged out automatically when browser is closed (session vars)
       
       Cites: 105-122;  page 122 (especially) 
-
+```
    Added MFA so users can only acsess by Verifying Email: 
-      
+     ```txt 
       Main files edited/created: 
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/index.php
          https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/weathMus.php
@@ -126,14 +126,14 @@ Full Descriptions of what I did:
          
       Cites: page 209, 38
 
-
-   Use an Automated VM Scanner: 
+```
+   Use an Automated VM Scanner: ```txt
       While reading, I had a nice relatabililty moment when it told us to use automated tools to scan VM's for vunerabilities as I was planning to do this with ZAP 
       anyways to find some specific ones. Luckily I had no reds! I included the ZAP response right here: https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab5/zaplab5.png
 
       Cites: page 189
-
-   Encrypted Passwords: 
+```
+   Encrypted Passwords: ```txt
       Main files edited: 
          One Example of encryption used (line 118): https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/index.php
          Also used it in tls swiftmailer smtp calls (line 42): https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/resources/iam/login.php
@@ -145,8 +145,8 @@ Full Descriptions of what I did:
       as suggested on page 199. I also used ecryption for some of the smtp calls by using tls. 
 
       Cites: page 199, 26
-
-   Prevented Path traversal:
+```
+   Prevented Path traversal:```txt
       
       Prevents from going to webpage 1 to 2 in URL when you shouldn't be able to. The first thing I did was disabling directory listing, 
       this ensures no directories without an index.php can be seen unless travled to by links I put there. I did this by following 
@@ -169,8 +169,8 @@ Full Descriptions of what I did:
       
       Cites: page 87 
 
-
-   Proper Data management: 
+```
+   Proper Data management: ```txt
 
       Main files edited:
          line 89, lines 103-112: https://github.com/RPI-ITWS/ITWS-2110-F24-foderj/blob/main/lab3/index.php
@@ -184,8 +184,8 @@ Full Descriptions of what I did:
       prevent against this, I used 'FILTER_SANITIZE_EMAIL' in my index.php when reading inputs.  
       
       Cites: Page 284 
-
-Citations:
+```
+Citations:```txt
     password verify unhashes: https://www.tutorialspoint.com/php/php_function_password_verify.htm#:~:text=The%20PHP%20Hashing%20password_verify(),output%20based%20on%20that%20input.
     password hashing: https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.php.net/manual/en/function.password-hash.php%23:~:text%3Dpassword_hash()%2520creates%2520a%2520new,algorithms%2520are%2520added%2520to%2520PHP.&ved=2ahUKEwjXpeukqN2JAxWNKVkFHX4_DI8QFnoECA4QAw&usg=AOvVaw2NTe7HNpHJZz9t9XRsTYOi
    .envs: https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
@@ -200,9 +200,9 @@ Citations:
    swiftmailer: https://mailtrap.io/blog/swiftmailer-sendmail/#Sending-a-message-with-Swift-Mailer
    smtp understanding: https://mailmeteor.com/blog/gmail-smtp-settings
    Path traversal remover: https://blog.qualys.com/vulnerabilities-threat-research/2021/10/27/apache-http-server-path-traversal-remote-code-execution-cve-2021-41773-cve-2021-42013
+```
 
-
-Things I leaned: 
+Things I leaned: ```txt
    Gap is really helpful for DIVS
    do not have to close pdo database connections
    stmt just means SQL statement
@@ -221,9 +221,9 @@ Things I leaned:
    if statements must exit after all conditions 
    Whenever resetting session var, must reload page
    do not need to predefine session vars 
+```
 
-
-questions: 
+questions: ```txt
    how are .env's not acsessible from the browser 
 
 Future additons: 
@@ -233,4 +233,4 @@ Future additons:
                     $_SESSION['resend_verification'] = 'set'; 
                     //once page reloaded verification email will be sent
                     $_SESSION['mess'] = 'The email you entered is not verified, <a href="login.php"> click here </a> to send a verification email.';    
-   
+```   
