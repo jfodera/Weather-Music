@@ -2,7 +2,8 @@ Lab 6 Notes (UI/UX):
 
 All work done on finder (group project) ->  https://finder.eastus.cloudapp.azure.com/finder 
 
-Note to Grader: this is the best way I could figure out how to format, links are clickable if you copy and paste the text section below into VS code. 
+Note to Grader: this is the best way I could figure out how to format, links are clickable if you copy and paste the text section below into VS code. Thanks 
+so much!
 
 ```txt
 Lenses of User Experience: 
