@@ -3,7 +3,7 @@ Lab 6 Notes (UI/UX):
 All work done on finder (group project) ->  https://finder.eastus.cloudapp.azure.com/finder 
 
 
-
+```txt
 Lenses of User Experience: 
 
 
@@ -349,3 +349,4 @@ Things I learned:
       if lost form works correctly, the response will be in a JSON data echo, going back to js function which then redirects initial page to the dash. 
 
 
+```
