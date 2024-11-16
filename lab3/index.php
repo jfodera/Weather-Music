@@ -28,7 +28,7 @@ try {
 }
 
 
-//sending verificaiton email, returns true if worked, false if didn't and reloads page
+//fing verificaiton email, returns true if worked, false if didn't and reloads page
 function sendVerificationEmail($email, $token) {
    //last arg is encryption protocol, 
    //sets email configs, creating new email 

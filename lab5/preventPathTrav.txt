@@ -12,7 +12,7 @@ For this guide, we'll edit the default site configuration (000-default.conf) to 
 3. Edit the Configuration File
 Open the Apache configuration file for the default site in a text editor. We’ll use nano in this example.
 
-sudo nano /etc/apache2/sites-available/000-default.conf
+sudo nano /etc/apache2/apache2.conf
 4. Disable Directory Listing
 Inside this file, find the <Directory> block. If it doesn’t exist, you can create one. We’ll add the Options -Indexes directive inside this block to disable directory listing.
 
@@ -22,10 +22,12 @@ Example configuration:
     # Other configurations
     DocumentRoot /var/www/html
 
-    <Directory /var/www/html>
-        Options -Indexes
-        AllowOverride All   # Allow .htaccess files to override settings
-    </Directory>
+<Directory /var/www/>
+        Options -Indexes               
+        AllowOverride All 
+        Require all granted
+</Directory>
+
 </VirtualHost>
 Here, Options -Indexes disables directory listing, and AllowOverride All allows .htaccess files to override this setting if needed.
 
