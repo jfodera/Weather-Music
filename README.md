@@ -1,149 +1,209 @@
+Lab 3 notes: 
+
+https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3
+
+Summary: 
+
+   This lab was a lot of shaking the rust off/learning new as we didn't do a whole bunch of php/mySQL in Intro last year. All in all I'd say I learned a lot so it was good. 
+   Below is basically all of my thought processes for the entire lab. A couple places I ran into errors was in sending the JSON data in a fetch request from 
+   js to my php scripts. There was defintley a learning curve there but I eventually got the hang of it. Once I figured out echos from the script can be caught by the 
+   JS console, everything got a lot easier in terms of error handling. Tough project but cool for sure.
+
+
+   note: in future hope to my use of apiType row
+
 Plan: 
 
+install mariaDB and mySQL  and phpmyadmin 
 
-Make a website that calls and presents the weather API 
-Then uses info from that call to call the spotify API 
-
-Weather Data Used: 
-   weather.icon -> png 
-   weather.description 
-   Wind Speed
-   pressure
-   humidity
-   temperature -> cliick on for 
-      Feels like
-      Min Temp 
-      Max Temp 
-   time (presented as date )
+Make a database format so that the website can store the JSON objects in the database √
 
 
-   will search spotify for "*condition* day"
-   returns and presents to the user top 5 playlists reccomended based on the weather
-      Displays: image, title of playlist, and author 
+Make a version of the website that requires you to click a button to start, only once you click, then it fetches √
+   and puts JSON obj in database
+   Only use PHP fetch obj in/out of database 
+   Use js for dynamically calling 
+   make a js API call, call a php script to fetch API data and store it
+
+Then after the use hits that button, and the php insert function has echod "done",√
+ call a retrive/populate JavaScript function that calls a php script which recieves the current DB entry (by ID), gives it to JS, then JS inserts it into the page.
+   A set of 2 database entries are made every time there are new users
+
+
+Then every time a new drop down menu item in selected, a corresponsing JS function to that place is called, makes the API call (long and lat hardcoded) then calls √
+   a PHP script to overwrite the database entry, just as with insert, waits till php script responds and then calls the retrive php scripts which gets the 
+   current DB entry, gives it to JS, and then JS inserts it into the page 
+
+Reasoning I took this approach was because I had dynamic updates set up in JS already adn don't really know how I would dynamically update page using inline PHP 
+without refreshing 
+
+They have a dropdown menu of other available (pre-inserted locations) that the user can select, 
+   index.php:96 is where you can insert
+   selecting a new location will overwrite the existing database entry 
+   then a page reload should reset the data 
+
+
+
+Before submit checklist: 
+   Validation
+
+
+Questions: 
+how to run mysql package so I can connect to DB from js? 
+
 
 
 Outline: 
-set up vm 
-
-Must put SSL certs (https on your vm)
-Figure out what a promise is 
-
-Use 10 peices of data acress each of the API’s 
-   5 and 5
 
 
-Weather API I'm calling: https://openweathermap.org/current
-   Documentation: https://openweathermap.org/current#data
-   updates after every call
+ Regarding "putting that JSON object into a MySQL database," 
+ I checked with Dr. Callahan, and he mentioned that it is up 
+ to you and your fellow students to decide how you want to store 
+ your data and in what format within the database
 
-Spotify API I'm calling (really nice documentation):
-   https://developer.spotify.com/documentation/web-api/reference/search
+ You all installed PHPMyAdmin on your VMs during the Intro class. It was not pre-installed on the VMs—I confirmed this with him as well.
 
-Following this flow for Spotify API: https://developer.spotify.com/documentation/web-api/tutorials/client-credentials-flow
-   whenever a user opens the website, an acsess token is created, then that token is used to make the search call from the weather data 
-
-Can copy and paste code chunk that into beginning of lab 2 
-
-
+Debug: 
+   sqli is not even throwing an error 
+   Error handling in php and js was set up correct, issue was I was using a table name, not a database name
 
 
 Things I learned: 
-   Fetch API is a simpler promised based syntax and more moder than using ajax
-Promise: an object representing the eventual completion or failure of an asynchronous operation
-Then: for asyncronous coding
-.json Method: 
-   Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce 
-By default, fetch makes get requests
-Then calls immedietley jump from one to another, returning result of previous one to the next
-No semicolon after Fetch call
-No '}' in API calls 
-No ';' After calling async functions
 
-having js included at the bottom of the body allows the visuals to load faster by not incuding it in the head 
-Breakpoints are just site rearrangements when the size changes 
+. is concatenation
+//$_Server, returns the name of the path of the file path currrently executing 
+Without Phpmyadin, mySQl is interacted with most commonly through the command line 
+Only can insert into DB if valid JSON
+int(10) -> 10 is the display width, not the storage size 
+Don't forget to include API ID when inserting 
+Node.js is a tool that basically allows js to connect to databases
+Need Node.js for use of mysql package
+Must have type='module' in script in order to import 
+   and then must have mysql2 installed in project directory which you can only use with node.js installed 
+   will see in directory that node_modules is installed 
+php://input allows you to acses raw POST data -> the JSON
+Send Javascript object to php, very cool 
+CANNOT use console with scripts inserted as type='module'   
+JSON.stringify converts JavaScript Objects into strings 
+if you misstype something in the initial mysqli statement it will not throw an error that you can read 
+can error handle in php by using echo  
+   If JS called it, it will just return it to the JS file it called it from  
+   $dbok is a way of checking if the database connection is good without stopping the rest of the HTML from working, not really neccesarry in a script where the main function is to connect to a database; no ins and outs
+When make table of JSON objects, content type will say longtext, but it's JSON  
+Error handling for php set up perfectly 
+Always use this series of binding statements to insert into a table: 
+       $insQuery = "insert into jsonObjs (`jdoc`) values(?)";
+      $statement = $db->prepare($insQuery);
+      $statement->bind_param("s", $data);
+      $statement->execute();
+      fetch_assoc() increments every call
+Must decode json and convers to php array in order to modify 
+Don't forget to close database
+if json_encode too much, escape "'s will start to show up
+If echos mult times in php script, it is just concatenated into the log 
+JavaScript global variables are reset when the page is reloaded
 
-thens are like chains
 
-Put a ';' at the end of the last then statement
-
-For some Reason, You can initially hide dynamically allocated things through ID's but not classes 
-
-
-Future improvements: 
-   Make it for any location 
-   Could do an ajax esc for loop and customize how many songs are returned but for right now stick to 5
-   Figure out why spotify doesn't always return 5 song results 
+Future improvements (Things I would have done if I had more time.): 
+Use XAMPP instead of pushing to main 
+   make more universal functions in js
 
 
-Citations
-For POST request using fetch: https://www.geeksforgeeks.org/simple-post-request-using-the-fetch-api/?ref=oin_asr4
-URL Search Params, to make conversion to fetchh call easier: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
-How to add fetch Auth header: https://jasonwatmore.com/fetch-add-bearer-token-authorization-header-to-http-request#:~:text=Add%20Authorization%20Header,to%20the%20fetch()%20function.
-Async: https://www.w3schools.com/js/js_async.asp
-   can use await instead of then to return something and maintain async nature
-Promise All Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
-Date Conversion: https://stackoverflow.com/questions/40761205/javascript-convert-timestamp-to-human-readable-date
-Unix time stamp is the format the day and time is recieved used this to help parse: https://www.unixtimestamp.com/
-   number of seconds since Jan 01 1970 
+   learn how to dymically update php inline
+   
+   learn how to read server logs
+   Is a chance id of other entry is retrived but doesn't really matter because, same content
+   Error catching for inserting into DB
+   Make use of apiType row 
+   learn how to use xampp for php debugging
+   Delete things when the tab closes or opens in order to not overload the database, leaving it for now because it's a cool way to count users as I won't have a lot of traffic. 
+      https://www.zyxware.com/articles/5732/solved-how-to-run-a-javascript-code-at-browser-closing-time#:~:text=In%20JS%20there%20is%20a,of%20callback%20function%20of%20onbeforeunload%20.
+   Could put location or type for the apiType column but didn't here because was not neccesary for the functionallity.
 
+
+Any challenges I came across: 
+
+Citations:
+Send Javascript object to php: 
+   https://www.youtube.com/watch?v=Ctz1Fsgt9OE
+
+json Decoding docs: 
+   https://www.php.net/manual/en/function.json-decode.php
+
+   JSON into mySQL    :
+      https://dev.mysql.com/doc/refman/8.4/en/json.html
+
+   stringify: https://www.w3schools.com/jsref/jsref_stringify.asp#:~:text=The%20JSON.,has%20to%20be%20a%20string.
+
+Intro to ITWS lab docs (can provide them if needed, just didn't really know how to cite without including actual files)
+
+Didn't actually use: 
+
+
+   JS database connection: 
+      https://www.w3schools.com/nodejs/nodejs_mysql.asp
+      Also taught me how to install node.js and npm (the package manager )
+
+   Getting the mySQL Package in JS file:
+      https://www.sitepoint.com/using-node-mysql-javascript-client/
+
+
+Decided to not use anything above 
+
+
+Current:
+   Done√
 
 
 Helpful Code Chunks: 
 
-To see raw JSON, use log : 
-   const params = new URLSearchParams();
-   params.append("grant_type", "client_credentials");
-   params.append("client_id", "");
-   params.append("client_secret", "");
-
-   fetch(url, {
-      method: "POST",
-      headers: {
-         "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: params.toString(),
-   })
-
-   .then(function(keyData){
-      console.log(keyData.json())
-   })
+            //Catches echo response for testing, returns as a string so must be converted to JSON 
+            .then(function(response){
+               return(response.json()) 
+            })
+            .then(function(js){
+               console.log(js); 
+            }); 
 
 
-Then version of getSpotKey (doesn't work in serperate funtion )
-async function getSpotKey(){
-   let key; 
-
-   const url = "https://accounts.spotify.com/api/token";
-
-   //Strings together URL in correct format so I don't have to 
-   const params = new URLSearchParams();
-   params.append("grant_type", "client_credentials");
-   params.append("client_id", "");
-   params.append("client_secret", "");
-
-   fetch(url, {
-      method: "POST",
-      headers: {
-         "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: params.toString(),
-   })
-   .then(function(keyData){
-      return(keyData.json());
-   })
-   .then(function(parsed){
-      console.log(parsed.access_token);
-      key = parsed.access_token; 
-   })
-   // console.log(key); 
-   return(key);
-}
 
 
-Post Request Spotify Outline: 
 
-curl -X POST "https://accounts.spotify.com/api/token" \
-     -H "Content-Type: application/x-www-form-urlencoded" \
-     -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret"
+<?php
+      //so can check every time we write in PhP 
+      $dbOk = false; 
+
+      //getting weather data
+      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+
+      if ($db->connect_error) {
+         echo '<div class="messages">Could not connect to the database. Error: ';
+         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
+      } else {
+         $dbOk = true;
+      }
+
+      $query = 'SELECT * FROM jsonObjs WHERE apiType="weather"';
+      $result = $db->query($query);
+      $record = $result->fetch_assoc();
+      $inter = json_decode($record['jdoc']);
+      //at this point, inter is still a string because the data is double JSON encoded, so have to do it one more
+      $weath = json_decode($inter, true);
+      //Now it is a php array acsessable by 
+      /*lat: 
+      echo $weath['coord']['lat'];
+      */
+?>
+
+                           <?php
+                           if
+                              echo "<span id='windSpeed'>" . $weath['wind']['speed'] .  "</span> mph";
+                           ?>
 
 
+
+
+SELECT * FROM jsonObjs WHERE jdoc="{\"coord\":{\"lon\":-73.6918,\"lat\":42.7284},\"weather\":[{\"id\":741,\"main\":\"Fog\",\"description\":\"fog\",\"icon\":\"50d\"}],\"base\":\"stations\",\"main\":{\"temp\":57.34,\"feels_like\":57.2,\"temp_min\":55.15,\"temp_max\":60.49,\"pressure\":1023,\"humidity\":94,\"sea_level\":1023,\"grnd_level\":1009},\"visibility\":10000,\"wind\":{\"speed\":0,\"deg\":0},\"clouds\":{\"all\":100},\"dt\":1728049196,\"sys\":{\"type\":2,\"id\":2018860,\"country\":\"US\",\"sunrise\":1728039341,\"sunset\":1728081044},\"timezone\":-14400,\"id\":5141502,\"name\":\"Troy\",\"cod\":200}"
+                                   "{\"coord\":{\"lon\":-73.6918,\"lat\":42.7284},\"weather\":[{\"id\":741,\"main\":\"Fog\",\"description\":\"fog\",\"icon\":\"50d\"}],\"base\":\"stations\",\"main\":{\"temp\":57.34,\"feels_like\":57.2,\"temp_min\":55.15,\"temp_max\":60.49,\"pressure\":1023,\"humidity\":94,\"sea_level\":1023,\"grnd_level\":1009},\"visibility\":10000,\"wind\":{\"speed\":0,\"deg\":0},\"clouds\":{\"all\":100},\"dt\":1728049196,\"sys\":{\"type\":2,\"id\":2018860,\"country\":\"US\",\"sunrise\":1728039341,\"sunset\":1728081044},\"timezone\":-14400,\"id\":5141502,\"name\":\"Troy\",\"cod\":200}"
+
+                                   "{\"coord\":{\"lon\":-73.6918,\"lat\":42.7284},\"weather\":[{\"id\":741,\"main\":\"Fog\",\"description\":\"fog\",\"icon\":\"50d\"}],\"base\":\"stations\",\"main\":{\"temp\":57.34,\"feels_like\":57.2,\"temp_min\":55.15,\"temp_max\":60.49,\"pressure\":1023,\"humidity\":94,\"sea_level\":1023,\"grnd_level\":1009},\"visibility\":10000,\"wind\":{\"speed\":0,\"deg\":0},\"clouds\":{\"all\":100},\"dt\":1728049196,\"sys\":{\"type\":2,\"id\":2018860,\"country\":\"US\",\"sunrise\":1728039341,\"sunset\":1728081044},\"timezone\":-14400,\"id\":5141502,\"name\":\"Troy\",\"cod\":200}"
