@@ -134,6 +134,7 @@ async function getPlays(auth,searchTerm){
       }
    })
    var jsonRes = await fetchRes.json();
+   console.log(jsonRes); 
    return(jsonRes);
 }
 
