@@ -157,7 +157,11 @@ Current:
    Install phpmyadmin on server √
    test -> make sure right version of repo downloaded √
    make Websys repo no longer public  √
-   Make API changes so that Rain error does not occur aka calls less than 5 
+   Make API changes so that Rain error does not occur aka breaks when less than 5 are returned 
+      Solved this by changing limits to 10, anything over results in JSON data too large to retrieve from database (for this implementation) 
+   Change back db conns
+   remove logs 
+
       ensure that every API call, 5 playlists are returned 
 
 

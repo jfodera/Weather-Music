@@ -61,30 +61,30 @@ function popHTML(weathDat, plays){
    $("#time").html(date);
 
    //Playlist info
-   $("#oneIm").attr('src', plays.playlists.items[0].images[0].url);
-   $("#oneLin").attr('href', plays.playlists.items[0].external_urls.spotify);
-   $("#titlOne").html(plays.playlists.items[0].name);
-   $("#auOne").html(plays.playlists.items[0].owner.display_name);
+   $("#oneIm").attr('src', plays[0].images[0].url);
+   $("#oneLin").attr('href', plays[0].external_urls.spotify);
+   $("#titlOne").html(plays[0].name);
+   $("#auOne").html(plays[0].owner.display_name);
 
-   $("#twoIm").attr('src', plays.playlists.items[1].images[0].url);
-   $("#twoLin").attr('href', plays.playlists.items[1].external_urls.spotify);
-   $("#titlTwo").html(plays.playlists.items[1].name);
-   $("#auTwo").html(plays.playlists.items[1].owner.display_name);
+   $("#twoIm").attr('src', plays[1].images[0].url);
+   $("#twoLin").attr('href', plays[1].external_urls.spotify);
+   $("#titlTwo").html(plays[1].name);
+   $("#auTwo").html(plays[1].owner.display_name);
 
-   $("#threeIm").attr('src', plays.playlists.items[2].images[0].url);
-   $("#threeLin").attr('href', plays.playlists.items[2].external_urls.spotify);
-   $("#titlThree").html(plays.playlists.items[2].name);
-   $("#auThree").html(plays.playlists.items[2].owner.display_name);
+   $("#threeIm").attr('src', plays[2].images[0].url);
+   $("#threeLin").attr('href', plays[2].external_urls.spotify);
+   $("#titlThree").html(plays[2].name);
+   $("#auThree").html(plays[2].owner.display_name);
 
-   $("#fourIm").attr('src', plays.playlists.items[3].images[0].url);
-   $("#fourLin").attr('href', plays.playlists.items[3].external_urls.spotify);
-   $("#titlFour").html(plays.playlists.items[3].name);
-   $("#auFour").html(plays.playlists.items[3].owner.display_name);
+   $("#fourIm").attr('src', plays[3].images[0].url);
+   $("#fourLin").attr('href', plays[3].external_urls.spotify);
+   $("#titlFour").html(plays[3].name);
+   $("#auFour").html(plays[3].owner.display_name);
 
-   $("#fiveIm").attr('src', plays.playlists.items[4].images[0].url);
-   $("#fiveLin").attr('href', plays.playlists.items[4].external_urls.spotify);
-   $("#titlFive").html(plays.playlists.items[4].name);
-   $("#auFive").html(plays.playlists.items[4].owner.display_name);
+   $("#fiveIm").attr('src', plays[4].images[0].url);
+   $("#fiveLin").attr('href', plays[4].external_urls.spotify);
+   $("#titlFive").html(plays[4].name);
+   $("#auFive").html(plays[4].owner.display_name);
 }
 
 /*API CALL FUNCTIONS*/
@@ -128,14 +128,17 @@ async function getWeath(lat,lon){
 /*Fetches the search query result data from the Spotify api given a get and a search term. A promise of the return converted to JSON is returned.  */ 
 async function getPlays(auth,searchTerm){
 
-   var fetchRes = await fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=30&offset=0", { 
+   var fetchRes = await fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=10&offset=0", { 
       headers: {
          'Authorization': auth
       }
    })
    var jsonRes = await fetchRes.json();
-   console.log(jsonRes); 
-   return(jsonRes);
+   // const validItems = jsonRes.items.filter(item => item !== null);
+   const validItems = jsonRes['playlists'].items.filter(item => item !== null);
+   console.log(validItems);
+
+   return(validItems);
 }
 
 
@@ -176,8 +179,9 @@ async function retrieve(id){
       "body" : JSON.stringify(id)
    })
 
-   var newRes = await res.json(); 
+   var newRes = await res.json();  
    return(newRes);
+   // return(res); 
 }
 
 

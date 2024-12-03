@@ -5,7 +5,8 @@
       //the php:// makes it so that it reads raw data from the post requests body 
       $id = file_get_contents("php://input");
 
-      $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
+      $db = new mysqli('localhost', 'root', '', 'apiDat');
+      // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 
       //error handling 
       if ($db->connect_error) {
