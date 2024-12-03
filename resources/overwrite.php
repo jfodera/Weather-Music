@@ -31,6 +31,7 @@
          }
 
       }
+
       $db = new mysqli('localhost', 'root', '', 'apiDat');
       // $db = new mysqli('localhost', 'phpmyadmin', '!fodAdmin!', 'apiDat');
 

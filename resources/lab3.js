@@ -136,8 +136,6 @@ async function getPlays(auth,searchTerm){
    var jsonRes = await fetchRes.json();
    // const validItems = jsonRes.items.filter(item => item !== null);
    const validItems = jsonRes['playlists'].items.filter(item => item !== null);
-   console.log(validItems);
-
    return(validItems);
 }
 
@@ -178,7 +176,6 @@ async function retrieve(id){
       },
       "body" : JSON.stringify(id)
    })
-
    var newRes = await res.json();  
    return(newRes);
    // return(res); 
@@ -198,7 +195,8 @@ async function overwrite(overDat, id){
 
    })
 
-   var newRes = await res.text(); 
+   var newRes = await res.text();
+
    return(newRes);
 }
 
@@ -225,7 +223,7 @@ async function locCheck(){
       var weathSuc = await overwrite(weathDat, WEATHERID);
       var playsSuc = await overwrite(plays, PLAYID);
       if(weathSuc!= 1 || playsSuc != 1){
-         console.log("overwrite error"); 
+         console.log(playsSuc);
       }
 
       //retrieve from DB
@@ -255,6 +253,9 @@ async function locCheck(){
       const initWeath = await retrieve(WEATHERID);
       const initPlays = await retrieve(PLAYID);
 
+      console.log(WEATHERID); 
+      console.log(PLAYID); 
+
       //populate
       popHTML(initWeath,initPlays);
 
@@ -268,8 +269,7 @@ async function locCheck(){
       const weathDat = await getWeath("25.761681", "80.191788");
       var auth = 'Bearer ' + SPOTIFYKEY; 
       var searchTerm = weathDat.weather[0].main + " day"; 
-      const plays = await getPlays(auth,searchTerm);
-
+      const plays = await getPlays(auth,searchTerm); 
       //overwrite existing entries 
       var weathSuc = await overwrite(weathDat, WEATHERID);
       var playsSuc = await overwrite(plays, PLAYID);
