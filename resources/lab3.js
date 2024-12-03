@@ -128,7 +128,7 @@ async function getWeath(lat,lon){
 /*Fetches the search query result data from the Spotify api given a get and a search term. A promise of the return converted to JSON is returned.  */ 
 async function getPlays(auth,searchTerm){
 
-   var fetchRes = await fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=5&offset=0", { 
+   var fetchRes = await fetch("https://api.spotify.com/v1/search?q=" + searchTerm + "&type=playlist&market=US&limit=30&offset=0", { 
       headers: {
          'Authorization': auth
       }
