@@ -165,10 +165,26 @@ async function insert(jsonDat){
 }
 
 
+// /*Passes id to a PHP script using the fetch method in order to retrieve JSON at that ID. Returns the JSON data of 
+// the id given */
+// async function retrieve(id){
+ 
+//    var res = await fetch("resources/retrieveDb.php", {
+//       "method" : "POST",
+//       "headers" : {
+//          "Content-Type" : "application/json; charset=utf-8"
+//       },
+//       "body" : JSON.stringify(id)
+//    })
+//    var newRes = await res.json();  
+//    return(newRes);
+//    // return(res); 
+// }
+
 /*Passes id to a PHP script using the fetch method in order to retrieve JSON at that ID. Returns the JSON data of 
 the id given */
 async function retrieve(id){
- 
+   console.log(id); 
    var res = await fetch("resources/retrieveDb.php", {
       "method" : "POST",
       "headers" : {
@@ -176,9 +192,13 @@ async function retrieve(id){
       },
       "body" : JSON.stringify(id)
    })
-   var newRes = await res.json();  
+   var newRes = await res.text();  
+   // var resj = await newRes.json(); 
+   // var newRes = await res.json();  
+   console.log(newRes); 
    return(newRes);
-   // return(res); 
+
+   
 }
 
 
