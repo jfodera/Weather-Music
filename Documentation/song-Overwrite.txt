@@ -1,0 +1,6 @@
+Issue: 
+   JSON coming back from DB not valid. 
+
+   used json validator: 
+
+   Something is Broke with the Sotify Call 

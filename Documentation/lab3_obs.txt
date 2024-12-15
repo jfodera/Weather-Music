@@ -10,7 +10,9 @@ Summary:
    JS console, everything got a lot easier in terms of error handling. Tough project but cool for sure.
 
 
-   note: in future hope to my use of apiType row
+note: in future hope to make use of apiType row
+   
+
 
 Plan: 
 
@@ -152,7 +154,15 @@ Decided to not use anything above
 
 
 Current:
-   Done√
+   Install phpmyadmin on server √
+   test -> make sure right version of repo downloaded √
+   make Websys repo no longer public  √
+   Make API changes so that Rain error does not occur aka breaks when less than 5 are returned 
+      Solved this by changing limits to 10, anything over results in JSON data too large to retrieve from database (for this implementation) 
+   Change back db conns
+   remove logs 
+
+      ensure that every API call, 5 playlists are returned 
 
 
 Helpful Code Chunks: 
