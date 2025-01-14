@@ -1,6 +1,4 @@
-Lab 3 notes: 
-
-https://foderj.eastus.cloudapp.azure.com/ITWS-2110-F24-foderj/lab3
+Current Link: https://foderj.eastus.cloudapp.azure.com/weather-music/
 
 Summary: 
 
